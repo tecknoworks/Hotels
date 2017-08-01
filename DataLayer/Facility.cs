@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-	public class City
+	public class Facility
 	{
 		public int Id { get; set; }
-		public string Name { get; set; }
-		public int CountryId { get; set; }
-		public Country Country { get; set; }
+		public string Description { get; set; }
 
+		public Facility(int Id, string Description)
+		{
+			this.Id = Id;
+			this.Description = Description;
+		}
 	}
 }

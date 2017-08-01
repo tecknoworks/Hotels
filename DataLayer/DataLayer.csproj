@@ -85,8 +85,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acomodation.cs" />
+    <Compile Include="AcomodationType.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="Facility.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201708010737455_InitialCreate.cs" />
     <Compile Include="Migrations\201708010737455_InitialCreate.Designer.cs">
@@ -98,6 +101,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnityFacility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
