@@ -30,6 +30,7 @@ namespace DataLayer.Migrations
 			  p => p.Id,
 			  new City { Id = 1, Name = "Cluj-Napoca", CountryId = 1 }
 			);
+			
 		}
 	}
 }
