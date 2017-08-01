@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels", "Hotels\Hotels.csproj", "{225FFE40-F17B-4BAC-8F2A-AD2816FB316A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Hotels\Web.csproj", "{225FFE40-F17B-4BAC-8F2A-AD2816FB316A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{2AEC209B-06E5-479D-8C5C-CC8A9F32D73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{918F1ADC-D0E3-4E50-B22C-CCB071DB2F54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{225FFE40-F17B-4BAC-8F2A-AD2816FB316A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{225FFE40-F17B-4BAC-8F2A-AD2816FB316A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{225FFE40-F17B-4BAC-8F2A-AD2816FB316A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AEC209B-06E5-479D-8C5C-CC8A9F32D73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AEC209B-06E5-479D-8C5C-CC8A9F32D73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AEC209B-06E5-479D-8C5C-CC8A9F32D73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AEC209B-06E5-479D-8C5C-CC8A9F32D73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{918F1ADC-D0E3-4E50-B22C-CCB071DB2F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{918F1ADC-D0E3-4E50-B22C-CCB071DB2F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{918F1ADC-D0E3-4E50-B22C-CCB071DB2F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{918F1ADC-D0E3-4E50-B22C-CCB071DB2F54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
