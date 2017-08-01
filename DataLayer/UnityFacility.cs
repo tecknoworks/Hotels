@@ -21,6 +21,8 @@ namespace DataLayer
 			this.Id = Id;
 			this.FacilityId = FacilityId;
 			this.AcomodationId = AcomodationId;
+
+
 		}
 	}
 }
