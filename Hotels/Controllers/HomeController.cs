@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,10 @@ namespace Hotels.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+			CountryService cs = new CountryService();
+			cs.GetAllCountries();
+
+			return View();
         }
 
         public ActionResult About()

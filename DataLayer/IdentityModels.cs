@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using DataLayer;
 
 namespace Hotels.Models
 {
@@ -29,5 +30,9 @@ namespace Hotels.Models
         {
             return new ApplicationDbContext();
         }
-    }
+
+		public DbSet<Country> Countries{get;set;}
+
+		public DbSet<City> Cities{ get; set; }
+	}
 }
