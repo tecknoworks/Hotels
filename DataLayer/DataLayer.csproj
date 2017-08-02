@@ -104,6 +104,11 @@
     <Compile Include="NearbyType.cs" />
     <Compile Include="UnityNearby.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Review.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RoomReservation.cs" />
+    <Compile Include="RoomType.cs" />
     <Compile Include="UnityFacility.cs" />
   </ItemGroup>
   <ItemGroup>
