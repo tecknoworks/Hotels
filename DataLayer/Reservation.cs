@@ -20,6 +20,11 @@ namespace DataLayer
         public int UserId { get; set; }
         public ApplicationUser User { get; set;}
 
+		public Reservation()
+		{
+
+		}
+
         public Reservation(int Id,DateTime DateOfReservation,DateTime DateOfStart,DateTime DateOfEnd,float TotalPayment,int NumberOfPeople,int RoomReservationId,int UserId)
         {
             this.Id = Id;

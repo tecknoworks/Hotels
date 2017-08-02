@@ -9,6 +9,7 @@ namespace DataLayer
 	public class Acomodation
 	{
 		public int Id { get; set; }
+
 		public AcomodationType Type { get; set; }
 		public string Address { get; set; }
 		public int NumberOfStars { get; set; }

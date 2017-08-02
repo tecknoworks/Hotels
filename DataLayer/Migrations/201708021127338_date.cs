@@ -3,14 +3,16 @@ namespace DataLayer.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class f : DbMigration
+    public partial class date : DbMigration
     {
         public override void Up()
         {
+            DropColumn("dbo.Acomodations", "Name");
         }
         
         public override void Down()
         {
+            AddColumn("dbo.Acomodations", "Name", c => c.String());
         }
     }
 }
