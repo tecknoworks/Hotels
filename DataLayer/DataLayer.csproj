@@ -99,6 +99,22 @@
     <Compile Include="Migrations\201708011153279_city.Designer.cs">
       <DependentUpon>201708011153279_city.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708020805396_NameClass.cs" />
+    <Compile Include="Migrations\201708020805396_NameClass.Designer.cs">
+      <DependentUpon>201708020805396_NameClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020851442_cityid.cs" />
+    <Compile Include="Migrations\201708020851442_cityid.Designer.cs">
+      <DependentUpon>201708020851442_cityid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020855528_R.cs" />
+    <Compile Include="Migrations\201708020855528_R.Designer.cs">
+      <DependentUpon>201708020855528_R.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708020910575_f.cs" />
+    <Compile Include="Migrations\201708020910575_f.Designer.cs">
+      <DependentUpon>201708020910575_f.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -121,6 +137,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708011153279_city.resx">
       <DependentUpon>201708011153279_city.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020805396_NameClass.resx">
+      <DependentUpon>201708020805396_NameClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020851442_cityid.resx">
+      <DependentUpon>201708020851442_cityid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020855528_R.resx">
+      <DependentUpon>201708020855528_R.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708020910575_f.resx">
+      <DependentUpon>201708020910575_f.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

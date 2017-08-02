@@ -16,8 +16,9 @@ namespace DataLayer
 		public string Description { get; set; }
 		public string PhoneNumber { get; set; }
 		public string WebSite { get; set; }
-
-		public Acomodation(int Id, AcomodationType Type, string Address, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite)
+		public int CityId { get; set; }
+		public City City { get; set; }
+		public Acomodation(int Id, AcomodationType Type, string Address, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
 			this.Id = Id;
 			this.Type = Type;
@@ -27,6 +28,7 @@ namespace DataLayer
 			this.Description = Description;
 			this.PhoneNumber = PhoneNumber;
 			this.WebSite = WebSite;
+			this.CityId = CityId;
 		}
 	}
 }

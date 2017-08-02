@@ -15,12 +15,12 @@ namespace DataLayer
         public DateTime DateOfEnd { get; set; }
         public float TotalPayment { get; set; }
         public int NumberOfPeople { get; set; }
-        public int RoomId { get; set; }
-        public Room Room { get; set; }
+        public int RoomReservationId { get; set; }
+        public RoomReservation Room { get; set; }
         public int UserId { get; set; }
         public ApplicationUser User { get; set;}
 
-        public Reservation(int Id,DateTime DateOfReservation,DateTime DateOfStart,DateTime DateOfEnd,float TotalPayment,int NumberOfPeople,int RoomId,int UserId)
+        public Reservation(int Id,DateTime DateOfReservation,DateTime DateOfStart,DateTime DateOfEnd,float TotalPayment,int NumberOfPeople,int RoomReservationId,int UserId)
         {
             this.Id = Id;
             this.DateOfReservation = DateOfReservation;
@@ -28,7 +28,7 @@ namespace DataLayer
             this.DateOfEnd = DateOfEnd;
             this.TotalPayment = TotalPayment;
             this.NumberOfPeople = NumberOfPeople;
-            this.RoomId = RoomId;
+            this.RoomReservationId = RoomReservationId;
             this.UserId = UserId;
         }
     }
