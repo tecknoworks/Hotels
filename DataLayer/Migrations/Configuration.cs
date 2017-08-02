@@ -13,8 +13,8 @@ namespace DataLayer.Migrations
             ContextKey = "Hotels.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(Hotels.Models.ApplicationDbContext context)
-        {
+		protected override void Seed(Hotels.Models.ApplicationDbContext context)
+		{
 			//  This method will be called after migrating to the latest version.
 
 			//  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -30,6 +30,12 @@ namespace DataLayer.Migrations
 			  p => p.Id,
 			  new City { Id = 1, Name = "Cluj-Napoca", CountryId = 1 }
 			);
+
+			context.NearbyPlaces.AddOrUpdate(
+				p => p.Id,
+				new Nearby { Id = 1, Name = "Marty",Location = "Iulius Mall",Type=NearbyType.Restaurant}
+		   );
+
 			
 		}
 	}

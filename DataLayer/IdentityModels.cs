@@ -38,5 +38,24 @@ namespace Hotels.Models
 		public DbSet<Acomodation> Acomodations { get; set; }
 
 		public DbSet<Facility> Facilities { get; set; }
+
+		public DbSet<UnityFacility> UnityFacilities { get; set; }
+
+		public DbSet<Nearby> NearbyPlaces { get; set; }
+
+		public DbSet<UnityNearby> UnityNearbyPlaces { get; set; }
+
+		//public DbSet<NearbyType> NearbyTypes { get; set; }
+
+		public DbSet<Review> Reviews { get; set; }
+
+		public DbSet<Room> Rooms { get; set; }
+
+		public DbSet<RoomReservation> RoomReservations { get; set; }
+
+		public DbSet<Reservation> Reservations { get; set; }
+
+
+
 	}
 }
