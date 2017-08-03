@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201708030819070_addedHotelsNames.Designer.cs">
       <DependentUpon>201708030819070_addedHotelsNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708031003292_Update1.cs" />
+    <Compile Include="Migrations\201708031003292_Update1.Designer.cs">
+      <DependentUpon>201708031003292_Update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708030819070_addedHotelsNames.resx">
       <DependentUpon>201708030819070_addedHotelsNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708031003292_Update1.resx">
+      <DependentUpon>201708031003292_Update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
