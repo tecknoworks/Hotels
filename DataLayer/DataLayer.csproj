@@ -91,6 +91,7 @@
     <Compile Include="City.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Facility.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\201708030750249_allTables.cs" />
     <Compile Include="Migrations\201708030750249_allTables.Designer.cs">

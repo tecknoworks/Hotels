@@ -14,14 +14,7 @@ namespace DataLayer.Migrations
             AutomaticMigrationsEnabled = true;
             ContextKey = "Hotels.Models.ApplicationDbContext";
         }
-        // convert image to byte array
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return ms.ToArray();
-        }
-
+        
         protected override void Seed(Hotels.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -120,7 +113,7 @@ namespace DataLayer.Migrations
                    Address = "Str.Nicoara Moise nr.10",
                    Name = "Belagio",
                    NumberOfStars = 3,
-                   Picture = imageToByteArray(Image.FromFile(@"C:\Work\Images\hotel1.jpg")),
+                   Picture = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\hotel1.jpg")),
                    Description = "Nice hotel with a great view",
                    PhoneNumber = "07433256963",
                    WebSite = "www.",
