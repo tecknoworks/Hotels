@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-	public class UnityFacility
+	public class AcomodationFacility
 	{
 		public int Id { get; set; }
 		public Facility Facility { get; set; }
@@ -16,8 +16,8 @@ namespace DataLayer
 		public Acomodation Acomodation { get; set; }
 
 		public int AcomodationId { get; set; }
-        public UnityFacility() { }
-		public UnityFacility(int Id, int FacilityId, int AcomodationId) {
+        public AcomodationFacility() { }
+		public AcomodationFacility(int Id, int FacilityId, int AcomodationId) {
 			this.Id = Id;
 			this.FacilityId = FacilityId;
 			this.AcomodationId = AcomodationId;

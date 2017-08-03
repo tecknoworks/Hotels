@@ -39,11 +39,11 @@ namespace Hotels.Models
 
 		public DbSet<Facility> Facilities { get; set; }
 
-		public DbSet<UnityFacility> UnityFacilities { get; set; }
+		public DbSet<AcomodationFacility> UnityFacilities { get; set; }
 
 		public DbSet<Nearby> NearbyPlaces { get; set; }
 
-		public DbSet<UnityNearby> UnityNearbyPlaces { get; set; }
+		public DbSet<AcomodationNearby> UnityNearbyPlaces { get; set; }
 
 		//public DbSet<NearbyType> NearbyTypes { get; set; }
 
