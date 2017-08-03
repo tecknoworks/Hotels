@@ -92,66 +92,6 @@
     <Compile Include="Country.cs" />
     <Compile Include="Facility.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201708010737455_InitialCreate.cs" />
-    <Compile Include="Migrations\201708010737455_InitialCreate.Designer.cs">
-      <DependentUpon>201708010737455_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708011153279_city.cs" />
-    <Compile Include="Migrations\201708011153279_city.Designer.cs">
-      <DependentUpon>201708011153279_city.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020805396_NameClass.cs" />
-    <Compile Include="Migrations\201708020805396_NameClass.Designer.cs">
-      <DependentUpon>201708020805396_NameClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020851442_cityid.cs" />
-    <Compile Include="Migrations\201708020851442_cityid.Designer.cs">
-      <DependentUpon>201708020851442_cityid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020855528_R.cs" />
-    <Compile Include="Migrations\201708020855528_R.Designer.cs">
-      <DependentUpon>201708020855528_R.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020910575_f.cs" />
-    <Compile Include="Migrations\201708020910575_f.Designer.cs">
-      <DependentUpon>201708020910575_f.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020932101_er.cs" />
-    <Compile Include="Migrations\201708020932101_er.Designer.cs">
-      <DependentUpon>201708020932101_er.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021011182_Da.cs" />
-    <Compile Include="Migrations\201708021011182_Da.Designer.cs">
-      <DependentUpon>201708021011182_Da.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021017379_d.cs" />
-    <Compile Include="Migrations\201708021017379_d.Designer.cs">
-      <DependentUpon>201708021017379_d.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021106385_Migration1.cs" />
-    <Compile Include="Migrations\201708021106385_Migration1.Designer.cs">
-      <DependentUpon>201708021106385_Migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021108244_Mig.cs" />
-    <Compile Include="Migrations\201708021108244_Mig.Designer.cs">
-      <DependentUpon>201708021108244_Mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021124520_Migr.cs" />
-    <Compile Include="Migrations\201708021124520_Migr.Designer.cs">
-      <DependentUpon>201708021124520_Migr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021133335_Migrat.cs" />
-    <Compile Include="Migrations\201708021133335_Migrat.Designer.cs">
-      <DependentUpon>201708021133335_Migrat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021135081_m.cs" />
-    <Compile Include="Migrations\201708021135081_m.Designer.cs">
-      <DependentUpon>201708021135081_m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021214131_Acomodation.cs" />
-    <Compile Include="Migrations\201708021214131_Acomodation.Designer.cs">
-      <DependentUpon>201708021214131_Acomodation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -167,53 +107,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708010737455_InitialCreate.resx">
-      <DependentUpon>201708010737455_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708011153279_city.resx">
-      <DependentUpon>201708011153279_city.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020805396_NameClass.resx">
-      <DependentUpon>201708020805396_NameClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020851442_cityid.resx">
-      <DependentUpon>201708020851442_cityid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020855528_R.resx">
-      <DependentUpon>201708020855528_R.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020910575_f.resx">
-      <DependentUpon>201708020910575_f.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020932101_er.resx">
-      <DependentUpon>201708020932101_er.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021011182_Da.resx">
-      <DependentUpon>201708021011182_Da.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021017379_d.resx">
-      <DependentUpon>201708021017379_d.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021106385_Migration1.resx">
-      <DependentUpon>201708021106385_Migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021108244_Mig.resx">
-      <DependentUpon>201708021108244_Mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021124520_Migr.resx">
-      <DependentUpon>201708021124520_Migr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021133335_Migrat.resx">
-      <DependentUpon>201708021133335_Migrat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021135081_m.resx">
-      <DependentUpon>201708021135081_m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021214131_Acomodation.resx">
-      <DependentUpon>201708021214131_Acomodation.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
