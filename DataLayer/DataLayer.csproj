@@ -92,6 +92,10 @@
     <Compile Include="Country.cs" />
     <Compile Include="Facility.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201708030750249_allTables.cs" />
+    <Compile Include="Migrations\201708030750249_allTables.Designer.cs">
+      <DependentUpon>201708030750249_allTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -107,6 +111,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708030750249_allTables.resx">
+      <DependentUpon>201708030750249_allTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
