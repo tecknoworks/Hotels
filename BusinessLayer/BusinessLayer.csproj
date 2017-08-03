@@ -49,24 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="CityService.cs" />
-=======
+
     <Compile Include="AcomodationFacilityService.cs" />
     <Compile Include="AcomodationNearby.cs" />
     <Compile Include="AcomodationService.cs" />
->>>>>>> 094b386047a6d4986ddebd26444a8188d9cb486f
+
     <Compile Include="CountryService.cs" />
     <Compile Include="FacilityService.cs" />
     <Compile Include="NearbyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
+
     <Compile Include="RoomReservationService.cs" />
     <Compile Include="ReviewService.cs" />
     <Compile Include="RoomService.cs" />
-=======
+
     <Compile Include="ReservationService.cs" />
->>>>>>> 094b386047a6d4986ddebd26444a8188d9cb486f
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
