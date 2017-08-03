@@ -60,50 +60,55 @@ namespace DataLayer.Migrations
                 new UnityNearby { Id = 6, NearbyId = 3 },
                 new UnityNearby { Id = 7, NearbyId = 3 }
             );
+            context.Rooms.AddOrUpdate(
+                p => p.Id,
+                new Room{ Id = 1, Type = RoomType.Single, Price = 23, NumberOfAdults=1, NumberOfChildren=0,Photo= Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomS1.jpg")), Description="Nice view",NumberOfRoomsAvailable=4,AcomodationId=1},
+                new Room{ Id = 2, Type = RoomType.Double, Price = 50, NumberOfAdults = 2, NumberOfChildren = 0, Photo = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomD1.jpg")), Description = "Large room", NumberOfRoomsAvailable = 3,AcomodationId=2 },
+                new Room{ Id = 3, Type = RoomType.Triple, Price = 70, NumberOfAdults = 2, NumberOfChildren = 1, Photo = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomT1.jpg")), Description = "2 bathrooms", NumberOfRoomsAvailable = 5,AcomodationId=2 }
+                );
 
+            context.RoomReservations.AddOrUpdate(
+              p => p.Id,
+            new RoomReservation { Id = 1, DateOfStart = new DateTime(2017, 04, 10), DateOfEnd = new DateTime(2017, 04, 15), RoomId = 3,ReservationId=1 },
+            new RoomReservation { Id = 2, DateOfStart = new DateTime(2017, 05, 11), DateOfEnd = new DateTime(2017, 05, 13),RoomId=1,ReservationId=2 },
+            new RoomReservation { Id = 3,DateOfStart = new DateTime(2017, 06, 20), DateOfEnd = new DateTime(2017, 06, 25),RoomId=2,ReservationId=3}
+            );
 
-            //context.RoomReservations.AddOrUpdate(
-            //  p => p.Id,
-            //new RoomReservation { Id = 1, DateOfStart = new DateTime(2017,08,01), RoomId = 3 }
-            //new RoomReservation { Id = 2, DateOfStart = DateTime.ParseExact("06/06/2008 18:00", "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture), DateOfEnd = DateTime.ParseExact("09/06/2008 18:00", "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture), RoomId = 1 },
-            //new RoomReservation { Id = 3, DateOfStart = DateTime.ParseExact("20/06/2008 14:00", "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture), DateOfEnd = DateTime.ParseExact("24/06/2008 14:00", "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture), RoomId = 2 }\
-            //);
-
-            //context.Reservations.AddOrUpdate(
-            //    new Reservation
-            //    {
-            //        Id = 1,
-            //        DateOfReservation = new DateTime(2017, 04, 01),
-            //        DateOfStart = new DateTime(2017, 04, 10),
-            //        DateOfEnd = new DateTime(2017, 04, 15),
-            //        TotalPayment = 400,
-            //        NumberOfPeople = 3,
-            //        RoomReservationId = 1,
-            //        UserId = 1
-            //    },
-            //new Reservation
-            //{
-            //    Id = 2,
-            //    DateOfReservation = new DateTime(2017, 05, 02),
-            //    DateOfStart = new DateTime(2017, 05, 11),
-            //    DateOfEnd = new DateTime(2017, 05, 13),
-            //    TotalPayment = 300,
-            //    NumberOfPeople = 2,
-            //    RoomReservationId = 2,
-            //    UserId = 2
-            //},
-            //    new Reservation
-            //    {
-            //        Id = 3,
-            //        DateOfReservation = new DateTime(2017, 06, 07),
-            //        DateOfStart = new DateTime(2017, 06, 20),
-            //        DateOfEnd = new DateTime(2017, 06, 25),
-            //        TotalPayment = 500,
-            //        NumberOfPeople = 2,
-            //        RoomReservationId = 3,
-            //        UserId = 1
-            //    }
-            //);
+            context.Reservations.AddOrUpdate(
+                new Reservation
+                {
+                    Id = 1,
+                    DateOfReservation = new DateTime(2017, 04, 01),
+                    DateOfStart = new DateTime(2017, 04, 10),
+                    DateOfEnd = new DateTime(2017, 04, 15),
+                    TotalPayment = 400,
+                    NumberOfPeople = 3,
+                    RoomReservationId = 1,
+                    UserId = 1
+                },
+            new Reservation
+            {
+                Id = 2,
+                DateOfReservation = new DateTime(2017, 05, 02),
+                DateOfStart = new DateTime(2017, 05, 11),
+                DateOfEnd = new DateTime(2017, 05, 13),
+                TotalPayment = 300,
+                NumberOfPeople = 2,
+                RoomReservationId = 2,
+                UserId = 2
+            },
+                new Reservation
+                {
+                    Id = 3,
+                    DateOfReservation = new DateTime(2017, 06, 07),
+                    DateOfStart = new DateTime(2017, 06, 20),
+                    DateOfEnd = new DateTime(2017, 06, 25),
+                    TotalPayment = 500,
+                    NumberOfPeople = 2,
+                    RoomReservationId = 3,
+                    UserId = 1
+                }
+            );
             context.Acomodations.AddOrUpdate(
                p => p.Id,
                new Acomodation
@@ -118,7 +123,34 @@ namespace DataLayer.Migrations
                    PhoneNumber = "07433256963",
                    WebSite = "www.",
                    CityId = 1
-               });
+               },
+               new Acomodation
+               {
+                   Id = 2,
+                   Type = AcomodationType.Hotel,
+                   Address = "Str.Ion Creanga nr.2",
+                   Name = "Bianca & Oana",
+                   NumberOfStars = 5,
+                   Picture = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\hotel2.jpg")),
+                   Description = "Great hotel with a great view",
+                   PhoneNumber = "07433256994",
+                   WebSite = "www.bianca&oana.com",
+                   CityId = 3
+               },
+               new Acomodation
+               {
+                   Id = 3,
+                   Type = AcomodationType.Hotel,
+                   Address = "Champselisee,no.10",
+                   Name = "Raul",
+                   NumberOfStars = 3,
+                   Picture = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\hotel3.jpg")),
+                   Description = "Best price in the city of love",
+                   PhoneNumber = "07433257963",
+                   WebSite = "www.raul.fr",
+                   CityId = 7
+               }
+               );
 
 
             context.Facilities.AddOrUpdate(
@@ -129,14 +161,15 @@ namespace DataLayer.Migrations
                );
             context.Reviews.AddOrUpdate(
                 p => p.Id,
-                new Review { Id = 1, Date= new DateTime(2017, 08, 01), Description="I liked everything",UserId=1,AcomodationId=1}
+                new Review { Id = 1, Date= new DateTime(2017, 08, 01), Description="I liked everything",UserId=1,AcomodationId=1},
+                new Review { Id=2, Date=new DateTime(2017,08,30),Description="It was a nice stay",UserId=2,AcomodationId=2}
                );
           
             context.UnityFacilities.AddOrUpdate(
                 p=>p.Id,
-                new UnityFacility { Id = 1, FacilityId = 1, AcomodationId = 1 }
-            //    new UnityFacility { Id = 2, FacilityId = 2, AcomodationId = 1 }
-            //    //new UnityFacility { Id = 3, FacilityId = 2, AcomodationId = 2 }
+                new UnityFacility { Id = 1, FacilityId = 1, AcomodationId = 1 },
+                new UnityFacility { Id = 2, FacilityId = 2, AcomodationId = 1 },
+                new UnityFacility { Id = 3, FacilityId = 2, AcomodationId = 2 }
                 );
 
 

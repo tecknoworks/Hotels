@@ -20,7 +20,7 @@ namespace DataLayer
         public int AcomodationId { get; set; }
 
         public Acomodation Acomodation { get; set; }
-
+        public Room() { }
         public Room(int Id, RoomType Type, float Price, int NumberOfAdults, int NumberOfChildren, byte[] Photo, string Description, int NumberOfRoomsAvailable,int AcomodationId)
         {
             this.Id = Id;
