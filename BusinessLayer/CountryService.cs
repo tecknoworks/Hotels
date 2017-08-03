@@ -11,9 +11,6 @@ namespace BusinessLayer
     {
 		private ApplicationDbContext context = new ApplicationDbContext();
 
-		public void GetAllCountries()
-		{
-			var x = context.Countries.ToList();
-		}
-    }
+		
+	}
 }

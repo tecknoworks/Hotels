@@ -11,8 +11,9 @@ namespace Hotels.Controllers
     {
         public ActionResult Index()
         {
-			CountryService cs = new CountryService();
-			cs.GetAllCountries();
+			AcomodationService service = new AcomodationService();
+			service.GetAllCountries();
+			service.GetCities(76);
 
 			return View();
         }

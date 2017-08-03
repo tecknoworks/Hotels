@@ -97,10 +97,6 @@
     <Compile Include="Migrations\201708030750249_allTables.Designer.cs">
       <DependentUpon>201708030750249_allTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708030819070_addedHotelsNames.cs" />
-    <Compile Include="Migrations\201708030819070_addedHotelsNames.Designer.cs">
-      <DependentUpon>201708030819070_addedHotelsNames.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201708031001229_Update.cs" />
     <Compile Include="Migrations\201708031001229_Update.Designer.cs">
       <DependentUpon>201708031001229_Update.cs</DependentUpon>
@@ -124,9 +120,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708030750249_allTables.resx">
       <DependentUpon>201708030750249_allTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708030819070_addedHotelsNames.resx">
-      <DependentUpon>201708030819070_addedHotelsNames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708031001229_Update.resx">
       <DependentUpon>201708031001229_Update.cs</DependentUpon>

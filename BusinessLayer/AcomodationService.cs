@@ -10,9 +10,22 @@ namespace BusinessLayer
     public class AcomodationService
     {
         private ApplicationDbContext context = new ApplicationDbContext();
-        public void getAllAcomodatioins()
-        {
-            var x = context.Acomodations.ToList();
-        }
-    }
+
+		public void GetAllCountries()
+		{
+			var x = context.Countries.ToList();
+		}
+
+		public void GetCities(int countryId)
+		{
+			var x = context.Cities.Where(c=> c.CountryId==countryId).ToList();
+		}
+
+		//public void GetAllAcomodatioins()
+  //      {
+  //          var x = context.Acomodations.ToList();
+  //      }
+
+	
+	}
 }
