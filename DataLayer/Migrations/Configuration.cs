@@ -52,13 +52,13 @@ namespace DataLayer.Migrations
 
             context.UnityNearbyPlaces.AddOrUpdate(
                 p => p.Id,
-                new UnityNearby { Id = 1, NearbyId = 1 },
-                new UnityNearby { Id = 2, NearbyId = 1 },
-                new UnityNearby { Id = 3, NearbyId = 1 },
-                new UnityNearby { Id = 4, NearbyId = 2 },
-                new UnityNearby { Id = 5, NearbyId = 2 },
-                new UnityNearby { Id = 6, NearbyId = 3 },
-                new UnityNearby { Id = 7, NearbyId = 3 }
+                new AcomodationNearby { Id = 1, NearbyId = 1 },
+                new AcomodationNearby { Id = 2, NearbyId = 1 },
+                new AcomodationNearby { Id = 3, NearbyId = 1 },
+                new AcomodationNearby { Id = 4, NearbyId = 2 },
+                new AcomodationNearby { Id = 5, NearbyId = 2 },
+                new AcomodationNearby { Id = 6, NearbyId = 3 },
+                new AcomodationNearby { Id = 7, NearbyId = 3 }
             );
             context.Rooms.AddOrUpdate(
                 p => p.Id,
@@ -167,9 +167,9 @@ namespace DataLayer.Migrations
           
             context.UnityFacilities.AddOrUpdate(
                 p=>p.Id,
-                new UnityFacility { Id = 1, FacilityId = 1, AcomodationId = 1 },
-                new UnityFacility { Id = 2, FacilityId = 2, AcomodationId = 1 },
-                new UnityFacility { Id = 3, FacilityId = 2, AcomodationId = 2 }
+                new AcomodationFacility { Id = 1, FacilityId = 1, AcomodationId = 1 },
+                new AcomodationFacility { Id = 2, FacilityId = 2, AcomodationId = 1 },
+                new AcomodationFacility { Id = 3, FacilityId = 2, AcomodationId = 2 }
                 );
 
 

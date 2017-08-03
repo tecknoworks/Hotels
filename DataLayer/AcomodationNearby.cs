@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-	public class UnityNearby
+	public class AcomodationNearby
 	{
 		public int Id { get; set; }
 

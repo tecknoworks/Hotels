@@ -101,17 +101,21 @@
     <Compile Include="Migrations\201708030819070_addedHotelsNames.Designer.cs">
       <DependentUpon>201708030819070_addedHotelsNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708031001229_Update.cs" />
+    <Compile Include="Migrations\201708031001229_Update.Designer.cs">
+      <DependentUpon>201708031001229_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
-    <Compile Include="UnityNearby.cs" />
+    <Compile Include="AcomodationNearby.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="RoomReservation.cs" />
     <Compile Include="RoomType.cs" />
-    <Compile Include="UnityFacility.cs" />
+    <Compile Include="AcomodationFacility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708030819070_addedHotelsNames.resx">
       <DependentUpon>201708030819070_addedHotelsNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708031001229_Update.resx">
+      <DependentUpon>201708031001229_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
