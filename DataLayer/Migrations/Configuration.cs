@@ -62,14 +62,14 @@ namespace DataLayer.Migrations
 
 			
 
-			/*context.Reservations.AddOrUpdate(
-				new Reservation { Id = 1, DateOfReservation =DateTime.Parse( "20-05-2008"), DateOfStart = DateTime.Parse ("29-05-2008 "),
-				     DateOfEnd=DateTime.Parse("01-06-2008 "),TotalPayment = 400,NumberOfPeople = 3,RoomReservationId = 1,UserId = 1}
-				new Reservation { Id = 2, DateOfReservation =DateTime.Parse( "21/05/2008 17:00"), DateOfStart = DateTime.Parse ("06/06/2008 14:00"),
-				     DateOfEnd=DateTime.Parse("09/06/2008 12:00"),TotalPayment = 300,NumberOfPeople = 2,RoomReservationId = 2,UserId = 2},
-				new Reservation{Id = 3,DateOfReservation = DateTime.Parse("29/05/2008 12:00"),DateOfStart = DateTime.Parse("20/06/2008 14:00"),
-					DateOfEnd = DateTime.Parse("24/06/2008 12:00"),TotalPayment = 500,NumberOfPeople = 2,RoomReservationId = 3,UserId =1 }
-			);*/
+			context.Reservations.AddOrUpdate(
+				new Reservation { Id = 1, DateOfReservation =new DateTime( 2017,04,01), DateOfStart = new DateTime (2017,04,10),
+				     DateOfEnd=new DateTime(2017,04,15),TotalPayment = 400,NumberOfPeople = 3,RoomReservationId = 1,UserId = 1}
+				new Reservation { Id = 2, DateOfReservation =new DateTime( 2017,05,02), DateOfStart = new DateTime (2017,05,11),
+				     DateOfEnd=new DateTime(2017,05,13),TotalPayment = 300,NumberOfPeople = 2,RoomReservationId = 2,UserId = 2},
+				new Reservation{Id = 3,DateOfReservation = new DateTime(2017,06,07),DateOfStart = new DateTime(2017,06,20),
+					DateOfEnd = new DateTime(2017,06,25),TotalPayment = 500,NumberOfPeople = 2,RoomReservationId = 3,UserId =1 }
+			);
 
 
 
