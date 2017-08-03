@@ -12,6 +12,7 @@ namespace DataLayer
 
 		public AcomodationType Type { get; set; }
 		public string Address { get; set; }
+        public string Name { get; set; }
 		public int NumberOfStars { get; set; }
 		public byte[] Picture { get; set; }
 		public string Description { get; set; }
@@ -19,11 +20,12 @@ namespace DataLayer
 		public string WebSite { get; set; }
 		public int CityId { get; set; }
 		public City City { get; set; }
-		public Acomodation(int Id, AcomodationType Type, string Address, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
+		public Acomodation(int Id, AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
 			this.Id = Id;
 			this.Type = Type;
 			this.Address = Address;
+            this.Name = Name;
 			this.NumberOfStars = NumberOfStars;
 			this.Picture = Picture;
 			this.Description = Description;
@@ -31,5 +33,6 @@ namespace DataLayer
 			this.WebSite = WebSite;
 			this.CityId = CityId;
 		}
-	}
+        public Acomodation() { }
+    }
 }

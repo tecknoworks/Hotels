@@ -77,6 +77,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -91,42 +92,6 @@
     <Compile Include="Country.cs" />
     <Compile Include="Facility.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201708010737455_InitialCreate.cs" />
-    <Compile Include="Migrations\201708010737455_InitialCreate.Designer.cs">
-      <DependentUpon>201708010737455_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708011153279_city.cs" />
-    <Compile Include="Migrations\201708011153279_city.Designer.cs">
-      <DependentUpon>201708011153279_city.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020805396_NameClass.cs" />
-    <Compile Include="Migrations\201708020805396_NameClass.Designer.cs">
-      <DependentUpon>201708020805396_NameClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020851442_cityid.cs" />
-    <Compile Include="Migrations\201708020851442_cityid.Designer.cs">
-      <DependentUpon>201708020851442_cityid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020855528_R.cs" />
-    <Compile Include="Migrations\201708020855528_R.Designer.cs">
-      <DependentUpon>201708020855528_R.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708020934092_oana.cs" />
-    <Compile Include="Migrations\201708020934092_oana.Designer.cs">
-      <DependentUpon>201708020934092_oana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021008391_reservation.cs" />
-    <Compile Include="Migrations\201708021008391_reservation.Designer.cs">
-      <DependentUpon>201708021008391_reservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021108211_data.cs" />
-    <Compile Include="Migrations\201708021108211_data.Designer.cs">
-      <DependentUpon>201708021108211_data.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708021127338_date.cs" />
-    <Compile Include="Migrations\201708021127338_date.Designer.cs">
-      <DependentUpon>201708021127338_date.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -142,35 +107,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708010737455_InitialCreate.resx">
-      <DependentUpon>201708010737455_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708011153279_city.resx">
-      <DependentUpon>201708011153279_city.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020805396_NameClass.resx">
-      <DependentUpon>201708020805396_NameClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020851442_cityid.resx">
-      <DependentUpon>201708020851442_cityid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020855528_R.resx">
-      <DependentUpon>201708020855528_R.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708020934092_oana.resx">
-      <DependentUpon>201708020934092_oana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021008391_reservation.resx">
-      <DependentUpon>201708021008391_reservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021108211_data.resx">
-      <DependentUpon>201708021108211_data.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708021127338_date.resx">
-      <DependentUpon>201708021127338_date.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
