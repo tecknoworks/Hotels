@@ -3,7 +3,7 @@ namespace DataLayer.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class allTables : DbMigration
+    public partial class allTabels : DbMigration
     {
         public override void Up()
         {
@@ -205,7 +205,7 @@ namespace DataLayer.Migrations
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
             
             CreateTable(
-                "dbo.UnityFacilities",
+                "dbo.AcomodationFacilities",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -219,31 +219,27 @@ namespace DataLayer.Migrations
                 .Index(t => t.AcomodationId);
             
             CreateTable(
-                "dbo.UnityNearbies",
+                "dbo.AcomodationNearbies",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         NearbyId = c.Int(nullable: false),
-                        Acomodation_Id = c.Int(),
-                        AcomodationId_Id = c.Int(),
+                        AcomodationId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Acomodations", t => t.Acomodation_Id)
-                .ForeignKey("dbo.Acomodations", t => t.AcomodationId_Id)
+                .ForeignKey("dbo.Acomodations", t => t.AcomodationId, cascadeDelete: true)
                 .ForeignKey("dbo.Nearbies", t => t.NearbyId, cascadeDelete: true)
                 .Index(t => t.NearbyId)
-                .Index(t => t.Acomodation_Id)
-                .Index(t => t.AcomodationId_Id);
+                .Index(t => t.AcomodationId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.UnityNearbies", "NearbyId", "dbo.Nearbies");
-            DropForeignKey("dbo.UnityNearbies", "AcomodationId_Id", "dbo.Acomodations");
-            DropForeignKey("dbo.UnityNearbies", "Acomodation_Id", "dbo.Acomodations");
-            DropForeignKey("dbo.UnityFacilities", "FacilityId", "dbo.Facilities");
-            DropForeignKey("dbo.UnityFacilities", "AcomodationId", "dbo.Acomodations");
+            DropForeignKey("dbo.AcomodationNearbies", "NearbyId", "dbo.Nearbies");
+            DropForeignKey("dbo.AcomodationNearbies", "AcomodationId", "dbo.Acomodations");
+            DropForeignKey("dbo.AcomodationFacilities", "FacilityId", "dbo.Facilities");
+            DropForeignKey("dbo.AcomodationFacilities", "AcomodationId", "dbo.Acomodations");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Reviews", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.Reviews", "AcomodationId", "dbo.Acomodations");
@@ -256,11 +252,10 @@ namespace DataLayer.Migrations
             DropForeignKey("dbo.Rooms", "AcomodationId", "dbo.Acomodations");
             DropForeignKey("dbo.Acomodations", "CityId", "dbo.Cities");
             DropForeignKey("dbo.Cities", "CountryId", "dbo.Countries");
-            DropIndex("dbo.UnityNearbies", new[] { "AcomodationId_Id" });
-            DropIndex("dbo.UnityNearbies", new[] { "Acomodation_Id" });
-            DropIndex("dbo.UnityNearbies", new[] { "NearbyId" });
-            DropIndex("dbo.UnityFacilities", new[] { "AcomodationId" });
-            DropIndex("dbo.UnityFacilities", new[] { "FacilityId" });
+            DropIndex("dbo.AcomodationNearbies", new[] { "AcomodationId" });
+            DropIndex("dbo.AcomodationNearbies", new[] { "NearbyId" });
+            DropIndex("dbo.AcomodationFacilities", new[] { "AcomodationId" });
+            DropIndex("dbo.AcomodationFacilities", new[] { "FacilityId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.Reviews", new[] { "User_Id" });
             DropIndex("dbo.Reviews", new[] { "AcomodationId" });
@@ -275,8 +270,8 @@ namespace DataLayer.Migrations
             DropIndex("dbo.Reservations", new[] { "RoomReservationId" });
             DropIndex("dbo.Cities", new[] { "CountryId" });
             DropIndex("dbo.Acomodations", new[] { "CityId" });
-            DropTable("dbo.UnityNearbies");
-            DropTable("dbo.UnityFacilities");
+            DropTable("dbo.AcomodationNearbies");
+            DropTable("dbo.AcomodationFacilities");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Reviews");
             DropTable("dbo.AspNetUserRoles");

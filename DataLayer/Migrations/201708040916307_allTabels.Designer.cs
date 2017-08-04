@@ -7,13 +7,13 @@ namespace DataLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class allTables : IMigrationMetadata
+    public sealed partial class allTabels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(allTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(allTabels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708030750249_allTables"; }
+            get { return "201708040916307_allTabels"; }
         }
         
         string IMigrationMetadata.Source

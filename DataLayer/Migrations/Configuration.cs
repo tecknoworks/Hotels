@@ -21,7 +21,6 @@ namespace DataLayer.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
-            //
             context.Countries.AddOrUpdate(
               p => p.Id,
               new Country { Id = 1, Name = "Romania" },
@@ -30,8 +29,8 @@ namespace DataLayer.Migrations
               new Country { Id = 4, Name = "Germany" },
               new Country { Id = 5, Name = "France" }
             );
-
-            context.Cities.AddOrUpdate(
+            
+              context.Cities.AddOrUpdate(
               p => p.Id,
               new City { Id = 1, Name = "Cluj-Napoca", CountryId = 1 },
               new City { Id = 2, Name = "Bucuresti", CountryId = 1 },
@@ -41,7 +40,7 @@ namespace DataLayer.Migrations
               new City { Id = 6, Name = "Berlin", CountryId = 4 },
               new City { Id = 7, Name = "Paris", CountryId = 5 }
             );
-
+            
             context.NearbyPlaces.AddOrUpdate(
                 p => p.Id,
                 new Nearby { Id = 1, Name = "Marty", Location = "Iulius Mall", Type = NearbyType.Restaurant },
@@ -49,16 +48,16 @@ namespace DataLayer.Migrations
                 new Nearby { Id = 3, Name = "Olivo Cafe", Location = "Center", Type = NearbyType.CoffeeShop }
 
            );
-
+            
             context.UnityNearbyPlaces.AddOrUpdate(
                 p => p.Id,
-                new AcomodationNearby { Id = 1, NearbyId = 1 },
-                new AcomodationNearby { Id = 2, NearbyId = 1 },
-                new AcomodationNearby { Id = 3, NearbyId = 1 },
-                new AcomodationNearby { Id = 4, NearbyId = 2 },
-                new AcomodationNearby { Id = 5, NearbyId = 2 },
-                new AcomodationNearby { Id = 6, NearbyId = 3 },
-                new AcomodationNearby { Id = 7, NearbyId = 3 }
+                new AcomodationNearby { Id = 1, NearbyId = 1,AcomodationId=1 },
+                new AcomodationNearby { Id = 2, NearbyId = 1 ,AcomodationId=2},
+                new AcomodationNearby { Id = 3, NearbyId = 1 ,AcomodationId=1},
+                new AcomodationNearby { Id = 4, NearbyId = 2 ,AcomodationId=2},
+                new AcomodationNearby { Id = 5, NearbyId = 2 ,AcomodationId=3},
+                new AcomodationNearby { Id = 6, NearbyId = 3 ,AcomodationId=1},
+                new AcomodationNearby { Id = 7, NearbyId = 3 ,AcomodationId=3}
             );
             context.Rooms.AddOrUpdate(
                 p => p.Id,
@@ -66,14 +65,14 @@ namespace DataLayer.Migrations
                 new Room{ Id = 2, Type = RoomType.Double, Price = 50, NumberOfAdults = 2, NumberOfChildren = 0, Photo = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomD1.jpg")), Description = "Large room", NumberOfRoomsAvailable = 3,AcomodationId=2 },
                 new Room{ Id = 3, Type = RoomType.Triple, Price = 70, NumberOfAdults = 2, NumberOfChildren = 1, Photo = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomT1.jpg")), Description = "2 bathrooms", NumberOfRoomsAvailable = 5,AcomodationId=2 }
                 );
-
+            
             context.RoomReservations.AddOrUpdate(
               p => p.Id,
             new RoomReservation { Id = 1, DateOfStart = new DateTime(2017, 04, 10), DateOfEnd = new DateTime(2017, 04, 15), RoomId = 3,ReservationId=1 },
             new RoomReservation { Id = 2, DateOfStart = new DateTime(2017, 05, 11), DateOfEnd = new DateTime(2017, 05, 13),RoomId=1,ReservationId=2 },
             new RoomReservation { Id = 3,DateOfStart = new DateTime(2017, 06, 20), DateOfEnd = new DateTime(2017, 06, 25),RoomId=2,ReservationId=3}
             );
-
+            
             context.Reservations.AddOrUpdate(
                 new Reservation
                 {
@@ -109,6 +108,7 @@ namespace DataLayer.Migrations
                     UserId = 1
                 }
             );
+            
             context.Acomodations.AddOrUpdate(
                p => p.Id,
                new Acomodation
@@ -124,6 +124,7 @@ namespace DataLayer.Migrations
                    WebSite = "www.",
                    CityId = 1
                },
+               
                new Acomodation
                {
                    Id = 2,
@@ -152,13 +153,14 @@ namespace DataLayer.Migrations
                }
                );
 
-
+            
             context.Facilities.AddOrUpdate(
                 p => p.Id,
                 new Facility { Id = 1, Description = "Close to the beach" },
                 new Facility { Id = 2, Description = "Close to supermarkets" },
                 new Facility { Id = 3, Description = "In a quaiet area" }
                );
+            
             context.Reviews.AddOrUpdate(
                 p => p.Id,
                 new Review { Id = 1, Date= new DateTime(2017, 08, 01), Description="I liked everything",UserId=1,AcomodationId=1},
@@ -168,10 +170,10 @@ namespace DataLayer.Migrations
             context.UnityFacilities.AddOrUpdate(
                 p=>p.Id,
                 new AcomodationFacility { Id = 1, FacilityId = 1, AcomodationId = 1 },
-                new AcomodationFacility { Id = 2, FacilityId = 2, AcomodationId = 1 },
-                new AcomodationFacility { Id = 3, FacilityId = 2, AcomodationId = 2 }
+                new AcomodationFacility { Id = 2, FacilityId = 2, AcomodationId = 2 },
+                new AcomodationFacility { Id = 3, FacilityId = 2, AcomodationId = 3 }
                 );
-
+               
 
         }  
     }

@@ -1,4 +1,5 @@
-﻿using Hotels.Models;
+﻿using DataLayer;
+using Hotels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,34 @@ namespace BusinessLayer
         }
 
         /// <summary>
+        /// Returns all acomodations by type
+        /// </summary>
+        /// <param name="type">AcomodationType</param>
+        public void GetAcomodationsByType(AcomodationType type)
+        {
+            var x = context.Acomodations.Where(a => a.Type == type).ToList();
+        }
+
+        /// <summary>
+        /// Returns all the hotels that have the number of stars equal to the parmeter
+        /// </summary>
+        /// <param name="numberOfStars"></param>
+        public void GetAcomodationsByStars(int numberOfStars)
+        {
+            var x = context.Acomodations.Where(g => g.NumberOfStars == numberOfStars).ToList();
+        }
+
+        /// <summary>
+        /// Returns all the rooms thare fit in the price range
+        /// </summary>
+        /// <param name="price1">Integer</param>
+        /// <param name="price2">Integer</param>
+        public void GetRoomsByPrice(float price1,float price2)
+        {
+            var x = context.Rooms.Where(a=>a.Price>=price1 && a.Price<=price2).ToList();
+        }
+
+        /// <summary>
         /// Returns all the facilities
         /// </summary>
         public void getAllFacilities()
@@ -62,6 +91,18 @@ namespace BusinessLayer
             var x = context.Facilities.ToList();
         }
 
+        /// <summary>
+        /// Returns all the rooms order by price
+        /// </summary>
+        public void GetRoomsOrderByPrice()
+        {
+            var x = context.Rooms.ToList().OrderBy(r => r.Price);
+        }
+
+        public void GetAcomodationsOrderByStars()
+        {
+            var x = context.Acomodations.ToList().OrderBy(a => a.NumberOfStars);
+        }
         /// <summary>
         /// Returns all the facilities from an acomodation
         /// </summary>
@@ -122,6 +163,11 @@ namespace BusinessLayer
             var x = context.Reviews.Where(r => r.AcomodationId == acomodationId).ToList();
         }
 
-
+        public void sdbfsb()
+        {
+            var innerJoin = from a in context.UnityFacilities.ToList()
+                            join f in context.Facilities.ToList() on a.FacilityId equals f.Id
+                            select a.AcomodationId;
+        }
     }
 }
