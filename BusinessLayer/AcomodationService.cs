@@ -163,11 +163,16 @@ namespace BusinessLayer
             var x = context.Reviews.Where(r => r.AcomodationId == acomodationId).ToList();
         }
 
-        public void sdbfsb()
+        /// <summary>
+        /// Returns all the acomodation is based on facilities
+        /// </summary>
+        public void getAllAcomodationBasedOnFacility()
         {
             var innerJoin = from a in context.UnityFacilities.ToList()
                             join f in context.Facilities.ToList() on a.FacilityId equals f.Id
                             select a.AcomodationId;
+           
+
         }
     }
 }
