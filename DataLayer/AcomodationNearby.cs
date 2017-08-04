@@ -16,7 +16,7 @@ namespace DataLayer
 
 		public Acomodation Acomodation { get; set; }
 
-		public Acomodation AcomodationId { get; set; }
+		public int  AcomodationId { get; set; }
 
 	
 

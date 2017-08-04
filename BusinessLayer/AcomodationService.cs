@@ -11,21 +11,117 @@ namespace BusinessLayer
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
+        /// <summary>
+        /// Returns all the countries
+        /// </summary>
 		public void GetAllCountries()
 		{
 			var x = context.Countries.ToList();
 		}
 
+        /// <summary>
+        /// Returns all the cities
+        /// </summary>
+        public void GetAllCities()
+        {
+            var x = context.Cities.ToList();
+        }
+
+        /// <summary>
+        /// Returns all cities of a country
+        /// </summary>
+        /// <param name="countryId">Integer</param>
 		public void GetCities(int countryId)
 		{
 			var x = context.Cities.Where(c=> c.CountryId==countryId).ToList();
 		}
 
-		//public void GetAllAcomodatioins()
-  //      {
-  //          var x = context.Acomodations.ToList();
-  //      }
 
-	
-	}
+        /// <summary>
+        /// Returns all the acomodations 
+        /// </summary>
+        public void GetAllAcomodatioins()
+        {
+            var x = context.Acomodations.ToList();
+        }
+
+        /// <summary>
+        /// Returns all the acomodations from a city
+        /// </summary>
+        /// <param name="cityId">Integer</param>
+        public void GetAcomodations(int cityId)
+        {
+            var x = context.Acomodations.Where(a => a.CityId == cityId).ToList();
+        }
+
+        /// <summary>
+        /// Returns all the facilities
+        /// </summary>
+        public void getAllFacilities()
+        {
+            var x = context.Facilities.ToList();
+        }
+
+        /// <summary>
+        /// Returns all the facilities from an acomodation
+        /// </summary>
+        /// <param name="acomodationId"></param>
+        public void getFacilities(int acomodationId)
+        {
+            var x = context.UnityFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
+        }
+
+        /// <summary>
+        /// Returns all the acomodation-facilities
+        /// </summary>
+        public void getAllAcomodationFacilities()
+        {
+            var x = context.UnityFacilities.ToList();
+        }
+
+        /// <summary>
+        /// Returns all the acomodation-nearbies
+        /// </summary>
+        public void getAllAcomodationNearbies()
+        {
+            var x = context.UnityNearbyPlaces.ToList();
+        }
+
+        /// <summary>
+        /// Returns all the nearby places for an acomodation
+        /// </summary>
+        /// <param name="acomodationId"></param>
+        public void getAcomodationNearbies(int acomodationId,int nearbyId)
+        {
+            var x = context.UnityNearbyPlaces.Where(n=>n.AcomodationId==acomodationId && n.NearbyId==nearbyId).ToList();
+        }
+
+        /// <summary>
+        /// Returns all the nearby places
+        /// </summary>
+        public void geAllNearbyPlaces()
+        {
+            var x = context.NearbyPlaces.ToList();
+        }
+
+        /// <summary>
+        /// Returns all the reviews
+        /// </summary>
+        public void GetAllReviews()
+        {
+            var x = context.Reviews.ToList();
+        }
+
+
+        /// <summary>
+        /// Returns all the reviews from an acomodations
+        /// </summary>
+        /// <param name="acomodationId"></param>
+        public void GetReviews(int acomodationId)
+        {
+            var x = context.Reviews.Where(r => r.AcomodationId == acomodationId).ToList();
+        }
+
+
+    }
 }
