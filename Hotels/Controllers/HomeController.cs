@@ -14,6 +14,7 @@ namespace Hotels.Controllers
 			AcomodationService service = new AcomodationService();
             service.GetAcomodations(1);
 
+
 			return View();
         }
 
