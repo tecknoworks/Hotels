@@ -211,7 +211,7 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the acomodation is based on facilities
         /// </summary>
-        /*public void getAllAcomodationBasedOnFacility()
+        public void getAllAcomodationBasedOnFacility()
 
         {
             var innerJoin = from a in context.UnityFacilities.ToList()
@@ -219,6 +219,6 @@ namespace BusinessLayer
                             select a.AcomodationId;
            
 
-        }*/
+        }
     }
 }
