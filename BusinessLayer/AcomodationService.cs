@@ -3,6 +3,7 @@ using Hotels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +16,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the countries
         /// </summary>
-		public void GetAllCountries()
+		public List<Country> GetAllCountries()
 		{
-			var x = context.Countries.ToList();
+			return context.Countries.ToList();
 		}
 
 
@@ -25,9 +26,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the cities
         /// </summary>
-        public void GetAllCities()
+        public List<City> GetAllCities()
         {
-            var x = context.Cities.ToList();
+            return  context.Cities.ToList();
         }
 
 
@@ -36,9 +37,9 @@ namespace BusinessLayer
         /// Returns all cities of a country
         /// </summary>
         /// <param name="countryId">The id of the country</param>
-		public void GetCities(int countryId)
+		public List<City> GetCities(int countryId)
 		{
-			var x = context.Cities.Where(c=> c.CountryId==countryId).ToList();
+			return context.Cities.Where(c=> c.CountryId==countryId).ToList();
 		}
 
 
@@ -46,9 +47,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the acomodations 
         /// </summary>
-        public void GetAllAcomodatioins()
+        public List<Acomodation> GetAllAcomodations()
         {
-            var x = context.Acomodations.ToList();
+            return context.Acomodations.ToList();
         }
 
 
@@ -57,9 +58,9 @@ namespace BusinessLayer
         /// Returns all the acomodations from a city
         /// </summary>
         /// <param name="cityId">The id of the city</param>
-        public void GetAcomodations(int cityId)
+        public List<Acomodation> GetAcomodations(int cityId)
         {
-            var x = context.Acomodations.Where(a => a.CityId == cityId).ToList();
+            return context.Acomodations.Where(a => a.CityId == cityId).ToList();
         }
 
 
@@ -68,9 +69,9 @@ namespace BusinessLayer
         /// Returns all acomodations by type
         /// </summary>
         /// <param name="type">The type of the acomodation</param>
-        public void GetAcomodationsByType(AcomodationType type)
+        public List<Acomodation> GetAcomodationsByType(AcomodationType type)
         {
-            var x = context.Acomodations.Where(a => a.Type == type).ToList();
+            return context.Acomodations.Where(a => a.Type == type).ToList();
         }
 
 
@@ -80,9 +81,9 @@ namespace BusinessLayer
         /// Returns all the hotels that have the number of stars equal to the parmeter
         /// </summary>
         /// <param name="numberOfStars">The number of stars</param>
-        public void GetAcomodationsByStars(int numberOfStars)
+        public List<Acomodation> GetAcomodationsByStars(int numberOfStars)
         {
-            var x = context.Acomodations.Where(g => g.NumberOfStars == numberOfStars).ToList();
+            return context.Acomodations.Where(g => g.NumberOfStars == numberOfStars).ToList();
         }
 
 
@@ -96,9 +97,9 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="price1">The first price from the price range</param>
         /// <param name="price2">The second price from the price range</param>
-        public void GetRoomsByPrice(float price1,float price2)
+        public List<Room> GetRoomsByPrice(float price1,float price2)
         {
-            var x = context.Rooms.Where(a=>a.Price>=price1 && a.Price<=price2).ToList();
+            return context.Rooms.Where(a=>a.Price>=price1 && a.Price<=price2).ToList();
         }
 
 
@@ -108,9 +109,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the facilities
         /// </summary>
-        public void GetAllFacilities()
+        public List<Facility> GetAllFacilities()
         {
-            var x = context.Facilities.ToList();
+            return context.Facilities.ToList();
         }
 
 
@@ -119,13 +120,14 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the rooms order by price
         /// </summary>
-        public void GetRoomsOrderByPrice(bool asc)
+        public List<Room>  GetRoomsOrderByPrice(bool asc)
         {
             var x = context.Rooms.ToList();
             if (asc)
                 x.OrderBy(r => r.Price);
             else
                 x.OrderByDescending(r => r.Price);
+            return x;
         }
 
 
@@ -134,13 +136,15 @@ namespace BusinessLayer
         /// Returns all the acomodations orderd by stars
         /// </summary>
         /// <param name="asc">If the parameters is asc the sortiong will be ascending</param>
-        public void GetAcomodationsOrderByStars(bool asc)
+        public List<Acomodation> GetAcomodationsOrderByStars(bool asc)
         {
             var x = context.Acomodations.ToList();
             if (asc)
                 x.OrderBy(r => r.NumberOfStars);
             else
                 x.OrderByDescending(r => r.NumberOfStars);
+
+            return x;
         }
        
 		
@@ -148,9 +152,9 @@ namespace BusinessLayer
         /// Returns all the facilities from an acomodation
         /// </summary>
         /// <param name="acomodationId">The id of the acomodation</param>
-        public void GetFacilities(int acomodationId)
+        public List<AcomodationFacility> GetFacilities(int acomodationId)
         {
-            var x = context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
+            return context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
         }
 
 
@@ -159,9 +163,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the acomodation-facilities
         /// </summary>
-        public void GetAllAcomodationFacilities()
+        public List<AcomodationFacility> GetAllAcomodationFacilities()
         {
-            var x = context.AcomodationFacilities.ToList();
+            return context.AcomodationFacilities.ToList();
         }
 
 
@@ -170,9 +174,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the acomodation-nearbies
         /// </summary>
-        public void GetAllAcomodationNearbies()
+        public List <AcomodationNearby> GetAllAcomodationNearbies()
         {
-            var x = context.AcomodationNearbyPlaces.ToList();
+            return context.AcomodationNearbyPlaces.ToList();
         }
 
 
@@ -183,17 +187,17 @@ namespace BusinessLayer
         /// Returns all the nearby places for an acomodation
         /// </summary>
         /// <param name="acomodationId">The id of the acomodaion</param>
-        public void GetAcomodationNearbies(int acomodationId,int nearbyId)
+        public List<AcomodationNearby> GetAcomodationNearbies(int acomodationId,int nearbyId)
         {
-            var x = context.AcomodationNearbyPlaces.Where(n=>n.AcomodationId==acomodationId && n.NearbyId==nearbyId).ToList();
+            return context.AcomodationNearbyPlaces.Where(n=>n.AcomodationId==acomodationId && n.NearbyId==nearbyId).ToList();
         }
 
         /// <summary>
         /// Returns all the nearby places
         /// </summary>
-        public void GetAllNearbyPlaces()
+        public List<Nearby> GetAllNearbyPlaces()
         {
-            var x = context.NearbyPlaces.ToList();
+            return context.NearbyPlaces.ToList();
         }
 
 
@@ -202,9 +206,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the reviews
         /// </summary>
-        public void GetAllReviews()
+        public List<Review> GetAllReviews()
         {
-            var x = context.Reviews.ToList();
+            return context.Reviews.ToList();
         }
 
 
@@ -212,9 +216,9 @@ namespace BusinessLayer
         /// Returns all the reviews from an acomodations
         /// </summary>
         /// <param name="acomodationId">The id of the acomodation</param>
-        public void GetReviews(int acomodationId)
+        public List<Review> GetReviews(int acomodationId)
         {
-            var x = context.Reviews.Where(r => r.AcomodationId == acomodationId).ToList();
+            return context.Reviews.Where(r => r.AcomodationId == acomodationId).ToList();
         }
 
 
@@ -224,16 +228,17 @@ namespace BusinessLayer
 
         /// <summary>
         /// Returns all the acomodation is based on facilities
-        /// </summary>
-        public void GetAllAcomodationBasedOnFacility(int facilityId)
+        /// !!!!!!!</summary>
+        public string GetAllAcomodationBasedOnFacility(int facilityId)
 
         {
             var accomodation = context.AcomodationFacilities.FirstOrDefault(f => f.Id == facilityId);
             if(accomodation!=null)
             {
-                var name = accomodation.Acomodation.Name.ToString();
+                return accomodation.Acomodation.Name.ToString();
             }
-            
+
+            return null;
 
              
         }

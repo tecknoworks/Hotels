@@ -15,9 +15,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all rooms
         /// </summary>
-		public void GetAllRooms()
+		public List<Room> GetAllRooms()
 		{
-			var x = context.Rooms.ToList();
+			return context.Rooms.ToList();
 		}
 
 
@@ -26,9 +26,9 @@ namespace BusinessLayer
         /// Returns all rooms form an acomodation
         /// </summary>
         /// <param name="acomodationId">The Id for an acomodation</param>
-        public void GetRooms(int acomodationId)
+        public List<Room> GetRooms(int acomodationId)
         {
-            var x = context.Rooms.Where(r => r.AcomodationId == acomodationId).ToList();
+            return context.Rooms.Where(r => r.AcomodationId == acomodationId).ToList();
         }
 
 
@@ -36,9 +36,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the room reservatuons
         /// </summary>
-        public void GetAllRoomReservation()
+        public List<RoomReservation> GetAllRoomReservation()
         {
-            var x = context.RoomReservations.ToList();
+            return context.RoomReservations.ToList();
         }
 
 
@@ -47,18 +47,18 @@ namespace BusinessLayer
 		/// </summary>
 		/// <param name="roomId">The Id of a room</param>
 		/// <param name="reservationId">The Id for a reservation</param>
-        public void getRoomReservations(int roomId,int reservationId)
+        public List<RoomReservation> GetRoomReservations(int roomId,int reservationId)
         {
-            var x = context.RoomReservations.Where(rr => rr.RoomId == roomId && rr.ReservationId==reservationId).ToList();
+            return context.RoomReservations.Where(rr => rr.RoomId == roomId && rr.ReservationId==reservationId).ToList();
         }
 
 
         /// <summary>
         /// Returns all the reservations
         /// </summary>
-        public void getAllReservations()
+        public List<Reservation> GetAllReservations()
         {
-            var x = context.Reservations.ToList();
+            return context.Reservations.ToList();
         }
 
 
