@@ -20,6 +20,8 @@ namespace BusinessLayer
 			var x = context.Countries.ToList();
 		}
 
+
+
         /// <summary>
         /// Returns all the cities
         /// </summary>
@@ -27,6 +29,8 @@ namespace BusinessLayer
         {
             var x = context.Cities.ToList();
         }
+
+
 
         /// <summary>
         /// Returns all cities of a country
@@ -38,6 +42,7 @@ namespace BusinessLayer
 		}
 
 
+
         /// <summary>
         /// Returns all the acomodations 
         /// </summary>
@@ -45,6 +50,8 @@ namespace BusinessLayer
         {
             var x = context.Acomodations.ToList();
         }
+
+
 
         /// <summary>
         /// Returns all the acomodations from a city
@@ -55,6 +62,8 @@ namespace BusinessLayer
             var x = context.Acomodations.Where(a => a.CityId == cityId).ToList();
         }
 
+
+
         /// <summary>
         /// Returns all acomodations by type
         /// </summary>
@@ -64,6 +73,9 @@ namespace BusinessLayer
             var x = context.Acomodations.Where(a => a.Type == type).ToList();
         }
 
+
+
+
         /// <summary>
         /// Returns all the hotels that have the number of stars equal to the parmeter
         /// </summary>
@@ -72,6 +84,9 @@ namespace BusinessLayer
         {
             var x = context.Acomodations.Where(g => g.NumberOfStars == numberOfStars).ToList();
         }
+
+
+
 
         /// <summary>
         /// Returns all the rooms thare fit in the price range
@@ -83,6 +98,10 @@ namespace BusinessLayer
             var x = context.Rooms.Where(a=>a.Price>=price1 && a.Price<=price2).ToList();
         }
 
+
+
+
+
         /// <summary>
         /// Returns all the facilities
         /// </summary>
@@ -90,6 +109,9 @@ namespace BusinessLayer
         {
             var x = context.Facilities.ToList();
         }
+
+
+
 
         /// <summary>
         /// Returns all the rooms order by price
@@ -99,11 +121,16 @@ namespace BusinessLayer
             var x = context.Rooms.ToList().OrderBy(r => r.Price);
         }
 
+
+
+
         public void GetAcomodationsOrderByStars()
         {
             var x = context.Acomodations.ToList().OrderBy(a => a.NumberOfStars);
         }
-        /// <summary>
+       
+		
+		/// <summary>
         /// Returns all the facilities from an acomodation
         /// </summary>
         /// <param name="acomodationId"></param>
@@ -111,6 +138,9 @@ namespace BusinessLayer
         {
             var x = context.UnityFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
         }
+
+
+
 
         /// <summary>
         /// Returns all the acomodation-facilities
@@ -120,6 +150,9 @@ namespace BusinessLayer
             var x = context.UnityFacilities.ToList();
         }
 
+
+
+
         /// <summary>
         /// Returns all the acomodation-nearbies
         /// </summary>
@@ -127,6 +160,10 @@ namespace BusinessLayer
         {
             var x = context.UnityNearbyPlaces.ToList();
         }
+
+
+
+
 
         /// <summary>
         /// Returns all the nearby places for an acomodation
@@ -144,6 +181,9 @@ namespace BusinessLayer
         {
             var x = context.NearbyPlaces.ToList();
         }
+
+
+
 
         /// <summary>
         /// Returns all the reviews
@@ -163,20 +203,27 @@ namespace BusinessLayer
             var x = context.Reviews.Where(r => r.AcomodationId == acomodationId).ToList();
         }
 
+
+
+
+
+
         /// <summary>
         /// Returns all the acomodation is based on facilities
         /// </summary>
         public void getAllAcomodationBasedOnFacility(string description)
+
         {
             var innerJoin = from a in context.UnityFacilities.ToList()
                             join f in context.Facilities.ToList() on a.FacilityId equals f.Id
                             select a.AcomodationId;
            
-
         }
         public Reservation addReservation(DateTime dateofReservation,DateTime dateOfStart,DateTime dateOfEnd,float totalPayment,int numberOfPeople,int roomReservationId,int userId)
         {
             return new Reservation(dateofReservation,dateOfStart,dateOfEnd,totalPayment,numberOfPeople,roomReservationId,userId);
         }
-    }
+
+        }
+
 }
