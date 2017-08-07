@@ -166,13 +166,17 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the acomodation is based on facilities
         /// </summary>
-        public void getAllAcomodationBasedOnFacility()
+        public void getAllAcomodationBasedOnFacility(string description)
         {
             var innerJoin = from a in context.UnityFacilities.ToList()
                             join f in context.Facilities.ToList() on a.FacilityId equals f.Id
                             select a.AcomodationId;
            
 
+        }
+        public Reservation addReservation(DateTime dateofReservation,DateTime dateOfStart,DateTime dateOfEnd,float totalPayment,int numberOfPeople,int roomReservationId,int userId)
+        {
+            return new Reservation(dateofReservation,dateOfStart,dateOfEnd,totalPayment,numberOfPeople,roomReservationId,userId);
         }
     }
 }
