@@ -53,5 +53,11 @@ namespace BusinessLayer
         {
             return new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
         }
+
+        public RoomReservation AddRoomReservation(DateTime dateOfStart,DateTime dateOfEnd,int roomId,int reservationId)
+        {
+            return new RoomReservation(dateOfStart, dateOfEnd, roomId, reservationId);
+
+        }
     }
 }

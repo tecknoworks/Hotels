@@ -11,9 +11,9 @@ namespace DataLayer
 		public int Id { get; set; }
 		public string Description { get; set; }
         public Facility() { }
-		public Facility(int Id, string Description)
+		public Facility( string Description)
 		{
-			this.Id = Id;
+			
 			this.Description = Description;
 		}
 	}

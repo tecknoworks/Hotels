@@ -27,7 +27,6 @@ namespace DataLayer
 
         public Reservation(DateTime DateOfReservation,DateTime DateOfStart,DateTime DateOfEnd,float TotalPayment,int NumberOfPeople,int RoomReservationId,int UserId)
         {
-            //this.Id = Id;
             this.DateOfReservation = DateOfReservation;
             this.DateOfStart = DateOfStart;
             this.DateOfEnd = DateOfEnd;

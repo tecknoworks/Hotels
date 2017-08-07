@@ -23,7 +23,7 @@ namespace DataLayer
         public Room() { }
         public Room(RoomType Type, float Price, int NumberOfAdults, int NumberOfChildren, byte[] Photo, string Description, int NumberOfRoomsAvailable,int AcomodationId)
         {
-           // this.Id = Id;
+           
             this.Type = Type;
             this.Price = Price;
             this.NumberOfAdults = NumberOfAdults;

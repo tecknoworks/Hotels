@@ -18,10 +18,9 @@ namespace DataLayer
 		{
 
 		}
-		public Nearby(int Id, string Name, string Location,NearbyType Type)
+		public Nearby( string Name, string Location,NearbyType Type)
 		{
 			
-			this.Id = Id;
 			this.Name = Name;
 			this.Location = Location;
 			this.Type = Type;

@@ -18,7 +18,15 @@ namespace DataLayer
 
 		public int  AcomodationId { get; set; }
 
-	
+        public AcomodationNearby()
+        {
+                
+        }
+        public AcomodationNearby(int nearbyId,int acomodationId)
+        {
+            this.NearbyId = nearbyId;
+            this.AcomodationId = acomodationId;
+        }
 
 	}
 }
