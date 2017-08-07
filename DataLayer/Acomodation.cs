@@ -20,9 +20,9 @@ namespace DataLayer
 		public string WebSite { get; set; }
 		public int CityId { get; set; }
 		public City City { get; set; }
-		public Acomodation(int Id, AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
+		public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
-			this.Id = Id;
+			//this.Id = Id;
 			this.Type = Type;
 			this.Address = Address;
             this.Name = Name;

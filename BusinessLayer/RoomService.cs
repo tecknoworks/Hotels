@@ -1,4 +1,5 @@
-﻿using Hotels.Models;
+﻿using DataLayer;
+using Hotels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,9 @@ namespace BusinessLayer
         {
             var x = context.Reservations.ToList();
         }
-
+        public Room AddRoom(RoomType type,float price,int numberOdAdults,int numberOfChildren,byte[] photo,string description,int numberOfRoomsAvailable,int accomodationId)
+        {
+            return new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+        }
     }
 }
