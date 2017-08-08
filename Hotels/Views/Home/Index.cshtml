@@ -20,9 +20,32 @@
         <p>After a long travel day it sure is nice to have an on-site restaurant or two at your hotel. </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Ambience & Decor</h2>
-        <p>Fresh flowers, attractive art, and thoughtful interior design add to the vacation experience. Even if you’re on a tight budget, you want to sleep somewhere comfortable, clean and inviting.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div id="countries" class="col-md-4">        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:Countries">
+                <tr>
+                    <td class="col-xs-5" data-bind="text:Name"></td>
+                    <td class="col-xs-1">
+                        <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#countryItem" data-bind="click:$parent.details" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        @Html.Partial("Item")
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        var vm = new Countries();
+        vm.refresh();
+        ko.applyBindings(vm, $("#countries").get(0));
+    });
+</script>

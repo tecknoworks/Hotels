@@ -15,9 +15,9 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all the countries
         /// </summary>
-		public void GetAllCountries()
+		public List<Country> GetAllCountries()
 		{
-			var x = context.Countries.ToList();
+			return context.Countries.ToList();
 		}
 
 
