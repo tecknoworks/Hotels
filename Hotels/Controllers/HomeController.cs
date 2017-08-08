@@ -40,13 +40,6 @@ namespace Hotels.Controllers
             return View();
         }
 
-        public JsonResult GetAllCountries()
-        {
-            AcomodationService service = new AcomodationService();
-            var countries = service.GetAllCountries();
-            return new JsonResult() { Data = new { Countries = countries }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-        }
-
         public JsonResult GetAllCities()
         {
             AcomodationService service = new AcomodationService();
