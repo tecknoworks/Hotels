@@ -15,43 +15,86 @@ namespace BusinessLayer
         /// <summary>
         /// Returns all rooms
         /// </summary>
-		public void GetAllRooms()
+		public List<Room> GetAllRooms()
 		{
-			var x = context.Rooms.ToList();
+			return context.Rooms.ToList();
 		}
+
+
 
         /// <summary>
         /// Returns all rooms form an acomodation
         /// </summary>
-        /// <param name="acomodationId"></param>
-        public void GetRooms(int acomodationId)
+        /// <param name="acomodationId">The Id for an acomodation</param>
+        public List<Room> GetRooms(int acomodationId)
         {
-            var x = context.Rooms.Where(r => r.AcomodationId == acomodationId).ToList();
+            return context.Rooms.Where(r => r.AcomodationId == acomodationId).ToList();
         }
+
+
 
         /// <summary>
         /// Returns all the room reservatuons
         /// </summary>
-        public void GetAllRoomReservation()
+        public List<RoomReservation> GetAllRoomReservation()
         {
-            var x = context.RoomReservations.ToList();
+            return context.RoomReservations.ToList();
         }
 
-        public void getRoomReservations(int roomId,int reservationId)
+
+		/// <summary>
+		/// Returns a room reservation
+		/// </summary>
+		/// <param name="roomId">The Id of a room</param>
+		/// <param name="reservationId">The Id for a reservation</param>
+        public List<RoomReservation> GetRoomReservations(int roomId,int reservationId)
         {
-            var x = context.RoomReservations.Where(rr => rr.RoomId == roomId && rr.ReservationId==reservationId).ToList();
+            return context.RoomReservations.Where(rr => rr.RoomId == roomId && rr.ReservationId==reservationId).ToList();
         }
+
 
         /// <summary>
         /// Returns all the reservations
         /// </summary>
-        public void getAllReservations()
+        public List<Reservation> GetAllReservations()
         {
-            var x = context.Reservations.ToList();
+            return context.Reservations.ToList();
         }
+
+
+
+		/// <summary>
+		/// Add a new room
+		/// </summary>
+		/// <param name="type">The type of a room</param>
+		/// <param name="price">The price of a room</param>
+		/// <param name="numberOdAdults">The number of adults</param>
+		/// <param name="numberOfChildren">The number of children</param>
+		/// <param name="photo">The photo of the room</param>
+		/// <param name="description">The description of the room</param>
+		/// <param name="numberOfRoomsAvailable">The number of rooms available</param>
+		/// <param name="accomodationId">The Id of the acomodation </param>
+		/// <returns>A new room</returns>
         public Room AddRoom(RoomType type,float price,int numberOdAdults,int numberOfChildren,byte[] photo,string description,int numberOfRoomsAvailable,int accomodationId)
         {
             return new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+        }
+
+
+
+
+		/// <summary>
+		/// Add a new room reservation
+		/// </summary>
+		/// <param name="dateOfStart">The date of start</param>
+		/// <param name="dateOfEnd">The date of end</param>
+		/// <param name="roomId">The Id of a room</param>
+		/// <param name="reservationId">The Id of a reservation</param>
+		/// <returns>A new room reservation</returns>
+        public RoomReservation AddRoomReservation(DateTime dateOfStart,DateTime dateOfEnd,int roomId,int reservationId)
+        {
+            return new RoomReservation(dateOfStart, dateOfEnd, roomId, reservationId);
+
         }
     }
 }

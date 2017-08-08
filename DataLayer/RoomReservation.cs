@@ -16,9 +16,8 @@ namespace DataLayer
         public int ReservationId { get; set; }
         public Reservation Reservation;
         public RoomReservation() { }
-        public RoomReservation(int Id,DateTime DateOfStart,DateTime DateOfEnd,int RoomId,int ReservationId)
+        public RoomReservation(DateTime DateOfStart,DateTime DateOfEnd,int RoomId,int ReservationId)
         {
-            this.Id = Id;
             this.DateOfStart = DateOfStart;
             this.DateOfEnd = DateOfEnd;
             this.RoomId = RoomId;

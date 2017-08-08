@@ -49,7 +49,7 @@ namespace DataLayer.Migrations
 
            );
             
-            context.UnityNearbyPlaces.AddOrUpdate(
+            context.AcomodationNearbyPlaces.AddOrUpdate(
                 p => p.Id,
                 new AcomodationNearby { Id = 1, NearbyId = 1,AcomodationId=1 },
                 new AcomodationNearby { Id = 2, NearbyId = 1 ,AcomodationId=2},
@@ -167,7 +167,7 @@ namespace DataLayer.Migrations
                 new Review { Id=2, Date=new DateTime(2017,08,30),Description="It was a nice stay",UserId=2,AcomodationId=2}
                );
           
-            context.UnityFacilities.AddOrUpdate(
+            context.AcomodationFacilities.AddOrUpdate(
                 p=>p.Id,
                 new AcomodationFacility { Id = 1, FacilityId = 1, AcomodationId = 1 },
                 new AcomodationFacility { Id = 2, FacilityId = 2, AcomodationId = 2 },

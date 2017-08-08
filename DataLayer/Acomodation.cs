@@ -22,7 +22,6 @@ namespace DataLayer
 		public City City { get; set; }
 		public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
-			//this.Id = Id;
 			this.Type = Type;
 			this.Address = Address;
             this.Name = Name;

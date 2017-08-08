@@ -8,10 +8,21 @@ namespace DataLayer
 {
 	public class City
 	{
-		public int Id { get; set; }
+      
+        public int Id { get; set; }
 		public string Name { get; set; }
 		public int CountryId { get; set; }
 		public Country Country { get; set; }
+        public City()
+        {
 
-	}
+        }
+        public City(string name, int countryId)
+        {
+            Name = name;
+            CountryId = countryId;
+        }
+
+
+    }
 }

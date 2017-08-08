@@ -11,5 +11,14 @@ namespace DataLayer
 		public int Id { get; set; }
 		public string Name { get; set;}
 
+        public Country()
+        {
+
+        }
+        public Country(string name)
+        {
+            this.Name = name;
+        }
+    
 	}
 }

@@ -19,9 +19,9 @@ namespace DataLayer
         public int AcomodationId { get; set; }
         public Acomodation Acomodation { get; set; }
         public Review() { }
-        public Review(int Id,DateTime Date,string Description,int UserId,int AcomodationId)
+        public Review(DateTime Date,string Description,int UserId,int AcomodationId)
         {
-            this.Id = Id;
+            
             this.Date = Date;
             this.Description = Description;
             this.UserId = UserId;
