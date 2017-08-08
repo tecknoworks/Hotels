@@ -15,16 +15,15 @@
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Restaurants</h2>
-        <p>After a long travel day it sure is nice to have an on-site restaurant or two at your hotel. </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
+
+
+
+
     <div id="countries" class="col-md-4">        
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Country Name</th>
                     <th></th>
                 </tr>
             </thead>
@@ -38,7 +37,34 @@
             </tbody>
         </table>
         @Html.Partial("Item")
+
+
+
     </div>
+
+
+	<div id="cities" class="col-md-4">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>City Name</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach:Cities">
+				<tr>
+					<td class="col-xs-5" data-bind="text:Name"></td>
+					<td class="col-xs-1">
+						<input type="button" value="City Details" class="btn btn-info" data-toggle="modal" data-target="#cityItem" data-bind="click:$parent.details" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+
+
 </div>
 
 <script type="text/javascript">
@@ -48,3 +74,13 @@
         ko.applyBindings(vm, $("#countries").get(0));
     });
 </script>
+
+<script type="text/javascript">
+    $(function () {
+        var vm = new Cities();
+        vm.refresh();
+        ko.applyBindings(vm, $("#cities").get(0));
+    });
+</script>
+
+

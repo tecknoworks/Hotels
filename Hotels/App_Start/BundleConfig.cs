@@ -30,9 +30,15 @@ namespace Hotels
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
                      "~/Scripts/knockout-3.4.2.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/viewModels").Include(
-                      "~/Scripts/ViewModels/Countries.js"));
+			bundles.Add(new ScriptBundle("~/bundles/viewModels").Include(
+					  "~/Scripts/ViewModels/Countries.js",
+					  "~/Scripts/ViewModels/Cities.js"));
 
-        }
+
+			//bundles.Add(new ScriptBundle("~/bundles/viewModels/cities").Include(
+			//	   "~/Scripts/ViewModels/Cities.js"));
+
+
+		}
     }
 }
