@@ -15,7 +15,7 @@
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 self.Countries(data.Countries);
             },
             error: function (jqXHR, textStatus, errorThrown) {
