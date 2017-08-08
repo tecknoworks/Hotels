@@ -1,6 +1,7 @@
 ﻿function Countries() {
     var self = this;
     self.Countries = ko.observableArray();
+    self.Cities = ko.observableArray();
     self.Id = ko.observable();
     self.Name = ko.observable();
 
@@ -23,4 +24,19 @@
             }
         });
     };
+    self.getCities = function (data) {
+    	var url = '/Home/GetCities';
+    	$.ajax(url, {
+    		data: { countryId: data.Id },
+    		type: "get",
+    		contentType: "application/json; charset=utf-8",
+    		success: function (data) {
+    			//console.log(data);
+    			self.Cities(data.Cities);
+    		},
+    		error: function (jqXHR, textStatus, errorThrown) {
+    			console.log(textStatus + ': ' + errorThrown);
+    		}
+    	});
+    }
 }

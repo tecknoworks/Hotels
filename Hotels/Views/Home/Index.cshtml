@@ -7,14 +7,6 @@
     <p><a href="https://www.booking.com/index.html?aid=376393;label=bookings-name-aBWsJiTz5zPDtvKd5x3fwgS171942957760:pl:ta:p1:p21.408.000:ac:ap1t1:neg:fi:tiaud-146342138470:kwd-65526620:lp1011806:li:dec:dm;ws=&gclid=Cj0KCQjwtpDMBRC4ARIsADhz5O5TCa7lgLubjZV2FmEu-bw4kjjkjSC5-EY_it_E1PEp9C1IFtDmaWAaAnR5EALw_wcB" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Find your best price</h2>
-        <p>
-			Selecting the right hotel is one of the most important decisions to make when planning a vacation. 
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
 
 
 
@@ -23,13 +15,15 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Country Name</th>
+                    <th>Choose the country</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody data-bind="foreach:Countries">
                 <tr>
-                    <td class="col-xs-5" data-bind="text:Name"></td>
+                    <td class="col-xs-5" >
+						<h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem"> </h4>
+					</td>
                     <td class="col-xs-1">
                         <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#countryItem" data-bind="click:$parent.details" />
                     </td>
@@ -63,22 +57,19 @@
 
 
 
-</div>
+
 
 <script type="text/javascript">
     $(function () {
         var vm = new Countries();
         vm.refresh();
         ko.applyBindings(vm, $("#countries").get(0));
+ 
+        var cities = new Cities();
+        cities.refresh();
+        ko.applyBindings(cities, $("#cities").get(0));
     });
-</script>
 
-<script type="text/javascript">
-    $(function () {
-        var vm = new Cities();
-        vm.refresh();
-        ko.applyBindings(vm, $("#cities").get(0));
-    });
 </script>
 
 
