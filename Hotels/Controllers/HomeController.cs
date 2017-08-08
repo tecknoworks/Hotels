@@ -13,8 +13,6 @@ namespace Hotels.Controllers
     {
         public ActionResult Index()
         {
-			//AcomodationService service = new AcomodationService();
-           // service.GetAcomodations(1);
 
 			return View();
         }
