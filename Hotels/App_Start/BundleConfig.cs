@@ -34,6 +34,11 @@ namespace Hotels
                       "~/Scripts/ViewModels/Countries.js", "~/Scripts/ViewModels/Acomodations.js"));
        
 
-        }
+
+			//bundles.Add(new ScriptBundle("~/bundles/viewModels/cities").Include(
+			//	   "~/Scripts/ViewModels/Cities.js"));
+
+
+		}
     }
 }
