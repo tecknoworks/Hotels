@@ -71,7 +71,10 @@
     			contentType: "application/json; charset=utf-8",
     			success: function (data) {
     				self.Acomodations(data.Acomodations);
-    				$("#acomodations").show();
+    				if (data.Acomodations.length>0)
+    					$("#acomodations").show();
+    				else
+    					$("#acomodations").hide();
     			},
     			error: function (jqXHR, textStatus, errorThrown) {
     				console.log(textStatus + ': ' + errorThrown);
