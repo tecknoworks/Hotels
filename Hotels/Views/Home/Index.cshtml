@@ -34,7 +34,7 @@
     </div>
 
 
-	<div id="cities" class="col-md-4">
+	<div id="cities" class="col-md-4" style="display:none">
 		<table class="table">
 			<thead>
 				<tr>
@@ -64,10 +64,7 @@
         var vm = new Countries();
         vm.refresh();
         ko.applyBindings(vm, $("#countries").get(0));
- 
-        var cities = new Cities();
-        cities.refresh();
-        ko.applyBindings(cities, $("#cities").get(0));
+        ko.applyBindings(vm, $("#cities").get(0));
     });
 
 </script>

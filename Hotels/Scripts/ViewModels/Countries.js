@@ -31,8 +31,8 @@
     		type: "get",
     		contentType: "application/json; charset=utf-8",
     		success: function (data) {
-    			//console.log(data);
     			self.Cities(data.Cities);
+    			$("#cities").show();
     		},
     		error: function (jqXHR, textStatus, errorThrown) {
     			console.log(textStatus + ': ' + errorThrown);
