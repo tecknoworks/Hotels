@@ -2,8 +2,9 @@
     var self = this;
     self.Countries = ko.observableArray();
     self.Cities = ko.observableArray();
-   
     self.Acomodations = ko.observableArray();
+    self.Rooms = ko.observableArray();
+
     self.Id = ko.observable();
     self.Type = ko.observable();
     self.Address = ko.observable();
@@ -12,6 +13,10 @@
     self.Description = ko.observable();
     self.PhoneNumber = ko.observable();
     self.WebSite = ko.observable();
+    self.Price = ko.observable();
+    self.NumberOfAdults = ko.observable();
+    self.NumberOfChildren = ko.observable();
+    self.NumberOfRoomsAvailable = ko.observable();
 
     self.details = function (data) {
     	self.Id(data.Id);
@@ -22,6 +27,11 @@
     	self.Description(data.Description);
     	self.PhoneNumber(data.PhoneNumber);
     	self.WebSite(data.WebSite);
+    	self.Price(data.Price);
+    	self.NumberOfAdults(data.NumberOfAdults);
+    	self.NumberOfChildren(data.NumberOfChildren);
+    	self.NumberOfRoomsAvailable(data.NumberOfRoomsAvailable);
+
 
     };
 
@@ -67,6 +77,21 @@
     				console.log(textStatus + ': ' + errorThrown);
     			}
     		});
+    	}
+    	self.getRooms = function (data) {
+    	    var url = '/Home/GetRooms';
+    	    $.ajax(url, {
+    	        data: { acomodationId: data.Id },
+    	        type: "get",
+    	        contentType: "application/json; charset=utf-8",
+    	        success: function (data) {
+    	            self.Rooms(data.Rooms);
+    	            $("#rooms").show();
+    	        },
+    	        error: function (jqXHR, textStatus, errorThrown) {
+    	            console.log(textStatus + ': ' + errorThrown);
+    	        }
+    	    });
     	}
     }
 }
