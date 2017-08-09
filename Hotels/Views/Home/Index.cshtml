@@ -59,7 +59,10 @@
 			</thead>
 			<tbody data-bind="foreach:Acomodations">
 				<tr>
-					<td class="col-xs-5" data-bind="text:Name"></td>
+					<td class="col-xs-5" >
+                        <h4 data-bind="text: Name, click:$parent.getRooms" data-target="#acomodationItem"> </h4>
+                        </td>
+
 					<td class="col-xs-1">
 						<input type="button" value="Acomodation Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
 					</td>
@@ -68,6 +71,26 @@
 		</table>
 		@Html.Partial("AcomodationItem")
 	</div>
+
+<div id="rooms" class="col-md-4" style="display:none">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rooms</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:Rooms">
+            <tr>
+                <td class="col-xs-5" data-bind="text:Type"></td>
+                <td class="col-xs-1">
+                    <input type="button" value="Room Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @Html.Partial("RoomItem")
+</div>
 
 
 
@@ -85,6 +108,7 @@
         ko.applyBindings(vm, $("#countries").get(0));
         ko.applyBindings(vm, $("#cities").get(0));
         ko.applyBindings(vm, $("#acomodations").get(0));
+        ko.applyBindings(vm, $("#rooms").get(0));
     });
 
 </script>

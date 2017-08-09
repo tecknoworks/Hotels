@@ -272,6 +272,7 @@
     <Content Include="Views\Home\Item.cshtml" />
     <Content Include="Views\Home\CityItem.cshtml" />
     <Content Include="Views\Home\AcomodationItem.cshtml" />
+    <Content Include="Views\Home\RoomItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
