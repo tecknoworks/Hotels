@@ -1,4 +1,26 @@
-﻿@{
+﻿<style style="text/css">
+	.col-md-4 {
+		width: 30%;
+		border-collapse: collapse;
+	}
+
+		.col-md-4 td {
+			padding: 7px;
+			border: #4e95f4 1px solid;
+		}
+		/* Define the default color for all the table rows */
+		.col-md-4 tr {
+			background: rgba(165, 42, 42, 0.12);
+		}
+			/* Define the hover highlight color for the table row */
+			.col-md-4 tr:hover {
+				background-color: white;
+			}
+</style>
+
+ 
+
+@{
     ViewBag.Title = "Teckbook.com";
 }
 
@@ -14,16 +36,17 @@
     <div id="countries" class="col-md-4">        
         <table class="table">
             <thead>
-                <tr>
+                <tr style="background-color:rgba(165, 42, 42, 0.64); color:#ffffff " >
                     <th>Choose the country</th>
                      
                 </tr>
             </thead>
             <tbody data-bind="foreach:Countries">
-                <tr>
-                    <td class="col-xs-8" style="background-color:darksalmon;">
-						<h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem"> </h4>
+                <tr  >
+                    <td class="col-xs-8" style="background-color:rgba(165, 42, 42, 0.12)" id="id1" onmouseover="onMouse(this);">
+						<h4   data-bind="text: Name, click:$parent.getCities" data-target="#countryItem"> </h4>
 					</td>
+
                 </tr>
             </tbody>
         </table>
@@ -34,7 +57,7 @@
 	<div id="cities" class="col-md-4" style="display:none" >
 		<table class="table">
 			<thead>
-				<tr>
+				<tr style="background-color:rgba(165, 42, 42, 0.64); color:#ffffff " >
 					<th>Choose the city</th>
 				</tr>
 			</thead>
@@ -52,8 +75,9 @@
 	<div id="acomodations" class="col-md-4" style="display:none">
 		<table class="table">
 			<thead>
-				<tr>
+				<tr style="background-color:rgba(165, 42, 42, 0.64); color:#ffffff ">
 					<th>Acomodation</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody data-bind="foreach:Acomodations">
@@ -74,7 +98,7 @@
 <div id="rooms" class="col-md-4" style="display:none">
     <table class="table">
         <thead>
-            <tr>
+            <tr style="background-color:rgba(165, 42, 42, 0.64); color:#ffffff ">
                 <th>Choose the room</th>
                 <th></th>
             </tr>
@@ -109,6 +133,10 @@
         ko.applyBindings(vm, $("#acomodations").get(0));
         ko.applyBindings(vm, $("#rooms").get(0));
     });
+
+    function onMouse(x) {
+    	x.style.border.color = "green";
+    }
 
 </script>
 
