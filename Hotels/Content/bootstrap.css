@@ -4505,6 +4505,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #A52A2A;
   border-color: #080808;
 }
+	.navbar-inverse:hover {
+		background-color: #428bca;
+}
 
 .navbar-inverse .navbar-brand {
   color: #ffffff;
