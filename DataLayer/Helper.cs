@@ -11,7 +11,7 @@ namespace DataLayer
     public static class Helper
     {
         // convert image to byte array
-        public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        public static byte[] ImageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);

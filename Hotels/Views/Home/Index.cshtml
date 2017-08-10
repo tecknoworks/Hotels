@@ -42,7 +42,7 @@
 		</thead>
 		<tbody data-bind="foreach:Countries">
 			<tr>
-				<td class="col-xs-8" style="background-color:rgba(242, 233, 238, 0.41)" id="id1" onmouseover="onMouse(this);">
+				<td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41)" id="id1" onmouseover="onMouse(this);">
 					<h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem"> </h4>
 				</td>
 
@@ -88,6 +88,7 @@
 				<td  class="col-xs-1">
 					<input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
 				</td>
+				
 			</tr>
 		</tbody>
 	</table>
