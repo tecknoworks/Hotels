@@ -51,6 +51,15 @@
             success: function (data) {
                 //console.log(data);
                 self.Countries(data.Countries);
+                $("#cities").hide();
+                $("#acomodations").hide();
+                $("#rooms").hide();
+                if (data.Countries.length > 0) {
+                    $("#countries").show();
+                }
+                else {
+                    $("#countries").hide();
+                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -65,7 +74,14 @@
     		contentType: "application/json; charset=utf-8",
     		success: function (data) {
     			self.Cities(data.Cities);
-    			$("#cities").show();
+    			$("#acomodations").hide();
+    			$("#rooms").hide();
+    			if (data.Cities.length > 0) {
+    			    $("#cities").show();
+    			}
+    			else {
+    			    $("#cities").hide();
+    			}
     		},
     		error: function (jqXHR, textStatus, errorThrown) {
     			console.log(textStatus + ': ' + errorThrown);
