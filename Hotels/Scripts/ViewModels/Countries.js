@@ -17,7 +17,8 @@
     self.NumberOfAdults = ko.observable();
     self.NumberOfChildren = ko.observable();
     self.NumberOfRoomsAvailable = ko.observable();
-
+    self.AcomodationType = ko.observable();
+    self.RoomType = ko.observable();
     self.details = function (data) {
     	self.Id(data.Id);
     	self.Type(data.Type);
@@ -31,7 +32,8 @@
     	self.NumberOfAdults(data.NumberOfAdults);
     	self.NumberOfChildren(data.NumberOfChildren);
     	self.NumberOfRoomsAvailable(data.NumberOfRoomsAvailable);
-
+    	self.AcomodationType(data.AcomodationType);
+    	self.RoomType(data.RoomType);
 
     };
 
@@ -71,10 +73,13 @@
     			contentType: "application/json; charset=utf-8",
     			success: function (data) {
     				self.Acomodations(data.Acomodations);
-    				if (data.Acomodations.length>0)
-    					$("#acomodations").show();
-    				else
-    					$("#acomodations").hide();
+    				$("#rooms").hide();
+    				if (data.Acomodations.length > 0) {
+    				    $("#acomodations").show();
+    				}
+    				else {
+    				    $("#acomodations").hide();
+    				}
     			},
     			error: function (jqXHR, textStatus, errorThrown) {
     				console.log(textStatus + ': ' + errorThrown);
@@ -89,7 +94,12 @@
     	        contentType: "application/json; charset=utf-8",
     	        success: function (data) {
     	            self.Rooms(data.Rooms);
-    	            $("#rooms").show();
+    	            if (data.Rooms.length > 0) {
+    	                $("#rooms").show();
+    	            }
+    	            else {
+    	                $("#rooms").hide();
+    	            }
     	        },
     	        error: function (jqXHR, textStatus, errorThrown) {
     	            console.log(textStatus + ': ' + errorThrown);

@@ -8,6 +8,9 @@ namespace DataLayer
 {
 	public enum AcomodationType
 	{
-		Hotel,Pension,Hut,Motel
+		Hotel,
+        Pension,
+        Hut,
+        Motel
 	}
 }

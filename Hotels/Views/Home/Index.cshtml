@@ -1,6 +1,6 @@
 ﻿<style style="text/css">
 	.col-md-4 {
-		width: 30%;
+		width: 25%;
 		border-collapse: collapse;
 	}
 
@@ -37,7 +37,7 @@
 	<table class="table">
 		<thead>
 			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:large ">
-				<th>Choose the country</th>
+				<th>Countries</th>
 
 			</tr>
 		</thead>
@@ -58,7 +58,7 @@
 	<table class="table">
 		<thead>
 			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:large">
-				<th>Choose the city</th>
+				<th>Cities</th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Cities">
@@ -76,8 +76,8 @@
 	<table class="table">
 		<thead>
 			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:large ">
-				<th >Acomodation </th>
-				<th></th>
+				<th >Acomodations</th>
+                <th></th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Acomodations">
@@ -87,7 +87,7 @@
 				</td>
 
 				<td  class="col-xs-1">
-					<input type="button" value="Acomodation Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
+					<input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
 				</td>
 			</tr>
 		</tbody>
@@ -99,15 +99,17 @@
 	<table class="table">
 		<thead>
 			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:large">
-				<th>Choose the room</th>
-				<th></th>
+				<th>Rooms</th>
+                <th></th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Rooms">
 			<tr>
-				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41)"data-bind="text:Type"></td>
+				<td class="col-xs-5" >
+                    <h4 data-bind="text:RoomType"></h4>
+                </td>
 				<td class="col-xs-1">
-					<input type="button" value="Room Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
+					<input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
 				</td>
 			</tr>
 		</tbody>
