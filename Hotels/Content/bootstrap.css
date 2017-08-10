@@ -5948,12 +5948,12 @@ button.close {
 }
 .modal-body {
   position: relative;
- // padding: 20px;
+  padding: 20px;
 }
 .modal-footer {
   padding: 20px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #261d22;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
