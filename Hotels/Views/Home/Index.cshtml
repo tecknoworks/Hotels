@@ -57,7 +57,7 @@
 <div id="cities" class="col-md-4" style="display:none">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgb(154, 96, 127); color:#ffffff ;font-size:large">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:large">
 				<th>Choose the city</th>
 			</tr>
 		</thead>
@@ -75,7 +75,7 @@
 <div id="acomodations" class="col-md-4" style="display:none">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgb(154, 96, 127); color:#ffffff;font-size:large ">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:large ">
 				<th >Acomodation </th>
 				<th></th>
 			</tr>
@@ -86,7 +86,7 @@
 					<h4 data-bind="text: Name, click:$parent.getRooms" data-target="#acomodationItem"> </h4>
 				</td>
 
-				<td class="col-xs-1">
+				<td  class="col-xs-1">
 					<input type="button" value="Acomodation Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
 				</td>
 			</tr>
@@ -98,14 +98,14 @@
 <div id="rooms" class="col-md-4" style="display:none">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgb(154, 96, 127); color:#ffffff ;font-size:large">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:large">
 				<th>Choose the room</th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Rooms">
 			<tr>
-				<td class="col-xs-5" data-bind="text:Type"></td>
+				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41)"data-bind="text:Type"></td>
 				<td class="col-xs-1">
 					<input type="button" value="Room Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
 				</td>
