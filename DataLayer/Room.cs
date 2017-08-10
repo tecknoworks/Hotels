@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,15 @@ namespace DataLayer
     {
         public int Id { get; set; }
         public RoomType Type { get; set; }
+
+        [NotMapped]
+        public string RoomType
+        {
+            get
+            {
+                return Type.ToString();
+            }
+        }
         public float Price { get; set; }
         public int NumberOfAdults { get; set; }
         public int NumberOfChildren { get; set; }
