@@ -64,6 +64,7 @@ b,
 strong {
   font-weight: bold;
 }
+
 dfn {
   font-style: italic;
 }
@@ -1151,7 +1152,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #261d22;
 }
 .sr-only {
   position: absolute;
@@ -5937,7 +5938,8 @@ button.close {
 }
 .modal-header {
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #f6e1ec;
+  background:#f6e1ec;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5949,11 +5951,13 @@ button.close {
 .modal-body {
   position: relative;
   padding: 20px;
+  background:#f6e1ec;
 }
 .modal-footer {
   padding: 20px;
   text-align: right;
-  border-top: 1px solid #261d22;
+  border-top: 1px solid #f6e1ec;
+  background:#f6e1ec;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
