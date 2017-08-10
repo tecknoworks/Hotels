@@ -19,6 +19,10 @@
     self.NumberOfRoomsAvailable = ko.observable();
     self.AcomodationType = ko.observable();
     self.RoomType = ko.observable();
+    self.Picture = ko.observable();
+    self.Photo = ko.observable();
+
+
     self.details = function (data) {
     	self.Id(data.Id);
     	self.Type(data.Type);
@@ -34,6 +38,8 @@
     	self.NumberOfRoomsAvailable(data.NumberOfRoomsAvailable);
     	self.AcomodationType(data.AcomodationType);
     	self.RoomType(data.RoomType);
+    	self.Picture(data.Picture);
+    	self.Photo(data.Photo);
 
     };
 
