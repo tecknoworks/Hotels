@@ -23,13 +23,7 @@ namespace DataLayer
 		public int CityId { get; set; }
 		public City City { get; set; }
         [NotMapped]
-        public Image AcomodationPhoto
-        {
-            get
-            {
-                return Helper.ByteArrayToImage(Picture);
-            }
-        }
+        public string AcomodationPhoto { get; set;}
         [NotMapped]
         public string AcomodationType
         {
