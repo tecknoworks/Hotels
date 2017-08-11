@@ -30,6 +30,14 @@ namespace DataLayer
 		public string WebSite { get; set; }
 		public int CityId { get; set; }
 		public City City { get; set; }
+        [NotMapped]
+        public Image AcomodationPhoto
+        {
+            get
+            {
+                return Helper.ByteArrayToImage(Picture);
+            }
+        }
         public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
 			this.Type = Type;
