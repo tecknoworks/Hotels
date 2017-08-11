@@ -1,6 +1,6 @@
 ﻿<style style="text/css">
 	.col-md-4 {
-		width: 25%;
+		width: 20%;
 		border-collapse: collapse;
 	}
 
@@ -32,15 +32,16 @@
 <div id="countries" class="col-md-4">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:large ">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large;margin-top:5px;margin-bottom:5px;margin-left:0px;margin-right:0px;">
 				<th>Countries</th>
 
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Countries">
 			<tr>
-				<td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41)" id="id1" onmouseover="onMouse(this);">
-					<h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem"> </h4>
+				<td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);">
+					<h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem" 
+						style="margin-top:5px;margin-bottom:5px;margin-left:0px;margin-right:0px;font-size:x-large"> </h4>
 				</td>
 
 			</tr>
@@ -53,13 +54,13 @@
 <div id="cities" class="col-md-4" style="display:none">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:large">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
 				<th>Cities</th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Cities">
 			<tr>
-				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41)">
+				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);font-size:x-large;margin-top:5px;margin-bottom:5px;">
 					<h4 data-bind="text: Name, click:$parent.getAcomodations" data-target="#cityItem"> </h4>
 				</td>
 			</tr>
@@ -71,14 +72,14 @@
 <div id="acomodations" class="col-md-4" style="display:none">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:large ">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large ">
 				<th >Acomodations</th>
                 <th></th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Acomodations">
 			<tr>
-				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41)">
+				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);font-size:x-large">
 					<h4 data-bind="text: Name, click:$parent.getRooms" data-target="#acomodationItem"> </h4>
 				</td>
 
@@ -95,14 +96,14 @@
 <div id="rooms" class="col-md-4" style="display:none">
 	<table class="table">
 		<thead>
-			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:large">
+			<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
 				<th>Rooms</th>
                 <th></th>
 			</tr>
 		</thead>
 		<tbody data-bind="foreach:Rooms">
 			<tr>
-				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41)" >
+				<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);font-size:x-large" >
                     <h4 data-bind="text:RoomType"></h4>
                 </td>
 				<td class="col-xs-1" >
