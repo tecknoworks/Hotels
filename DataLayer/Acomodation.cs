@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace DataLayer
 		public string WebSite { get; set; }
 		public int CityId { get; set; }
 		public City City { get; set; }
-		public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
+        public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
 			this.Type = Type;
 			this.Address = Address;
