@@ -15,11 +15,11 @@ namespace Hotels
         {
             string id = context.Request.QueryString["id"];
             //save into the database 
-            string fileName = "hotel1.jpg";
+            string fileName = "hotel"+ id+".jpg";
             context.Response.Clear();
             //context.Response.ContentType = "application/pdf";
             context.Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName);
-            context.Response.TransmitFile(HttpContext.Current.Server.MapPath("~/App_Data/hotel1.jpg"));
+            context.Response.TransmitFile(HttpContext.Current.Server.MapPath("~/App_Data/hotel"+ id+".jpg"));
             context.Response.End();
         }
 

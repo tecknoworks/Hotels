@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201708040916307_allTabels.Designer.cs">
       <DependentUpon>201708040916307_allTabels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708110944468_AccomnodationPhoto.cs" />
+    <Compile Include="Migrations\201708110944468_AccomnodationPhoto.Designer.cs">
+      <DependentUpon>201708110944468_AccomnodationPhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -116,6 +120,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708040916307_allTabels.resx">
       <DependentUpon>201708040916307_allTabels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708110944468_AccomnodationPhoto.resx">
+      <DependentUpon>201708110944468_AccomnodationPhoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

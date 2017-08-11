@@ -136,7 +136,7 @@ namespace Hotels.Controllers
             var acomodations = service.GetAcomodations(cityId);
             foreach(Acomodation a in acomodations)
             {
-                a.AcomodationPhoto = "file.ashx?id=1";
+                a.AcomodationPhoto = "file.ashx?id="+a.Id.ToString();
             }
             return new JsonResult() { Data = new { Acomodations=acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -229,7 +229,7 @@ namespace Hotels.Controllers
         }
 
 
-        public JsonResult AddAcomodation(AcomodationType type, string address, string name, int numberOfStars, byte[] photo, string description, string phoneNumber, string website, int cityId)
+        public JsonResult AddAcomodation(AcomodationType type, string address, string name, int numberOfStars, string photo, string description, string phoneNumber, string website, int cityId)
         {
             AcomodationService service = new AcomodationService();
             var acomodation = service.AddAcomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId);

@@ -41,7 +41,7 @@
     	self.RoomType(data.RoomType);
     	self.Picture(data.Picture);
     	self.Photo(data.Photo);
-    	self.AcomodationPhoto(data.AcomodationPhoto); debugger
+    	self.AcomodationPhoto(data.AcomodationPhoto); 
     };
 
     self.refresh = function () {
