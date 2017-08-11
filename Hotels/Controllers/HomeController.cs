@@ -112,6 +112,10 @@ namespace Hotels.Controllers
         {
             RoomService service = new RoomService();
             var rooms = service.GetRooms(acomodationId);
+            foreach (Room r in rooms)
+            {
+                r.RoomPhoto = "file.ashx?name=" + r.RoomPhoto;
+            }
             return new JsonResult() { Data = new { Rooms = rooms }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
@@ -136,7 +140,7 @@ namespace Hotels.Controllers
             var acomodations = service.GetAcomodations(cityId);
             foreach(Acomodation a in acomodations)
             {
-                a.AcomodationPhoto = "file.ashx?id="+a.Id.ToString();
+                a.AcomodationPhoto = "file.ashx?name="+a.AcomodationPhoto;
             }
             return new JsonResult() { Data = new { Acomodations=acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -200,7 +204,7 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult AddRoom(RoomType type, float price, int numberOdAdults, int numberOfChildren, byte[] photo, string description, int numberOfRoomsAvailable, int accomodationId)
+        public JsonResult AddRoom(RoomType type, float price, int numberOdAdults, int numberOfChildren, string photo, string description, int numberOfRoomsAvailable, int accomodationId)
         {
             RoomService service = new RoomService();
             var room = service.AddRoom(type,price, numberOdAdults,  numberOfChildren, photo,  description,  numberOfRoomsAvailable,  accomodationId);

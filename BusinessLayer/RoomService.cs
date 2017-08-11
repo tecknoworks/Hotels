@@ -75,7 +75,7 @@ namespace BusinessLayer
 		/// <param name="numberOfRoomsAvailable">The number of rooms available</param>
 		/// <param name="accomodationId">The Id of the acomodation </param>
 		/// <returns>A new room</returns>
-        public Room AddRoom(RoomType type,float price,int numberOdAdults,int numberOfChildren,byte[] photo,string description,int numberOfRoomsAvailable,int accomodationId)
+        public Room AddRoom(RoomType type,float price,int numberOdAdults,int numberOfChildren,string photo,string description,int numberOfRoomsAvailable,int accomodationId)
         {
             return new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
         }

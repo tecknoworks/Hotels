@@ -213,6 +213,9 @@
     <Content Include="App_Data\hotel1.jpg" />
     <Content Include="App_Data\hotel2.jpg" />
     <Content Include="App_Data\hotel3.jpg" />
+    <Content Include="App_Data\roomD1.jpg" />
+    <Content Include="App_Data\roomS1.jpg" />
+    <Content Include="App_Data\roomT1.jpg" />
     <Content Include="Content\hotel1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -13,13 +13,13 @@ namespace Hotels
 
         public void ProcessRequest(HttpContext context)
         {
-            string id = context.Request.QueryString["id"];
+            string name = context.Request.QueryString["name"];
             //save into the database 
-            string fileName = "hotel"+ id+".jpg";
+            string fileName = name;
             context.Response.Clear();
             //context.Response.ContentType = "application/pdf";
             context.Response.AddHeader("Content-Disposition", "attachment; filename=" + fileName);
-            context.Response.TransmitFile(HttpContext.Current.Server.MapPath("~/App_Data/hotel"+ id+".jpg"));
+            context.Response.TransmitFile(HttpContext.Current.Server.MapPath("~/App_Data/"+ name ));
             context.Response.End();
         }
 

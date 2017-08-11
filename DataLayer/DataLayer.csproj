@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201708110944468_AccomnodationPhoto.Designer.cs">
       <DependentUpon>201708110944468_AccomnodationPhoto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708110956041_RoomPhoto.cs" />
+    <Compile Include="Migrations\201708110956041_RoomPhoto.Designer.cs">
+      <DependentUpon>201708110956041_RoomPhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
     <Compile Include="NearbyType.cs" />
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708110944468_AccomnodationPhoto.resx">
       <DependentUpon>201708110944468_AccomnodationPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708110956041_RoomPhoto.resx">
+      <DependentUpon>201708110956041_RoomPhoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
