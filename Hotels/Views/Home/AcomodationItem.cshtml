@@ -10,19 +10,12 @@
             <input id="Name" type="text" class="form-control" data-bind="value: Name" />
 
             <label for="Picture">Picture</label>
-            <img src="" width="90" height="90"  align="right" data-bind="value:Picture" />
+            <img width="90" height="90"  align="right" data-bind="value:Picture" />
+			<img width="16px" height="16px" data-bind="attr:{src: imagePath}" />  
 
             <label for="AcomodationType">Type</label>
             <input id="AcomodationType" type="text" class="form-control" data-bind="value: AcomodationType" />
 
-            <div class="modal-body">
-			    <label for="Picture">Picture</label>
-			
-			    <img src="C:\Work\Images" width="16px" height="16px" data-bind="value:Picture" />
-			
-            </div>
-
-        <div class="modal-body">
             <label for="NumberOfStars">Number of stars</label>
             <input id="NumberOfStars" type="text" class="form-control" data-bind="value: NumberOfStars" />
 
