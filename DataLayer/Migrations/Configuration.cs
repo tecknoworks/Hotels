@@ -61,9 +61,9 @@ namespace DataLayer.Migrations
             );
             context.Rooms.AddOrUpdate(
                 p => p.Id,
-                new Room{ Id = 1, Type = RoomType.Single, Price = 23, NumberOfAdults=1, NumberOfChildren=0,Photo= Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomS1.jpg")), Description="Nice view",NumberOfRoomsAvailable=4,AcomodationId=1},
-                new Room{ Id = 2, Type = RoomType.Double, Price = 50, NumberOfAdults = 2, NumberOfChildren = 0, Photo = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomD1.jpg")), Description = "Large room", NumberOfRoomsAvailable = 3,AcomodationId=2 },
-                new Room{ Id = 3, Type = RoomType.Triple, Price = 70, NumberOfAdults = 2, NumberOfChildren = 1, Photo = Helper.ImageToByteArray(Image.FromFile(@"C:\Work\Images\roomT1.jpg")), Description = "2 bathrooms", NumberOfRoomsAvailable = 5,AcomodationId=2 }
+                new Room{ Id = 1, Type = RoomType.Single, Price = 23, NumberOfAdults=1, NumberOfChildren=0,RoomPhoto="roomS1.jpg", Description="Nice view",NumberOfRoomsAvailable=4,AcomodationId=1},
+                new Room{ Id = 2, Type = RoomType.Double, Price = 50, NumberOfAdults = 2, NumberOfChildren = 0, RoomPhoto ="roomD1.jpg", Description = "Large room", NumberOfRoomsAvailable = 3,AcomodationId=2 },
+                new Room{ Id = 3, Type = RoomType.Triple, Price = 70, NumberOfAdults = 2, NumberOfChildren = 1, RoomPhoto="roomT1.jpg", Description = "2 bathrooms", NumberOfRoomsAvailable = 5,AcomodationId=2 }
                 );
             
             context.RoomReservations.AddOrUpdate(
