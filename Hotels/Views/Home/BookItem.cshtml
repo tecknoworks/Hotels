@@ -1,0 +1,29 @@
+﻿<div id="bookItem" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Reservation detalis</h4>
+        </div>
+        <div class="modal-body">
+
+            <label for="DateOfStart">Date of start</label>
+            <input id="DateOfStart" data-bind="datepicker: myDate, datepickerOptions: { minDate: new Date() }" class="form-control"  />
+
+            <label for="DateOfEnd">Date of end</label>
+            <input id="DateOfEnd" data-bind="datepicker: myDate, datepickerOptions: { minDate: new Date() }" class="form-control" />
+
+            <label for="NumberOfPeople">Number of people</label>
+            <input id="NumberOfPeople" type="text" class="form-control" data-bind="value: NumberOfPeople" />
+
+            <label for="TotalPayment">Total payment</label>
+            <input id="TotalPayment" type="text" class="form-control" data-bind="value: TotalPayment" />
+
+          
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+
+</div>

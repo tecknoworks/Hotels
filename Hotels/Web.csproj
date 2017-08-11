@@ -286,6 +286,7 @@
     <Content Include="Views\Home\CityItem.cshtml" />
     <Content Include="Views\Home\AcomodationItem.cshtml" />
     <Content Include="Views\Home\RoomItem.cshtml" />
+    <Content Include="Views\Home\BookItem.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
