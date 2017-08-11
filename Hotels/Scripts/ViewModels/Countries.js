@@ -22,7 +22,7 @@
     self.Picture = ko.observable();
     self.Photo = ko.observable();
     self.AcomodationPhoto=ko.observable();
-
+   
 
     self.details = function (data) {
     	self.Id(data.Id);
@@ -41,7 +41,7 @@
     	self.RoomType(data.RoomType);
     	self.Picture(data.Picture);
     	self.Photo(data.Photo);
-    	self.AcomodationPhoto(data.AcomodationPhoto);
+    	self.AcomodationPhoto(data.AcomodationPhoto); debugger
     };
 
     self.refresh = function () {

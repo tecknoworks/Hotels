@@ -13,14 +13,6 @@ namespace DataLayer
 		public int Id { get; set; }
 
 		public AcomodationType Type { get; set; }
-        [NotMapped]
-        public string AcomodationType
-        {
-            get
-            {
-                return Type.ToString();
-            }
-        }
         public string Address { get; set; }
         public string Name { get; set; }
 		public int NumberOfStars { get; set; }
@@ -36,6 +28,14 @@ namespace DataLayer
             get
             {
                 return Helper.ByteArrayToImage(Picture);
+            }
+        }
+        [NotMapped]
+        public string AcomodationType
+        {
+            get
+            {
+                return Type.ToString();
             }
         }
         public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, byte[] Picture, string Description, string PhoneNumber, string WebSite,int CityId)
