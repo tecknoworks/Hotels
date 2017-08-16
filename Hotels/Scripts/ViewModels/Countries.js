@@ -148,8 +148,11 @@
     	        contentType: "application/json; charset=utf-8",
     	        success: function (data) {
     	            self.Reservation(data.Reservation);
-    	        
-    	        },
+    	        //    if (data.DateOfStart>Date.now.toString) {
+    	        //    	$("#reservations").show();
+    	        //    	else {
+				//		$("#reservations").hide();
+    	        //},
     	        error: function (jqXHR, textStatus, errorThrown) {
     	            console.log(textStatus + ': ' + errorThrown);
     	        }

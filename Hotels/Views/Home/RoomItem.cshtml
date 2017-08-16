@@ -40,10 +40,14 @@
         <div class="modal-body">
 
             <label for="DateOfStart">Date of start</label>
-            <input id="datePiker" data-bind="datepicker: myDate, datepickerOptions: { minDate: new Date() }" class="form-control" />
+			<br>
+			<input type="datetime-local" min="@DateTime.Now.ToString("o") " required  >
+			<br>
 
             <label for="DateOfEnd">Date of end</label>
-            <input type="datetime-local">
+			<br />
+            <input type="datetime-local" > 
+			<br />
 
             <label for="NumberOfPeople">Number of people</label>
             <input id="NumberOfPeople" type="text" class="form-control" data-bind="value: NumberOfPeople" />

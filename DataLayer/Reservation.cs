@@ -11,7 +11,7 @@ namespace DataLayer
     {
         public int Id { get; set; }
         public DateTime DateOfReservation { get; set; }
-        public DateTime DateOfStart { get; set; }
+        public DateTime  DateOfStart { get; set; }
         public DateTime DateOfEnd { get; set; }
         public float TotalPayment { get; set; }
         public int NumberOfPeople { get; set; }
@@ -28,7 +28,7 @@ namespace DataLayer
         public Reservation(DateTime DateOfReservation,DateTime DateOfStart,DateTime DateOfEnd,float TotalPayment,int NumberOfPeople,int RoomReservationId,int UserId)
         {
             this.DateOfReservation = DateOfReservation;
-            this.DateOfStart = DateOfStart;
+            this.DateOfStart =DateOfStart;
             this.DateOfEnd = DateOfEnd;
             this.TotalPayment = TotalPayment;
             this.NumberOfPeople = NumberOfPeople;
