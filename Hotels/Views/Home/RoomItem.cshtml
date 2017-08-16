@@ -40,7 +40,7 @@
         <div class="modal-body">
 
             <label for="DateOfStart">Date of start</label>
-            <input id="datapicker" type="text" class="form-control"  />
+            <input id="datePiker" data-bind="datepicker: myDate, datepickerOptions: { minDate: new Date() }" class="form-control" />
 
             <label for="DateOfEnd">Date of end</label>
             <input type="datetime-local">
@@ -54,7 +54,7 @@
           
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-default">Book room</button>
+            <button type="button" class="btn btn-default" data-bind="click:Countries.bookRoom">Book room</button>
 
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
