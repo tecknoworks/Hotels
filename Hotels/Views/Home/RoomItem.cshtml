@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Room detalis</h4>
+            <h3 class="modal-title">Room detalis</h3>
         </div>
         <div class="modal-body">
             <label for="RoomType">Type</label>
@@ -35,16 +35,16 @@
     <div class="modal-dialog">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Reservation detalis</h4>
+            <h3 class="modal-title">Reservation detalis</h3>
         </div>
         <div class="modal-body">
 
-            <label for="DateOfStart">Date of start</label>
-            <input id="datePiker" data-bind="datepicker: myDate, datepickerOptions: { minDate: new Date() }" class="form-control" />
-
-            <label for="DateOfEnd">Date of end</label>
-            <input type="datetime-local">
-
+            <label for="DateOfStart">Date of start</label><br />
+            <input type="datetime-local" data-bind="value:DateOfStart" class="form-control">
+            <br />
+            <label for="DateOfEnd">Date of end</label><br />
+            <input type="datetime-local" data-bind="value:DateOfEnd" class="form-control">
+            <br />
             <label for="NumberOfPeople">Number of people</label>
             <input id="NumberOfPeople" type="text" class="form-control" data-bind="value: NumberOfPeople" />
 
@@ -54,7 +54,7 @@
           
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-bind="click:Countries.bookRoom">Book room</button>
+            <button type="button" class="btn btn-default" data-bind="click:Locations.bookRoom">Book room</button>
 
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
