@@ -4,6 +4,7 @@
     self.Cities = ko.observableArray();
     self.Acomodations = ko.observableArray();
     self.Rooms = ko.observableArray();
+    self.Reservation = ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -134,6 +135,28 @@
     	            console.log(textStatus + ': ' + errorThrown);
     	        }
     	    });
+    	}
+    	self.bookRoom = function (data) {
+    	    var url = '/Home/AddReservation';
+    	    $.ajax(url, {
+
+    	        data: { DateOfStart: data.DateOfStart },
+    	        data: { DateOfEnd: data.DateOfEnd },
+    	        data: { TotalPayment: data.TotalPayment },
+                data:{NumberOfPeople:data.NumberOfPeople},
+    	        type: "get",
+    	        contentType: "application/json; charset=utf-8",
+    	        success: function (data) {
+    	            self.Reservation(data.Reservation);
+    	        
+    	        },
+    	        error: function (jqXHR, textStatus, errorThrown) {
+    	            console.log(textStatus + ': ' + errorThrown);
+    	        }
+    	    });
+
+
+
     	}
     }
 }
