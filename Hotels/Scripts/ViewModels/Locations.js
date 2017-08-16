@@ -1,4 +1,4 @@
-﻿function Countries() {
+﻿function Locations() {
     var self = this;
     self.Countries = ko.observableArray();
     self.Cities = ko.observableArray();
@@ -142,8 +142,9 @@
 
     	        data: { DateOfStart: data.DateOfStart },
     	        data: { DateOfEnd: data.DateOfEnd },
-    	        data: { TotalPayment: data.TotalPayment },
-                data:{NumberOfPeople:data.NumberOfPeople},
+    	        data: { NumberOfPeople: data.NumberOfPeople },
+                data: { TotalPayment: data.TotelPayment},
+                
     	        type: "get",
     	        contentType: "application/json; charset=utf-8",
     	        success: function (data) {
