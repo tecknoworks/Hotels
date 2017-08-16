@@ -135,5 +135,21 @@
     	        }
     	    });
     	}
-    }
+
+    	//self.getreservations = function (data) {
+    	//	var url = '/home/getreservations';
+    	//	$.ajax(url, {
+    	//		data: { roomid: data.id },
+    	//		type: "get",
+    	//		contenttype: "application/json; charset=utf-8",
+    	//		success: function (data) {
+    	//			self.reservations(data.reservations);
+    				
+    	//		},
+    	//		error: function (jqxhr, textstatus, errorthrown) {
+    	//			console.log(textstatus + ': ' + errorthrown);
+    	//		}
+    //	});
+    //	}
+    //}
 }

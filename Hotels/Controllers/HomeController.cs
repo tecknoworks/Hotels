@@ -17,7 +17,9 @@ namespace Hotels.Controllers
 			return View();
         }
 
-        public JsonResult GetAllCountries()
+		
+
+		public JsonResult GetAllCountries()
         {
             AcomodationService service = new AcomodationService();
             var countries = service.GetAllCountries();
