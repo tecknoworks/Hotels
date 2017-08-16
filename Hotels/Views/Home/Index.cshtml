@@ -5,7 +5,7 @@
 	}
 
 		.col-md-4 td {
-			padding: 7px;
+			padding: 10px;
 			border: rgba(119, 41, 83, 0.74) 1px solid;
 		}
 		/* Define the default color for all the table rows */
@@ -30,7 +30,6 @@
 </div>
 
 
-<div>
     <div id="countries" class="col-md-4">
 	    <table class="table" style="width:90%" >
 		    <thead style="margin-left:0px;margin-right:0px">
@@ -76,7 +75,7 @@
 	    <table class="table" style="width:90%">
 		    <thead>
 			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large ">
-				    <th >Acomodations</th>
+				    <th >Properties</th>
                     <th></th>
 			    </tr>
 		    </thead>
@@ -87,7 +86,7 @@
 						    style="font-size:large;margin-right: 5px"> </h4>
 				    </td>
 
-				    <td  class="col-xs-1">
+				    <td  class="col-xs-5">
 					    <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
 				    </td>
 				
@@ -103,31 +102,31 @@
 			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
 				    <th>Rooms</th>
                     <th></th>
+                    <th></th>
 			    </tr>
 		    </thead>
-		    <tbody data-bind="foreach:Rooms">
-			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);">
-                        <h4 data-bind="text:RoomType" style="font-size:large"></h4>
+            <tbody data-bind="foreach:Rooms">
+
+                <tr >
+                    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);">
+                        <h4 data-bind="text:RoomType" style="font-size:large;margin-right: 5px"></h4>
                     </td>
-				    <td  style="display:inline-flex" >
-                       
-                            <input type="button"  value="Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details"   /> 
-                            
-                            <input type="button"  value="Book"    class="btn btn-info" data-toggle="modal" data-target="#bookItem" data-bind="click:$parent.details" />
+            
+                    <td class="col-xs-5">
 
+                        <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
+                    </td>
+                    <td class="col-xs-5">
+                        <input type="button" value="Book" class="btn btn-info" data-toggle="modal" data-target="#bookItem" data-bind="click:$parent.details" />
+                        
 
-				    </td>
-			    </tr>
-		    </tbody>
+                    </td>
+                </tr>
+
+            </tbody>
 	    </table>
 	    @Html.Partial("RoomItem")
     </div>
-
-</div>
-
-
-
 
 
 
@@ -146,10 +145,3 @@
     }
 
 </script>
-
-
-
-
-
-
-
