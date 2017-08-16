@@ -153,7 +153,7 @@
     	        //    	$("#reservations").show();
     	        //    	else {
 				//		$("#reservations").hide();
-    	        //},
+    	        },
     	        error: function (jqXHR, textStatus, errorThrown) {
     	            console.log(textStatus + ': ' + errorThrown);
     	        }

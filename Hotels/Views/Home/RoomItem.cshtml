@@ -41,12 +41,13 @@
 
             <label for="DateOfStart">Date of start</label>
 			<br>
-			<input type="datetime-local" min="@DateTime.Now.ToString("o") " required  >
+		
+			<input type="datetime-local" min="@DateTime.Now"  required  >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input type="datetime-local" > 
+            <input type="datetime-local" min="@DateTime.Now.AddDays(+1)" required  > 
 			<br />
 
             <label for="NumberOfPeople">Number of people</label>
