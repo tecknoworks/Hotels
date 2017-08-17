@@ -42,27 +42,36 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="click:DateOfStart" >
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="DateOfStart" >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="click:DateOfEnd"  > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd"  > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>
             <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" />
 
             <label for="TotalPrice">Total payment</label>
-            <input id="TotalPrice" type="text" class="form-control" data-bind="click:Locations.getTotalPayment"/>
+            @*<input id="TotalPrice" type="text" class="form-control" data-bind="click:getTotalPrice"/>*@
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-bind="click:Locations.bookRoom">Book room</button>
+            @*<button type="button" class="btn btn-default" data-bind="click:bookRoom">Book room</button>*@
 
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </div>
-
-
 </div>
+
+<script>
+
+    function bookRoom()
+    {
+        var date1 = document.getElementById("DateOfStart");
+        var date2 = document.getElementById("DateOfEnd");
+        
+    }
+
+</script>
