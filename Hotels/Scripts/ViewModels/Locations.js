@@ -159,7 +159,23 @@
     	        }
     	    });
 
+    	    self.getTotalPrice = function (data) {
+    	        var url = '/Home/GetTotalPrice';
+    	        $.ajax(url, {
+    	            data: { DateOfStart: data.DateOfStart },
+    	            data: { DateOfEnd: data.DateOfEnd },
+    	            data: { Price: data.Price },
+    	            type: "get",
+    	            contentType: "application/json; charset=utf-8",
+    	            success: function (data) {
+    	                self.TotalPrice=data.TotalPrice
+    	            },
+    	            error: function (jqXHR, textStatus, errorThrown) {
+    	                console.log(textStatus + ': ' + errorThrown);
+    	            }
 
+    	        });
+    	    }
 
     	}
     }
