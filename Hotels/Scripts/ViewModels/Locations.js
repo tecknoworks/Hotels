@@ -27,34 +27,34 @@
     self.TotalPayment = ko.observable();
     self.DateOfEnd = ko.observable();
     self.DateOfStart = ko.observable();
-    self.DateOfReservation=ko.observable();
+    self.DateOfReservation = ko.observable();
     self.TotalPrice = ko.observable();
     self.NrOfPeople = ko.observable();
-   
+
 
     self.details = function (data) {
-    	self.Id(data.Id);
-    	self.Type(data.Type);
-    	self.Address(data.Address);
-    	self.Name(data.Name);
-    	self.NumberOfStars(data.NumberOfStars);
-    	self.Description(data.Description);
-    	self.PhoneNumber(data.PhoneNumber);
-    	self.WebSite(data.WebSite);
-    	self.Price(data.Price);
-    	self.NumberOfAdults(data.NumberOfAdults);
-    	self.NumberOfChildren(data.NumberOfChildren);
-    	self.NumberOfRoomsAvailable(data.NumberOfRoomsAvailable);
-    	self.AcomodationType(data.AcomodationType);
-    	self.RoomType(data.RoomType);
-    	self.RoomPhoto(data.RoomPhoto);
-    	self.AcomodationPhoto(data.AcomodationPhoto);
-    	self.NumberOfPeople(data.NumberOfPeople);
-    	self.TotalPayment(data.TotalPayment);
-    	self.DateOfStart(data.DateOfStart);
-    	self.DateOfEnd(data.DateOfEnd);
-    	self.TotalPrice(data.TotalPrice);
-    	self.NrOfPeople(data.NrOfPeople);
+        self.Id(data.Id);
+        self.Type(data.Type);
+        self.Address(data.Address);
+        self.Name(data.Name);
+        self.NumberOfStars(data.NumberOfStars);
+        self.Description(data.Description);
+        self.PhoneNumber(data.PhoneNumber);
+        self.WebSite(data.WebSite);
+        self.Price(data.Price);
+        self.NumberOfAdults(data.NumberOfAdults);
+        self.NumberOfChildren(data.NumberOfChildren);
+        self.NumberOfRoomsAvailable(data.NumberOfRoomsAvailable);
+        self.AcomodationType(data.AcomodationType);
+        self.RoomType(data.RoomType);
+        self.RoomPhoto(data.RoomPhoto);
+        self.AcomodationPhoto(data.AcomodationPhoto);
+        self.NumberOfPeople(data.NumberOfPeople);
+        self.TotalPayment(data.TotalPayment);
+        self.DateOfStart(data.DateOfStart);
+        self.DateOfEnd(data.DateOfEnd);
+        self.TotalPrice(data.TotalPrice);
+        self.NrOfPeople(data.NrOfPeople);
     };
 
     self.refresh = function () {
@@ -80,105 +80,105 @@
         });
     };
     self.getCities = function (data) {
-    	var url = '/Home/GetCities';
-    	$.ajax(url, {
-    		data: { countryId: data.Id },
-    		type: "get",
-    		contentType: "application/json; charset=utf-8",
-    		success: function (data) {
-    			self.Cities(data.Cities);
-    			$("#acomodations").hide();
-    			$("#rooms").hide();
-    			if (data.Cities.length > 0) {
-    			    $("#cities").show();
-    			}
-    			else {
-    			    $("#cities").hide();
-    			}
-    		},
-    		error: function (jqXHR, textStatus, errorThrown) {
-    			console.log(textStatus + ': ' + errorThrown);
-    		}
-    	});
-    	self.getAcomodations = function (data) {
-    		var url = '/Home/GetAcomodations';
-    		$.ajax(url, {
-    			data: { cityId: data.Id },
-    			type: "get",
-    			contentType: "application/json; charset=utf-8",
-    			success: function (data) {
-    				self.Acomodations(data.Acomodations);
-    				$("#rooms").hide();
-    				if (data.Acomodations.length > 0) {
-    				    $("#acomodations").show();
-    				}
-    				else {
-    				    $("#acomodations").hide();
-    				}
-    			},
-    			error: function (jqXHR, textStatus, errorThrown) {
-    				console.log(textStatus + ': ' + errorThrown);
-    			}
-    		});
-    	}
-    	self.getRooms = function (data) {
-    	    var url = '/Home/GetRooms';
-    	    $.ajax(url, {
-    	        data: { acomodationId: data.Id },
-    	        type: "get",
-    	        contentType: "application/json; charset=utf-8",
-    	        success: function (data) {
-    	            self.Rooms(data.Rooms);
-    	            if (data.Rooms.length > 0) {
-    	                $("#rooms").show();
-    	            }
-    	            else {
-    	                $("#rooms").hide();
-    	            }
-    	        },
-    	        error: function (jqXHR, textStatus, errorThrown) {
-    	            console.log(textStatus + ': ' + errorThrown);
-    	        }
-    	    });
-    	}
+        var url = '/Home/GetCities';
+        $.ajax(url, {
+            data: { countryId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Cities(data.Cities);
+                $("#acomodations").hide();
+                $("#rooms").hide();
+                if (data.Cities.length > 0) {
+                    $("#cities").show();
+                }
+                else {
+                    $("#cities").hide();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+        self.getAcomodations = function (data) {
+            var url = '/Home/GetAcomodations';
+            $.ajax(url, {
+                data: { cityId: data.Id },
+                type: "get",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    self.Acomodations(data.Acomodations);
+                    $("#rooms").hide();
+                    if (data.Acomodations.length > 0) {
+                        $("#acomodations").show();
+                    }
+                    else {
+                        $("#acomodations").hide();
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus + ': ' + errorThrown);
+                }
+            });
+        }
+        self.getRooms = function (data) {
+            var url = '/Home/GetRooms';
+            $.ajax(url, {
+                data: { acomodationId: data.Id },
+                type: "get",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    self.Rooms(data.Rooms);
+                    if (data.Rooms.length > 0) {
+                        $("#rooms").show();
+                    }
+                    else {
+                        $("#rooms").hide();
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus + ': ' + errorThrown);
+                }
+            });
+        }
 
-    	self.bookRoom = function (data) {
-    	    var url = '/Home/AddReservation';
-    	    $.ajax(url, {
-    	    	data:{  DateOfReservation: Date.now.toString()},
-    	        data: { DateOfStart: data.DateOfStart },
-    	        data: { DateOfEnd: data.DateOfEnd },
-    	        data: { NumberOfPeople: data.NumberOfPeople },
-                data: { TotalPayment: data.TotelPayment},
-    	        type: "get",
-    	        contentType: "application/json; charset=utf-8",
-    	        success: function (data) {
-    	        	self.Reservation(data.Reservation);
-    	        },
-    	        error: function (jqXHR, textStatus, errorThrown) {
-    	            console.log(textStatus + ': ' + errorThrown);
-    	        }
+        self.bookRoom = function (data) {
+            var url = '/Home/AddReservation';
+            $.ajax(url, {
+                data: { DateOfReservation: Date.now.toString() },
+                data: { DateOfStart: data.DateOfStart },
+                data: { DateOfEnd: data.DateOfEnd },
+                data: { NumberOfPeople: data.NumberOfPeople },
+                data: { TotalPayment: data.TotelPayment },
+                type: "get",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    self.Reservation(data.Reservation);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus + ': ' + errorThrown);
+                }
 
-    	    });
+            });
+        }
+        self.getTotalPrice = function (data) {
+            var url = '/Home/GetTotalPayment';
+            $.ajax(url, {
+                data: { DateOfStart: data.DateOfStart },
+                data: { DateOfEnd: data.DateOfEnd },
+                data: { Price: data.Price },
+                type: "get",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    self.TotalPrice = data.TotalPrice
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus + ': ' + errorThrown);
+                }
 
-    	    self.getTotalPrice = function (data) {
-    	        var url = '/Home/GetTotalPayment';
-    	        $.ajax(url, {
-    	            data: { DateOfStart: data.DateOfStart },
-    	            data: { DateOfEnd: data.DateOfEnd },
-    	            data: { Price: data.Price },
-    	            type: "get",
-    	            contentType: "application/json; charset=utf-8",
-    	            success: function (data) {
-    	                self.TotalPrice=data.TotalPrice
-    	            },
-    	            error: function (jqXHR, textStatus, errorThrown) {
-    	                console.log(textStatus + ': ' + errorThrown);
-    	            }
+            });
+        }
 
-    	        });
-    	    }
-
-    	}
     }
 }
+
