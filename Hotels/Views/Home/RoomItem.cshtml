@@ -42,19 +42,19 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input type="datetime-local" min="@DateTime.Now"  required  >
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="value:DateOfStart" >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input type="datetime-local" min="@DateTime.Now.AddDays(+1)" required  > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="value:DateOfEnd"  > 
 			<br />
 
-            <label for="NumberOfPeople">Number of people</label>
-            <input id="NumberOfPeople" type="text" class="form-control" data-bind="value: NumberOfPeople" />
+            <label for="NrOfPeople">Number of people</label>
+            <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" />
 
-            <label for="TotalPayment">Total payment</label>
-            <input id="TotalPayment" type="text" class="form-control" data-bind="value: TotalPayment" />
+            <label for="TotalPrice">Total payment</label>
+            <input id="TotalPrice" type="text" class="form-control" data-bind="value:TotalPrice"/>
 
           
         </div>

@@ -1,6 +1,7 @@
 ﻿using Hotels.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,7 @@ namespace DataLayer
         public RoomReservation Room { get; set; }
         public int UserId { get; set; }
         public ApplicationUser User { get; set;}
-
-		public Reservation()
+        public Reservation()
 		{
 
 		}

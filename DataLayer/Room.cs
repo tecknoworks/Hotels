@@ -28,7 +28,14 @@ namespace DataLayer
         public int NumberOfRoomsAvailable { get; set; }
 
         public int AcomodationId { get; set; }
+        [NotMapped]
+        public int NrOfPeople {
 
+            get
+            {
+                return NumberOfAdults + NumberOfChildren;
+            }
+        }
         public Acomodation Acomodation { get; set; }
         public Room() { }
         public Room(RoomType Type, float Price, int NumberOfAdults, int NumberOfChildren, string RoomPhoto, string Description, int NumberOfRoomsAvailable,int AcomodationId)

@@ -5,6 +5,7 @@
     self.Acomodations = ko.observableArray();
     self.Rooms = ko.observableArray();
     self.Reservation = ko.observableArray();
+    self.RoomReservation = ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -26,6 +27,8 @@
     self.TotalPayment = ko.observable();
     self.DateOfEnd = ko.observable();
     self.DateOfStart = ko.observable();
+    self.TotalPrice = ko.observable();
+    self.NrOfPeople = ko.observable();
    
 
     self.details = function (data) {
@@ -49,6 +52,8 @@
     	self.TotalPayment(data.TotalPayment);
     	self.DateOfStart(data.DateOfStart);
     	self.DateOfEnd(data.DateOfEnd);
+    	self.TotalPrice(data.TotalPrice);
+    	self.NrOfPeople(data.NrOfPeople);
     };
 
     self.refresh = function () {
@@ -57,7 +62,6 @@
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                //console.log(data);
                 self.Countries(data.Countries);
                 $("#cities").hide();
                 $("#acomodations").hide();
@@ -149,11 +153,7 @@
     	        contentType: "application/json; charset=utf-8",
     	        success: function (data) {
     	            self.Reservation(data.Reservation);
-    	        //    if (data.DateOfStart>Date.now.toString) {
-    	        //    	$("#reservations").show();
-    	        //    	else {
-				//		$("#reservations").hide();
-    	        },
+     	        },
     	        error: function (jqXHR, textStatus, errorThrown) {
     	            console.log(textStatus + ': ' + errorThrown);
     	        }
