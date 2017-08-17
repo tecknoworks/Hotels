@@ -136,6 +136,7 @@
     	        }
     	    });
     	}
+
     	self.bookRoom = function (data) {
     	    var url = '/Home/AddReservation';
     	    $.ajax(url, {
@@ -144,15 +145,10 @@
     	        data: { DateOfEnd: data.DateOfEnd },
     	        data: { NumberOfPeople: data.NumberOfPeople },
                 data: { TotalPayment: data.TotelPayment},
-                
     	        type: "get",
     	        contentType: "application/json; charset=utf-8",
     	        success: function (data) {
-    	            self.Reservation(data.Reservation);
-    	        //    if (data.DateOfStart>Date.now.toString) {
-    	        //    	$("#reservations").show();
-    	        //    	else {
-				//		$("#reservations").hide();
+    	        	self.Reservation(data.Reservation);
     	        },
     	        error: function (jqXHR, textStatus, errorThrown) {
     	            console.log(textStatus + ': ' + errorThrown);

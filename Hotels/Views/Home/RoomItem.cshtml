@@ -41,8 +41,8 @@
 
             <label for="DateOfStart">Date of start</label>
 			<br>
-		
-			<input type="datetime-local" min="@DateTime.Now"  required  >
+			<input type="datetime-local" min="@DateTime.Today.TimeOfDay.ToString()" required>
+			@*<input type="datetime-local" min="@DateTime.Now.ToString()"  required  >*@
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
