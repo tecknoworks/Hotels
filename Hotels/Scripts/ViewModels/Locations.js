@@ -162,7 +162,7 @@
     	    });
 
     	    self.getTotalPrice = function (data) {
-    	        var url = '/Home/GetTotalPrice';
+    	        var url = '/Home/GetTotalPayment';
     	        $.ajax(url, {
     	            data: { DateOfStart: data.DateOfStart },
     	            data: { DateOfEnd: data.DateOfEnd },

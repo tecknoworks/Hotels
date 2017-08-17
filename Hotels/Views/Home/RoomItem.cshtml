@@ -42,12 +42,12 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="click:DateOfStart" >
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="value:DateOfStart" >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="click:DateOfEnd"  > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="value:DateOfEnd"  > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>

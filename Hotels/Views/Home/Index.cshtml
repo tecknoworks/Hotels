@@ -16,16 +16,18 @@
         .col-md-4 tr:hover {
 			background-color: white;
 		}
-h5 {
+.carousel {
     width: 500px;
     height: 40px;
     background: rgb(118, 92, 106);
   -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
-    transition: width 2s, height 4s;;
+    transition: width 2s, height 4s;
 }
-h5:hover {
+.carousel:hover {
     width: 1000px;
+	 height: 700px;
 }
+
 </style>
 
 @{
@@ -36,11 +38,37 @@ h5:hover {
 	<h1 style="color:black">Teckbook</h1>
 	<p class="lead" style="color:black">Every month 120+ million visitors use Teckbook to search hotels, read reviews & browse photos. Find your ideal hotel deal right here.
 	Please use the site one by one.</p>
-	
 </div>
 
-<h5 style="color:white;font-size:x-large">   Unforgettable trips start here! </h5>
+<div class="carousel" onmouseover="myMap()" onmouseout="myMapOut()" style="color:white;font-size:x-large;">   Unforgettable trips start here!
+	<div id="googleMap1" style="width:300px;height:200px;visibility:hidden"></div>
+	<br>
+
+	<script>
+function myMap(map1) {
+  var mapOptions1 = {
+    center: new google.maps.LatLng(51.508742,-0.120850),
+    zoom:1,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+  document.getElementById("googleMap1").style.visibility = "visible";
+}
+function myMapOut(map1) {
+	var mapOptions1 = {
+		center: new google.maps.LatLng(51.508742, -0.120850),
+		zoom: 9,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+	document.getElementById("googleMap1").style.visibility = "hidden";
+}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&callback=myMap"></script>
+</div>
 <br />
+
+
 
     <div id="countries" class="col-md-4">
 	    <table class="table" style="width:90%" >
@@ -152,8 +180,6 @@ h5:hover {
         ko.applyBindings(vm, $("#rooms").get(0));
     });
 
-    function onMouse(x) {
-    	x.style.border.color = "green";
-    }
+  
 
 </script>
