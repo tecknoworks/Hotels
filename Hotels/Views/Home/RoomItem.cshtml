@@ -42,21 +42,19 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="value:DateOfStart" >
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="click:DateOfStart" >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="value:DateOfEnd"  > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="click:DateOfEnd"  > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>
             <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" />
 
             <label for="TotalPrice">Total payment</label>
-            <input id="TotalPrice" type="text" class="form-control" data-bind="value:TotalPrice"/>
-
-          
+            <input id="TotalPrice" type="text" class="form-control" data-bind="click:Locations.getTotalPayment"/>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-bind="click:Locations.bookRoom">Book room</button>

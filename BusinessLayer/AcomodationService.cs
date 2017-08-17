@@ -375,6 +375,10 @@ namespace BusinessLayer
         {
             return new AcomodationFacility(facilityId, acomodationId);
         }
+        public float GetTotalPayment(DateTime dateOfStart,DateTime dateOfEnd,float price)
+        {
+            return dateOfEnd.Date.Subtract(dateOfStart.Date).Days * price;
+        }
     }
     
 }
