@@ -27,6 +27,7 @@
     self.TotalPayment = ko.observable();
     self.DateOfEnd = ko.observable();
     self.DateOfStart = ko.observable();
+    self.DateOfReservation=ko.observable();
     self.TotalPrice = ko.observable();
     self.NrOfPeople = ko.observable();
    
@@ -144,7 +145,7 @@
     	self.bookRoom = function (data) {
     	    var url = '/Home/AddReservation';
     	    $.ajax(url, {
-
+    	    	data:{  DateOfReservation: Date.now.toString()},
     	        data: { DateOfStart: data.DateOfStart },
     	        data: { DateOfEnd: data.DateOfEnd },
     	        data: { NumberOfPeople: data.NumberOfPeople },
@@ -157,6 +158,7 @@
     	        error: function (jqXHR, textStatus, errorThrown) {
     	            console.log(textStatus + ': ' + errorThrown);
     	        }
+
     	    });
 
 
