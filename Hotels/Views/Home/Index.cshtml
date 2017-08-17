@@ -52,7 +52,7 @@ h5:hover {
 		    </thead>
 		    <tbody data-bind="foreach:Countries">
 			    <tr >
-				    <td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px">
+				    <td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black">
 					    <h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem" 
 						    style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
 				    </td>
@@ -73,7 +73,7 @@ h5:hover {
 		    </thead>
 		    <tbody data-bind="foreach:Cities">
 			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);">
+				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
 					    <h4 data-bind="text: Name, click:$parent.getAcomodations" data-target="#cityItem"
 						    style="font-size:large"> </h4>
 				    </td>
@@ -93,7 +93,7 @@ h5:hover {
 		    </thead>
 		    <tbody data-bind="foreach:Acomodations">
 			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41)">
+				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
 					    <h4 data-bind="text: Name, click:$parent.getRooms" data-target="#acomodationItem"
 						    style="font-size:large;margin-right: 5px"> </h4>
 				    </td>
@@ -120,7 +120,7 @@ h5:hover {
             <tbody data-bind="foreach:Rooms">
 
                 <tr >
-                    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);">
+                    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
                         <h4 data-bind="text:RoomType" style="font-size:large;margin-right: 5px"></h4>
                     </td>
             
