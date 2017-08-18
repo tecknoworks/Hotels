@@ -252,6 +252,15 @@
     <br />
     <label style="color:white">* All the fields are required</label> 
     <br />
-    <input type="button" value="Add acomodation" />
+    <input type="button" value="Add acomodation" onclick="onButton()" />
 
 </div>
+<script>
+	function onButton() {
+		if ((City.value=="")||(Address.value=="")||(Name.value=="")||(NumberOfStars.value="")||(Description.value="")||
+			(PhoneNumber.value=="")||(WebSite.value=="")||(Price.value=="")||(NumerOfChildren=="")||(NumberOfAdults=="")||
+			(NumerOfRoomsAvailabe=="")){
+			alert('Please complete all required fields');
+		}
+	}
+</script>

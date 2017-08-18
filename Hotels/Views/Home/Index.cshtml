@@ -27,7 +27,12 @@
     width: 1000px;
 	 height: 700px;
 }
-
+.progress{
+		width: 300px;
+		height: 200px;
+		visibility: hidden!important;
+	
+	}
 </style>
 
 @{
@@ -41,28 +46,30 @@
 </div>
 
 <div class="carousel" onmouseover="myMap()" onmouseout="myMapOut()" style="color:white;font-size:x-large;">   Unforgettable trips start here!
-	<div id="googleMap1" style="width:300px;height:200px;visibility:hidden"></div>
+	<div id="googleMap1" class="progress" style="visibility:hidden"></div>
 	<br>
 
-    <script>
-        function myMap(map1) {
-          var mapOptions1 = {
-            center: new google.maps.LatLng(51.508742,-0.120850),
-            zoom:1,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-          var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
-          document.getElementById("googleMap1").style.visibility = "visible";
-        }
-        function myMapOut(map1) {
-	        var mapOptions1 = {
-		        center: new google.maps.LatLng(51.508742, -0.120850),
-		        zoom: 9,
-		        mapTypeId: google.maps.MapTypeId.ROADMAP
-	        };
-	        var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
-	        document.getElementById("googleMap1").style.visibility = "hidden";
-        }
+	<script>
+function myMap(map1) {
+  var mapOptions1 = {
+    center: new google.maps.LatLng(51.508742,-0.120850),
+    zoom:1,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+  document.getElementById("googleMap1").style.visibility = "visible";
+  //document.getElementById("googleMap1").style.display = "block";
+
+}
+function myMapOut(map1) {
+	var mapOptions1 = {
+		center: new google.maps.LatLng(51.508742, -0.120850),
+		zoom: 9,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+	document.getElementById("googleMap1").style.visibility = "hidden";
+}
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&callback=myMap"></script>
 </div>
