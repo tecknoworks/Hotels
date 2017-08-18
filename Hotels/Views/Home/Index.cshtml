@@ -27,7 +27,12 @@
     width: 1000px;
 	 height: 700px;
 }
-
+.progress{
+		width: 300px;
+		height: 200px;
+		visibility: hidden!important;
+	
+	}
 </style>
 
 @{
@@ -41,7 +46,7 @@
 </div>
 
 <div class="carousel" onmouseover="myMap()" onmouseout="myMapOut()" style="color:white;font-size:x-large;">   Unforgettable trips start here!
-	<div id="googleMap1" style="width:300px;height:200px;visibility:hidden"></div>
+	<div id="googleMap1" class="progress" style="visibility:hidden"></div>
 	<br>
 
 	<script>
@@ -53,6 +58,8 @@ function myMap(map1) {
   };
   var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
   document.getElementById("googleMap1").style.visibility = "visible";
+  //document.getElementById("googleMap1").style.display = "block";
+
 }
 function myMapOut(map1) {
 	var mapOptions1 = {
