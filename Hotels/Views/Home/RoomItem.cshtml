@@ -6,24 +6,24 @@
         </div>
         <div class="modal-body">
             <label for="RoomType">Type</label>
-            <input id="RoomType" type="text" class="form-control" data-bind="value: RoomType" />
+            <input id="RoomType" type="text" class="form-control" data-bind="value: RoomType" readonly />
 
             <img width="275" height="260" align="right" data-bind="attr:{src: RoomPhoto}" />
 
         
             <label for="Description">Description</label>
-            <input id="Description" type="text" class="form-control" data-bind="value: Description" />
+            <input id="Description" type="text" class="form-control" data-bind="value: Description" readonly />
         
             <label for="NumberOfAdults">Number of adults</label>
-            <input id="NumberOfAdults" type="text" class="form-control" data-bind="value: NumberOfAdults" />
+            <input id="NumberOfAdults" type="text" class="form-control" data-bind="value: NumberOfAdults"  readonly/>
             <label for="NumberOfChildren">Number of children</label>
-            <input id="NumberOfChildren" type="text" class="form-control" data-bind="value: NumberOfChildren" />
+            <input id="NumberOfChildren" type="text" class="form-control" data-bind="value: NumberOfChildren"  readonly/>
        
             <label for="Price">Price</label>
-            <input id="Price" type="text" class="form-control" data-bind="value: Price" />
+            <input id="Price" type="text" class="form-control" data-bind="value: Price"  readonly/>
        
             <label for="NumberOfRoomsAvailable">Number of rooms available</label>
-            <input id="NumberOfRoomsAvailable" type="text" class="form-control" data-bind="value: NumberOfRoomsAvailable" />
+            <input id="NumberOfRoomsAvailable" type="text" class="form-control" data-bind="value: NumberOfRoomsAvailable" readonly />
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -42,25 +42,24 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="DateOfStart, click:$parent.getTotalPayment"  >
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required="required" class="form-control" data-bind="DateOfStart, click:Locations.getTotalPayment"  >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd, click:$parent.getTotalPayment" " > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd, click:Locations.getTotalPayment" > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>
-            <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" />
+            <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" readonly/>
 
             <label for="TotalPayment">Total payment</label>
-            <input id="TotalPayment" type="text" class="form-control" data-bind="TotalPayment"/>
+            <input id="TotalPayment" type="text" class="form-control" data-bind="click:Locations.getTotalPayment"/>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-bind="click:$parent.bookRoom" >Book room</button>
+            <button type="button" class="btn btn-default" data-bind="click:Locations.bookRoom" >Book room</button>
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="~/Scripts/ViewModels/Locations.js"></script>
