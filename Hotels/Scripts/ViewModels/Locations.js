@@ -28,7 +28,6 @@
     self.DateOfEnd = ko.observable();
     self.DateOfStart = ko.observable();
     self.DateOfReservation = ko.observable();
-    self.TotalPrice = ko.observable();
     self.NrOfPeople = ko.observable();
 
 
@@ -53,7 +52,6 @@
         self.TotalPayment(data.TotalPayment);
         self.DateOfStart(data.DateOfStart);
         self.DateOfEnd(data.DateOfEnd);
-        self.TotalPrice(data.TotalPrice);
         self.NrOfPeople(data.NrOfPeople);
     };
 
@@ -161,7 +159,7 @@
 
             });
         }
-        self.getTotalPrice = function (data) {
+        self.getTotalPayment = function (data) {
             var url = '/Home/GetTotalPayment';
             $.ajax(url, {
                 data: { DateOfStart: data.DateOfStart },
@@ -170,7 +168,7 @@
                 type: "get",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    self.TotalPrice = data.TotalPrice
+                    self.TotalPayment(data.TotalPayment)
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus + ': ' + errorThrown);

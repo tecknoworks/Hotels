@@ -2,7 +2,7 @@
     <h3 style="color:white">Add a new acomodation</h3>
     <br />
 
-    <label style="color:white">Country</label>
+    <label style="color:white">Country*</label>
     <select>
         <option>Select the country...</option>
         <option value="AF">Afghanistan</option>
@@ -167,14 +167,14 @@
     </select>
         <br />
         <br />
-        <label style="color:white">City</label>
+        <label style="color:white">City*</label>
         <input id="City" type="text" data-bind="City" />
         <br />
         
         <h3 style="color:white">Acomodation details</h3>
         <br />
   
-        <label style="color:white">Type</label>
+        <label style="color:white">Type*</label>
         <select >
             <option>Select the type...</option>
             <option value="Hotel">Hotel</option>
@@ -184,32 +184,32 @@
         </select>
         <br />
 
-        <label style="color:white">Address</label>
+        <label style="color:white">Address*</label>
         <input id="Address" type="text" data-bind="Address" size="25" />
         <br />
 
-        <label style="color:white">Name</label>
+        <label style="color:white">Name*</label>
         <input id="Name" type="text" data-bind="Name" size="27" />
         <br />
 
-        <label style="color:white">Nr. of stars</label>
+        <label style="color:white">Nr. of stars*</label>
         <input id="NumberOfStars" type="text" data-bind="NumberOfStars" size="22" />
         <br />
 
-        <label style="color:white">Description</label>
+        <label style="color:white">Description*</label>
         <input id="Description" type="text" data-bind="Description" size="21" />
         <br />
 
-        <label style="color:white">Phone number</label>
-        <input id="PhoneNumber" type="text" data-bind="PhoneNumber" size="18" />
+        <label style="color:white">Phone number*</label>
+        <input id="PhoneNumber" type="text" data-bind="PhoneNumber" size="19" />
         <br />
 
-        <label style="color:white">Web site</label>
+        <label style="color:white">Web site*</label>
         <input id="WebSite" type="text" data-bind="WebSite" size="24" />
         <br />
 
         <form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
-            <label style="color:white">Acomodation photo</label>
+            <label style="color:white">Acomodation photo*</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
         </form>
         <br />
@@ -218,7 +218,7 @@
         <h3 style="color:white">Room details:</h3>
         <br />
 
-        <label style="color:white">Room type</label>
+        <label style="color:white">Room type*</label>
         <select>
             <option>Select the type...</option>
             <option value="Single">Single</option>
@@ -230,28 +230,28 @@
         </select>
         <br />
 
-        <label style="color:white">Price</label>
+        <label style="color:white">Price*</label>
         <input id="Price" type="text" data-bind="Price" size="17"/>
         <br />
 
-        <label style="color:white">Nr. of children</label>
+        <label style="color:white">Nr. of children*</label>
         <input id="NumerOfChildren" type="text" data-bind="NumberOfChildren" size="8" />
         <br />
 
-        <label style="color:white">Nr. of adults</label>
+        <label style="color:white">Nr. of adults*</label>
         <input id="NumberOfAdults" type="text" data-bind="NumberOfAdults" size="10" />
         <br />
-        <label style="color:white">Nr. of rooms available</label>
+        <label style="color:white">Nr. of rooms available*</label>
         <input id="NumerOfRoomsAvailabe" type="text" data-bine="NumberOfRoomsAvailable"size="1" />
         <br />
         <form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
-            <label style="color:white">Room photo</label>
+            <label style="color:white">Room photo*</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
         </form>
     <br />
     <br />
-
-
+    <label style="color:white">* All the fields are required</label> 
+    <br />
     <input type="button" value="Add acomodation" />
 
 </div>

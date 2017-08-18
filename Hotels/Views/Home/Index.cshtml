@@ -44,25 +44,25 @@
 	<div id="googleMap1" style="width:300px;height:200px;visibility:hidden"></div>
 	<br>
 
-	<script>
-function myMap(map1) {
-  var mapOptions1 = {
-    center: new google.maps.LatLng(51.508742,-0.120850),
-    zoom:1,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
-  document.getElementById("googleMap1").style.visibility = "visible";
-}
-function myMapOut(map1) {
-	var mapOptions1 = {
-		center: new google.maps.LatLng(51.508742, -0.120850),
-		zoom: 9,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
-	document.getElementById("googleMap1").style.visibility = "hidden";
-}
+    <script>
+        function myMap(map1) {
+          var mapOptions1 = {
+            center: new google.maps.LatLng(51.508742,-0.120850),
+            zoom:1,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+          var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+          document.getElementById("googleMap1").style.visibility = "visible";
+        }
+        function myMapOut(map1) {
+	        var mapOptions1 = {
+		        center: new google.maps.LatLng(51.508742, -0.120850),
+		        zoom: 9,
+		        mapTypeId: google.maps.MapTypeId.ROADMAP
+	        };
+	        var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+	        document.getElementById("googleMap1").style.visibility = "hidden";
+        }
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&callback=myMap"></script>
 </div>
@@ -80,9 +80,8 @@ function myMapOut(map1) {
 		    </thead>
 		    <tbody data-bind="foreach:Countries">
 			    <tr >
-				    <td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black">
-					    <h4 data-bind="text: Name, click:$parent.getCities" data-target="#countryItem" 
-						    style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
+				    <td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black"data-bind="click:$parent.getCities"  data-target="#countryItem">
+					    <h4 data-bind="text: Name" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
 				    </td>
 
 			    </tr>
@@ -101,9 +100,8 @@ function myMapOut(map1) {
 		    </thead>
 		    <tbody data-bind="foreach:Cities">
 			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
-					    <h4 data-bind="text: Name, click:$parent.getAcomodations" data-target="#cityItem"
-						    style="font-size:large"> </h4>
+				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
+					    <h4 data-bind="text: Name" style="font-size:large"> </h4>
 				    </td>
 			    </tr>
 		    </tbody>
@@ -121,9 +119,8 @@ function myMapOut(map1) {
 		    </thead>
 		    <tbody data-bind="foreach:Acomodations">
 			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
-					    <h4 data-bind="text: Name, click:$parent.getRooms" data-target="#acomodationItem"
-						    style="font-size:large;margin-right: 5px"> </h4>
+				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
+					    <h4 data-bind="text: Name" style="font-size:large;margin-right: 5px"> </h4>
 				    </td>
 
 				    <td  class="col-xs-5">

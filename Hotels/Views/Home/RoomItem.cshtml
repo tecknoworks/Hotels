@@ -42,25 +42,25 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="DateOfStart" >
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required class="form-control" data-bind="DateOfStart, click:$parent.getTotalPayment"  >
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd, click:getTotalPrice"  > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd, click:$parent.getTotalPayment" " > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>
             <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" />
 
-            <label for="TotalPrice">Total payment</label>
-            <input id="TotalPrice" type="text" class="form-control" data-bind="TotalPrice"/>
+            <label for="TotalPayment">Total payment</label>
+            <input id="TotalPayment" type="text" class="form-control" data-bind="TotalPayment"/>
         </div>
         <div class="modal-footer">
-            @*<button type="button" class="btn btn-default" data-bind="click:bookRoom">Book room</button>*@
-
+            <button type="button" class="btn btn-default" data-bind="click:$parent.bookRoom" >Book room</button>
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="~/Scripts/ViewModels/Locations.js"></script>
