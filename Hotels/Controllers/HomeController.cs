@@ -188,8 +188,8 @@ namespace Hotels.Controllers
         public JsonResult GetFacilities(int acomodationId)
         {
             AcomodationService service = new AcomodationService();
-            var acomodationFacilities = service.GetFacilities(acomodationId);
-            return new JsonResult() { Data = new { Acomodations = acomodationFacilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var facilities = service.GetFacilities(acomodationId);
+            return new JsonResult() { Data = new { Facilities = facilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAcomodationNearbies(int acomodationId,int nearbyId)
@@ -202,8 +202,8 @@ namespace Hotels.Controllers
         public JsonResult GetReviews(int acomodationId)
         {
             AcomodationService service = new AcomodationService();
-            var acomodations = service.GetReviews(acomodationId);
-            return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var reviews = service.GetReviews(acomodationId);
+            return new JsonResult() { Data = new { Reviews = reviews }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult AddRoom(RoomType type, float price, int numberOdAdults, int numberOfChildren, string photo, string description, int numberOfRoomsAvailable, int accomodationId)
