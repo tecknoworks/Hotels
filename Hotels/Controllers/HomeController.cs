@@ -188,8 +188,8 @@ namespace Hotels.Controllers
         public JsonResult GetFacilities(int acomodationId)
         {
             AcomodationService service = new AcomodationService();
-            var facilities = service.GetFacilities(acomodationId);
-            return new JsonResult() { Data = new { Facilities = facilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var acomodationFacilities = service.GetFacilities(acomodationId);
+            return new JsonResult() { Data = new { AcomodationFacilities = acomodationFacilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAcomodationNearbies(int acomodationId,int nearbyId)

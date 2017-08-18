@@ -128,7 +128,7 @@ function myMapOut(map1) {
 		    <tbody data-bind="foreach:Acomodations">
 			    <tr>
 				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
-					    <h4 data-bind="text: Name" style="font-size:large;margin-right: 5px" > </h4>
+					    <h4 data-bind="text: Name, click:$parent.getFacilities" style="font-size:large;margin-right: 5px" > </h4>
 				    </td>
 
 				    <td  class="col-xs-5">
@@ -141,7 +141,7 @@ function myMapOut(map1) {
 	    @Html.Partial("AcomodationItem")
     </div>
 
-    <div id="rooms" class="col-md-4" style="display:none">
+    <div id="rooms" class="col-md-4" style="display:none" >
 	    <table class="table" style="width:90%">
 		    <thead >
 			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
@@ -172,19 +172,18 @@ function myMapOut(map1) {
 	    </table>
 	    @Html.Partial("RoomItem")
     </div>
-    <div id="facilities" class="col-md-4" style="display:none">
+    <div id="facilities" class="col-md-4" style="display:none" >
     <table class="table" style="width:90%">
         <thead>
             <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
                 <th>Facilities</th>
-                <th></th>
             </tr>
         </thead>
-        <tbody data-bind="foreach:Facilities">
+        <tbody data-bind="foreach:AcomodationFacilities">
 
             <tr>
                 <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
-                    <h4 data-bind="text:Description" style="font-size:large;margin-right: 5px"></h4>
+                    <h4 data-bind="text:FacilityDescription" style="font-size:large;margin-right: 5px"></h4>
             </tr>
 
         </tbody>

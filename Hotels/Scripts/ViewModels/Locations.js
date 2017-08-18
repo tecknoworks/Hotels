@@ -6,7 +6,7 @@
     self.Rooms = ko.observableArray();
     self.Reservation = ko.observableArray();
     self.RoomReservation = ko.observableArray();
-    self.Facilities = ko.observableArray();
+    self.AcomodationFacilities = ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -30,6 +30,7 @@
     self.DateOfStart = ko.observable();
     self.DateOfReservation = ko.observable();
     self.NrOfPeople = ko.observable();
+    self.FacilityDescription = ko.observable();
 
 
     self.details = function (data) {
@@ -54,6 +55,7 @@
         self.DateOfStart(data.DateOfStart);
         self.DateOfEnd(data.DateOfEnd);
         self.NrOfPeople(data.NrOfPeople);
+        selfFacilityDescription(data.FacilityDescription);
     };
 
     self.refresh = function () {
@@ -140,26 +142,26 @@
                 }
             });
         }
-        //self.getFacilities = function (data) {
-        //    var url = '/Home/GetFacilities';
-        //    $.ajax(url, {
-        //        data: { acomodationId: data.Id },
-        //        type: "get",
-        //        contentType: "application/json; charset=utf-8",
-        //        success: function (data) {
-        //            self.Facilities(data.Facilities);
-        //            if (data.Facilities.length > 0) {
-        //                $("#facilities").show();
-        //            }
-        //            else {
-        //                $("#facilities").hide();
-        //            }
-        //        },
-        //        error: function (jqXHR, textStatus, errorThrown) {
-        //            console.log(textStatus + ': ' + errorThrown);
-        //        }
-        //    });
-        //}
+        self.getFacilities = function (data) {
+            var url = '/Home/GetFacilities';
+            $.ajax(url, {
+                data: { acomodationId: data.Id },
+                type: "get",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    self.AcomodationFacilities(data.AcomodationFacilities);
+                    if (data.AcomodationFacilities.length > 0) {
+                        $("#facilities").show();
+                    }
+                    else {
+                        $("#facilities").hide();
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus + ': ' + errorThrown);
+                }
+            });
+        }
 
         self.bookRoom = function (data) {
             var url = '/Home/AddReservation';
