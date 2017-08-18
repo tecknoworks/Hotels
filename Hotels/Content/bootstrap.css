@@ -249,7 +249,7 @@ th {
     page-break-after: avoid;
   }
   .navbar {
-    display: none;
+    /*display: none;*/
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -5073,13 +5073,32 @@ a.thumbnail.active {
 .alert-success .alert-link {
   color: #356635;
 }
-.alert-info {
+/*.alert-info {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #3a87ad;
-}
+}*/
 .alert-info hr {
   border-top-color: #a6e1ec;
+}
+.alert-info{
+	align-content:center;
+	width:600px;
+	height: 100px;
+    background-color:#b68ca2;
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 4s  infinite alternate;
+    animation-name: example;
+    animation-duration: 4s infinite alternate;
+}
+
+@-webkit-keyframes example {
+    from {background-color: antiquewhite;}
+    to {background-color: cornsilk;}
+}
+@keyframes example {
+    from {background-color:#b68ca2 ;}
+    to {background-color:antiquewhite;}
 }
 .alert-info .alert-link {
   color: #2d6987;
