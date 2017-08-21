@@ -16,24 +16,15 @@
         .col-md-4 tr:hover {
 			background-color: white;
 		}
-.carousel {
-    width: 500px;
-    height: 40px;
-    background: rgb(118, 92, 106);
-  -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
-    transition: width 2s, height 4s;
-}
-.carousel:hover {
-    width: 1000px;
-	 height: 700px;
-}
+
 .progress{
-		width: 300px;
-		height: 200px;
-		visibility: hidden!important;
+		width: 600px;
+		height: 300px;
+		visibility: visible!important;
 		display:normal;
 	
 	}
+
 </style>
 
 @{
@@ -42,36 +33,28 @@
 
 <div class="jumbotron">
 	<h1 style="color:black">Teckbook</h1>
-	<p class="lead" style="color:black">Every month 120+ million visitors use Teckbook to search hotels, read reviews & browse photos. Find your ideal hotel deal right here.
-	Please use the site one by one.</p>
-</div>
-
-<div class="carousel" onmouseover="myMap()" onmouseout="myMapOut()" style="color:white;font-size:x-large;">   Unforgettable trips start here!
-	<div id="googleMap1" class="progress" style="visibility:hidden"></div>
-	<br>
-
+	<p class="lead" style="color:black">
+		Every month 120+ million visitors use Teckbook to search hotels, read reviews & browse photos. Find your ideal hotel deal right here.
+		Please use the site one by one.
+	</p>
+	<br />
+	<div id="map" class="progress" style="visibility:visible;align-items:center"></div>
 	<script>
-function myMap(map1) {
-  var mapOptions1 = {
-    center: new google.maps.LatLng(51.508742,-0.120850),
-    zoom:1,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
-  document.getElementById("googleMap1").style.visibility = "visible";
-  //document.getElementById("googleMap1").style.display = "block";
-
-}
-function myMapOut(map1) {
-	var mapOptions1 = {
-		center: new google.maps.LatLng(51.508742, -0.120850),
-		zoom: 9,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
-	document.getElementById("googleMap1").style.visibility = "hidden";
-}
+		function myMap(map) {
+			var uluru = { lat: -25.363, lng: 131.044 };
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 4,
+				center: uluru
+			});
+			document.getElementById("map").style.visibility = "visible";
+			var marker = new google.maps.Marker({
+				position: uluru,
+				map: map
+			});
+		}
 	</script>
+	
+	
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&callback=myMap"></script>
 </div>
 <br />
