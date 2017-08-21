@@ -20,15 +20,18 @@ namespace DataLayer
         {
             get
             {
-                return FacilityId.ToString();
+                if (FacilityId == 0)
+                    return string.Empty;
+
+                return Facility.Description;
             }
         }
         public int AcomodationId { get; set; }
         public AcomodationFacility() { }
-		public AcomodationFacility(int FacilityId, int AcomodationId) {
-			
-			this.FacilityId = FacilityId;
-			this.AcomodationId = AcomodationId;
-		}
+		//public AcomodationFacility(int FacilityId, int AcomodationId)
+  //      {
+		//	this.FacilityId = FacilityId;
+		//	this.AcomodationId = AcomodationId;
+		//}
     }
 }

@@ -154,7 +154,12 @@ namespace BusinessLayer
         /// <param name="acomodationId">The id of the acomodation</param>
         public List<AcomodationFacility> GetFacilities(int acomodationId)
         {
-            return context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
+            //var accomodation = context.AcomodationFacilities.FirstOrDefault(a => a.AcomodationId == acomodationId);
+            //var facility = accomodation.Facility.Description;
+            //var facil =  context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
+            //return facility;
+            var facility = context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
+            return facility;
         }
 
 
@@ -373,7 +378,7 @@ namespace BusinessLayer
         /// <returns></returns>
         public AcomodationFacility AddAcomodationFacility(int facilityId,int acomodationId)
         {
-            return new AcomodationFacility(facilityId, acomodationId);
+            return null;// new AcomodationFacility(facilityId, acomodationId);
         }
         public float GetTotalPayment(DateTime dateOfStart,DateTime dateOfEnd,float price)
         {
