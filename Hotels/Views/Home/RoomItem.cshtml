@@ -42,24 +42,31 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required="required" class="form-control" data-bind="DateOfStart,click:getTotalPayment" data-target="TotalPayment" />
+			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required="required" class="form-control" data-bind="DateOfStart" />
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd, click:getTotalPayment" data-target="TotalPayment" > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd" > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>
-            <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" readonly/>
+            <input id="NrOfPeople" type="text" class="form-control" data-bind="value: NrOfPeople" readonly />
 
             <label for="TotalPayment">Total payment</label>
             <input id="TotalPayment" type="text" class="form-control" data-bind="TotalPayment"/>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-bind="click:bookRoom" style="visibility:hidden">Book room</button>
-            <button type="button" class="btn btn-default" data-bind="click:getTotalPayment">Get total price</button>
+            <button id="button1" type="button" class="btn btn-default" data-bind="click:bookRoom" style="visibility:hidden">Book room</button>
+            <button id="button2" type="button" class="btn btn-default" data-bind="TotalPayment,click:getTotalPayment" >Get total price</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </div>
 </div>
+
+<script>
+    button2.onclick = function ()
+    {
+        button1.style.visibility = "visible";
+    }
+</script>

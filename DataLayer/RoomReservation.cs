@@ -16,14 +16,6 @@ namespace DataLayer
         public Room Room { get; set;}
         public int ReservationId { get; set; }
         public Reservation Reservation;
-        [NotMapped]
-        public float RoomPrice
-        {
-            get
-            {
-                return Room.Price;
-            }
-        }
         public RoomReservation() { }
         public RoomReservation(DateTime DateOfStart,DateTime DateOfEnd,int RoomId,int ReservationId)
         {

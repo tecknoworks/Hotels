@@ -14,16 +14,16 @@ namespace Hotels.Controllers
         public ActionResult Index()
         {
 
-			return View();
+            return View();
         }
 
-		
 
-		public JsonResult GetAllCountries()
+
+        public JsonResult GetAllCountries()
         {
             AcomodationService service = new AcomodationService();
             var countries = service.GetAllCountries();
-            return new JsonResult() { Data = new { Countries = countries}, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Countries = countries }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public ActionResult About()
@@ -44,28 +44,28 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var cities = service.GetAllCities();
-            return new JsonResult() { Data = new { Cities=cities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Cities = cities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllAcomodations()
         {
             AcomodationService service = new AcomodationService();
             var acomodations = service.GetAllAcomodations();
-            return new JsonResult() { Data = new { Acomodations=acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllFacilities()
         {
             AcomodationService service = new AcomodationService();
             var facilities = service.GetAllFacilities();
-            return new JsonResult() { Data = new { Facilities=facilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Facilities = facilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllAcomodationFacilities()
         {
             AcomodationService service = new AcomodationService();
             var acomodationFacilities = service.GetAllAcomodationFacilities();
-            return new JsonResult() { Data = new { AcomodationFacilities=acomodationFacilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { AcomodationFacilities = acomodationFacilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllAcomodationNearbies()
@@ -79,35 +79,35 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var nearbyplaces = service.GetAllNearbyPlaces();
-            return new JsonResult() { Data = new { Nearbyplaces=nearbyplaces }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Nearbyplaces = nearbyplaces }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllReviews()
         {
             AcomodationService service = new AcomodationService();
             var reviews = service.GetAllReviews();
-            return new JsonResult() { Data = new { Reviews=reviews }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Reviews = reviews }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllRooms()
         {
             RoomService service = new RoomService();
             var rooms = service.GetAllRooms();
-            return new JsonResult() { Data = new {Rooms=rooms },ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Rooms = rooms }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllRoomReservations()
         {
             RoomService service = new RoomService();
             var roomReservations = service.GetAllRoomReservation();
-            return new JsonResult() { Data = new { RoomReservations=roomReservations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { RoomReservations = roomReservations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAllReservations()
         {
             RoomService service = new RoomService();
             var reservations = service.GetAllReservations();
-            return new JsonResult() { Data = new { Reservations = reservations}, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Reservations = reservations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetRooms(int acomodationId)
@@ -125,7 +125,7 @@ namespace Hotels.Controllers
         public JsonResult GetRoomReservations(int roomId, int reservationId)
         {
             RoomService service = new RoomService();
-            var rooms = service.GetRoomReservations(roomId,reservationId);
+            var rooms = service.GetRoomReservations(roomId, reservationId);
             return new JsonResult() { Data = new { Rooms = rooms }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
@@ -133,18 +133,18 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var cities = service.GetCities(countryId);
-            return new JsonResult() { Data = new { Cities=cities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Cities = cities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetAcomodations(int cityId)
         {
             AcomodationService service = new AcomodationService();
             var acomodations = service.GetAcomodations(cityId);
-            foreach(Acomodation a in acomodations)
+            foreach (Acomodation a in acomodations)
             {
-                a.AcomodationPhoto = "file.ashx?name="+a.AcomodationPhoto;
+                a.AcomodationPhoto = "file.ashx?name=" + a.AcomodationPhoto;
             }
-            return new JsonResult() { Data = new { Acomodations=acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
 
@@ -166,8 +166,8 @@ namespace Hotels.Controllers
         public JsonResult GetRoomsByPrice(float price1, float price2)
         {
             AcomodationService service = new AcomodationService();
-            var rooms = service.GetRoomsByPrice(price1,price2);
-            return new JsonResult() { Data = new {Rooms=rooms }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var rooms = service.GetRoomsByPrice(price1, price2);
+            return new JsonResult() { Data = new { Rooms = rooms }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult GetRoomsOrderByPrice(bool asc)
@@ -181,7 +181,7 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var acomodations = service.GetAcomodationsOrderByStars(asc);
-            return new JsonResult() { Data = new {Acomodations=acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
 
@@ -192,10 +192,10 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { AcomodationFacilities = acomodationFacilities }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult GetAcomodationNearbies(int acomodationId,int nearbyId)
+        public JsonResult GetAcomodationNearbies(int acomodationId, int nearbyId)
         {
             AcomodationService service = new AcomodationService();
-            var acomodations = service.GetAcomodationNearbies(acomodationId,nearbyId);
+            var acomodations = service.GetAcomodationNearbies(acomodationId, nearbyId);
             return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
@@ -209,8 +209,8 @@ namespace Hotels.Controllers
         public JsonResult AddRoom(RoomType type, float price, int numberOdAdults, int numberOfChildren, string photo, string description, int numberOfRoomsAvailable, int accomodationId)
         {
             RoomService service = new RoomService();
-            var room = service.AddRoom(type,price, numberOdAdults,  numberOfChildren, photo,  description,  numberOfRoomsAvailable,  accomodationId);
-            return new JsonResult() { Data = new {Room=room}, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var room = service.AddRoom(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+            return new JsonResult() { Data = new { Room = room }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult AddRoomReservation(DateTime dateOfStart, DateTime dateOfEnd, int roomId, int reservationId)
@@ -227,11 +227,11 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { Country = country }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult AddCity(string name,int countryId)
+        public JsonResult AddCity(string name, int countryId)
         {
             AcomodationService service = new AcomodationService();
-            var city = service.AddCity(name,countryId);
-            return new JsonResult() { Data = new { City=city }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var city = service.AddCity(name, countryId);
+            return new JsonResult() { Data = new { City = city }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
 
@@ -239,35 +239,35 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var acomodation = service.AddAcomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId);
-            return new JsonResult() { Data = new { Acomodation=acomodation }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Acomodation = acomodation }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult AddReservation(DateTime dateofReservation, DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople, int roomReservationId, int userId)
+        public JsonResult AddReservation(DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople)
         {
             AcomodationService service = new AcomodationService();
-            var resevation = service.AddReservation(dateofReservation, dateOfStart, dateOfEnd, totalPayment, numberOfPeople, roomReservationId, userId);
-            return new JsonResult() { Data = new { Reservation=resevation}, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var resevation = service.AddReservation(dateOfStart, dateOfEnd, totalPayment, numberOfPeople);
+            return new JsonResult() { Data = new { Reservation = resevation }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult AddFacility(string description)
         {
             AcomodationService service = new AcomodationService();
             var facility = service.AddFacility(description);
-            return new JsonResult() { Data = new { Facility=facility }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { Facility = facility }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult AddNearby(string name, string location, NearbyType type)
         {
             AcomodationService service = new AcomodationService();
             var nearbyPlace = service.AddNearby(name, location, type);
-            return new JsonResult() { Data = new { NearbyPlace=nearbyPlace }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { NearbyPlace = nearbyPlace }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult AddReview(DateTime date, string description, int userId, int acomodationId)
         {
             AcomodationService service = new AcomodationService();
-            var review = service.AddReview(date,description,userId,acomodationId);
-            return new JsonResult() { Data = new {Review=review }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            var review = service.AddReview(date, description, userId, acomodationId);
+            return new JsonResult() { Data = new { Review = review }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         public JsonResult AddAcomodationNearby(int nearbyId, int acomodationId)
@@ -282,13 +282,13 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var acomodationFacility = service.AddAcomodationFacility(facilityId, acomodationId);
-            return new JsonResult() { Data = new { AcomodationFacility=acomodationFacility }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult() { Data = new { AcomodationFacility = acomodationFacility }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult GetTotalPayment(DateTime dateOfEnd,DateTime dateOfStart,float price)
+        public JsonResult GetTotalPayment( DateTime? dateOfStart, DateTime? dateOfEnd, int price)
         {
             AcomodationService service = new AcomodationService();
-            var totalPayment = service.GetTotalPayment(dateOfStart, dateOfEnd, price);
+            var totalPayment = service.GetTotalPayment(dateOfStart.Value, dateOfEnd.Value, price);
             return new JsonResult() { Data = new { TotalPayment = totalPayment }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 

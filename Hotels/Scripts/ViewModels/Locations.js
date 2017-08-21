@@ -31,7 +31,6 @@
     self.DateOfReservation = ko.observable();
     self.NrOfPeople = ko.observable();
     self.FacilityDescription = ko.observable();
-    self.RoomPrice = ko.observable();
 
 
     self.details = function (data) {
@@ -57,7 +56,6 @@
         self.DateOfEnd(data.DateOfEnd);
         self.NrOfPeople(data.NrOfPeople);
         self.FacilityDescription(data.FacilityDescription);
-        self.RoomPrice(data.RoomPrice);
     };
 
     self.refresh = function () {
@@ -115,6 +113,7 @@
             success: function (data) {
                 self.Acomodations(data.Acomodations);
                 $("#rooms").hide();
+                $("#facilities").hide();
                 if (data.Acomodations.length > 0) {
                     $("#acomodations").show();
                 }
@@ -171,13 +170,14 @@
     };
 
     self.bookRoom = function (data) {
-        
+        debugger
         var url = '/Home/AddReservation';
         $.ajax(url, {
-            data: { DateOfStart: data.DateOfStart },
-            data: { DateOfEnd: data.DateOfEnd },
-            data: { NumberOfPeople: data.NumberOfPeople },
-            data: { TotalPayment: data.TotelPayment },
+            data: {
+                dateOfStart: data.DateOfStart,
+                dateOfEnd: data.DateOfEnd,
+                numberOfPeople: data.NrOfPeople,
+                 totalPayment: data.TotalPayment },
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
@@ -190,12 +190,12 @@
         });
     };
     self.getTotalPayment = function (data) {
-        if (data.DateOfStart.val !== undefined && data.DateOfEnd.val !== undefined) {
-            var url = '/Home/GetTotalPayment';
+        debugger
+        var url = '/Home/GetTotalPayment';
             $.ajax(url, {
-                data: { DateOfStart: data.DateOfStart },
-                data: { DateOfEnd: data.DateOfEnd },
-                data: { Price: data.RoomPrice },
+                data: { dateOfEnd: DateOfStart.value ,
+                        dateOfStart: DateOfEnd.value ,
+                        price: data.Price },
                 type: "get",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
@@ -205,7 +205,6 @@
                     console.log(textStatus + ': ' + errorThrown);
                 }
             });
-        }
     };
 }
 

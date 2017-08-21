@@ -25,15 +25,15 @@ namespace DataLayer
 
 		}
 
-        public Reservation(DateTime DateOfReservation,DateTime DateOfStart,DateTime DateOfEnd,float TotalPayment,int NumberOfPeople,int RoomReservationId,int UserId)
+        public Reservation(DateTime dateOfReservation,DateTime dateOfStart,DateTime dateOfEnd,float totalPayment,int numberOfPeople,int roomReservationId,int userId)
         {
-            this.DateOfReservation = DateOfReservation;
-            this.DateOfStart =DateOfStart;
-            this.DateOfEnd = DateOfEnd;
-            this.TotalPayment = TotalPayment;
-            this.NumberOfPeople = NumberOfPeople;
-            this.RoomReservationId = RoomReservationId;
-            this.UserId = UserId;
+            this.DateOfReservation = dateOfReservation;
+            this.DateOfStart =dateOfStart;
+            this.DateOfEnd = dateOfEnd;
+            this.TotalPayment = totalPayment;
+            this.NumberOfPeople = numberOfPeople;
+            this.RoomReservationId = roomReservationId;
+            this.UserId = userId;
         }
     }
 }
