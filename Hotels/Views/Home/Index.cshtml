@@ -30,13 +30,125 @@
 @{
 	ViewBag.Title = "Teckbook.com";
 }
+<div>
+	<div class="active">
+		<h1 style="color:#cea1b9">Teckbook</h1>
+		<p class="lead" style="color:darkgray">
+			Every month 120+ million visitors use Teckbook to search hotels, read reviews & browse photos. Find your ideal hotel deal right here.
+			Please use the site one by one.</p>
+		<br />
+		<div id="countries" class="col-md-4">
+			<table class="table" style="width:90%">
+				<thead style="margin-left:0px;margin-right:0px">
+					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large;">
+						<th style="width:100%;height:20px">
+							Countries
+						</th>
 
-<div class="active">
-	<h1 style="color:#cea1b9">Teckbook</h1>
-	<p class="lead" style="color:darkgray">
-		Every month 120+ million visitors use Teckbook to search hotels, read reviews & browse photos. Find your ideal hotel deal right here.
-	</p>
-	<br />
+					</tr>
+				</thead>
+				<tbody data-bind="foreach:Countries">
+					<tr>
+						<td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black" data-bind="click:$parent.getCities" data-target="#countryItem">
+							<h4 data-bind="text: Name" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			@Html.Partial("Item")
+		</div>
+		</br>
+
+
+		<div id="cities" class="col-md-4" style="display:none">
+			<table class="table" style="width:90%">
+				<thead>
+					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
+						<th>Cities</th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach:Cities">
+					<tr>
+						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
+							<h4 data-bind="text: Name" style="font-size:large"> </h4>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			@Html.Partial("CityItem")
+		</div>
+
+		<div id="acomodations" class="col-md-4" style="display:none">
+			<table class="table" style="width:90%">
+				<thead>
+					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large ">
+						<th>Properties</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach:Acomodations">
+					<tr>
+						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
+							<h4 data-bind="text: Name, click:$parent.getFacilities" style="font-size:large;margin-right: 5px"> </h4>
+						</td>
+
+						<td class="col-xs-5">
+							<input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+			@Html.Partial("AcomodationItem")
+		</div>
+
+		<div id="rooms" class="col-md-4" style="display:none">
+			<table class="table" style="width:90%">
+				<thead>
+					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
+						<th>Rooms</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach:Rooms">
+
+					<tr>
+						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
+							<h4 data-bind="text:RoomType" style="font-size:large;margin-right: 5px"></h4>
+						</td>
+
+						<td class="col-xs-5">
+
+							<input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
+						</td>
+						<td class="col-xs-5">
+							<input type="button" value="Book" class="btn btn-info" data-toggle="modal" data-target="#bookItem" data-bind="click:$parent.details" />
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+			@Html.Partial("RoomItem")
+		</div>
+		<div id="facilities" class="col-md-4" style="display:none">
+			<table class="table" style="width:90%">
+				<thead>
+					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
+						<th>Facilities</th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach:AcomodationFacilities">
+					<tr>
+						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
+							<h4 data-bind="text:FacilityDescription" style="font-size:large;margin-right: 5px"></h4>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<br />
 	<div id="map" class="progress" style="visibility:visible;align-items:center"></div>
 	<script>
 		function myMap(map) {
@@ -52,128 +164,7 @@
 			});
 		}
 	</script>
-	
-	
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&callback=myMap"></script>
-</div>
-<br />
-
-
-
-    <div id="countries" class="col-md-4">
-	    <table class="table" style="width:90%" >
-		    <thead style="margin-left:0px;margin-right:0px">
-			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large;">
-				    <th style="width:100%;height:20px">
-                    Countries</th>
-
-			    </tr>
-		    </thead>
-		    <tbody data-bind="foreach:Countries">
-			    <tr >
-				    <td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black"data-bind="click:$parent.getCities"  data-target="#countryItem">
-					    <h4 data-bind="text: Name" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
-				    </td>
-
-			    </tr>
-		    </tbody>
-	    </table>
-	    @Html.Partial("Item")
-    </div>
-
-
-    <div id="cities" class="col-md-4" style="display:none">
-	    <table class="table" style="width:90%">
-		    <thead>
-			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
-				    <th>Cities</th>
-			    </tr>
-		    </thead>
-		    <tbody data-bind="foreach:Cities">
-			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
-					    <h4 data-bind="text: Name" style="font-size:large"> </h4>
-				    </td>
-			    </tr>
-		    </tbody>
-	    </table>
-	    @Html.Partial("CityItem")
-    </div>
-
-    <div id="acomodations" class="col-md-4" style="display:none">
-	    <table class="table" style="width:90%">
-		    <thead>
-			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large ">
-				    <th >Properties</th>
-                    <th></th>
-			    </tr>
-		    </thead>
-		    <tbody data-bind="foreach:Acomodations">
-			    <tr>
-				    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
-					    <h4 data-bind="text: Name, click:$parent.getFacilities" style="font-size:large;margin-right: 5px" > </h4>
-				    </td>
-
-				    <td  class="col-xs-5">
-					    <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
-				    </td>
-				
-			    </tr>
-		    </tbody>
-	    </table>
-	    @Html.Partial("AcomodationItem")
-    </div>
-
-    <div id="rooms" class="col-md-4" style="display:none" >
-	    <table class="table" style="width:90%">
-		    <thead >
-			    <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
-				    <th>Rooms</th>
-                    <th></th>
-                    <th></th>
-			    </tr>
-		    </thead>
-            <tbody data-bind="foreach:Rooms">
-
-                <tr >
-                    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
-                        <h4 data-bind="text:RoomType" style="font-size:large;margin-right: 5px"></h4>
-                    </td>
-            
-                    <td class="col-xs-5">
-
-                        <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#roomItem" data-bind="click:$parent.details" />
-                    </td>
-                    <td class="col-xs-5">
-                        <input type="button" value="Book" class="btn btn-info" data-toggle="modal" data-target="#bookItem" data-bind="click:$parent.details" />
-                        
-
-                    </td>
-                </tr>
-
-            </tbody>
-	    </table>
-	    @Html.Partial("RoomItem")
-
-    </div>
-    <div id="facilities" class="col-md-4" style="display:none" >
-    <table class="table" style="width:90%">
-        <thead>
-            <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
-                <th>Facilities</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach:AcomodationFacilities">
-
-            <tr>
-                <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black">
-                    <h4 data-bind="text:FacilityDescription" style="font-size:large;margin-right: 5px"></h4>
-            </tr>
-
-        </tbody>
-    </table>
-</div>
-    
 
 
 
