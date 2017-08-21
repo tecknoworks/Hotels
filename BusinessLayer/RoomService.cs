@@ -49,7 +49,7 @@ namespace BusinessLayer
 		/// <param name="reservationId">The Id for a reservation</param>
         public List<RoomReservation> GetRoomReservations(int roomId,int reservationId)
         {
-            return context.RoomReservations.Where(rr => rr.RoomId == roomId && rr.ReservationId==reservationId).ToList();
+            return context.RoomReservations.Include("Room").Where(rr => rr.RoomId == roomId && rr.ReservationId==reservationId).ToList();
         }
 
 

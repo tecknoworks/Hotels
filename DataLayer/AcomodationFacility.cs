@@ -20,9 +20,6 @@ namespace DataLayer
         {
             get
             {
-                if (FacilityId == 0)
-                    return string.Empty;
-
                 return Facility.Description;
             }
         }

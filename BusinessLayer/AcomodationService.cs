@@ -154,11 +154,7 @@ namespace BusinessLayer
         /// <param name="acomodationId">The id of the acomodation</param>
         public List<AcomodationFacility> GetFacilities(int acomodationId)
         {
-            //var accomodation = context.AcomodationFacilities.FirstOrDefault(a => a.AcomodationId == acomodationId);
-            //var facility = accomodation.Facility.Description;
-            //var facil =  context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
-            //return facility;
-            var facility = context.AcomodationFacilities.Where(f => f.AcomodationId == acomodationId).ToList();
+            var facility = context.AcomodationFacilities.Include("Facility").Where(f => f.AcomodationId == acomodationId).ToList();
             return facility;
         }
 
@@ -311,7 +307,7 @@ namespace BusinessLayer
         /// <returns></returns>
         public Reservation AddReservation(DateTime dateofReservation,DateTime dateOfStart,DateTime dateOfEnd,float totalPayment,int numberOfPeople,int roomReservationId,int userId)
         {
-            return new Reservation(dateofReservation,dateOfStart,dateOfEnd,totalPayment,numberOfPeople,roomReservationId,userId);
+            return new Reservation(DateTime.Now,dateOfStart,dateOfEnd,totalPayment,numberOfPeople,roomReservationId,userId);
         }
 
 
