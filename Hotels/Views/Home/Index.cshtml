@@ -22,21 +22,36 @@
 		height: 300px;
 		visibility: visible!important;
 		display:normal;
-	
 	}
+  #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 
 </style>
 
 @{
 	ViewBag.Title = "Teckbook.com";
 }
-<div>
+
 	<div class="active">
 		<h1 style="color:#cea1b9">Teckbook</h1>
 		<p class="lead" style="color:darkgray">
 			Every month 120+ million visitors use Teckbook to search hotels, read reviews & browse photos. Find your ideal hotel deal right here.
 			Please use the site one by one.</p>
 		<br />
+		</div>
+
 		<div id="countries" class="col-md-4">
 			<table class="table" style="width:90%">
 				<thead style="margin-left:0px;margin-right:0px">
@@ -54,10 +69,20 @@
 						</td>
 					</tr>
 				</tbody>
+
 			</table>
+			<div>
+				<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+			</div>
+			<br />
+			<div id="map" class="progress" style="visibility:visible;align-items:center"></div>
 			@Html.Partial("Item")
 		</div>
-		</br>
+
+		<br />
+
+	
+		
 
 
 		<div id="cities" class="col-md-4" style="display:none">
@@ -95,7 +120,6 @@
 						<td class="col-xs-5">
 							<input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
 						</td>
-
 					</tr>
 				</tbody>
 			</table>
@@ -126,11 +150,12 @@
 							<input type="button" value="Book" class="btn btn-info" data-toggle="modal" data-target="#bookItem" data-bind="click:$parent.details" />
 						</td>
 					</tr>
-
 				</tbody>
 			</table>
 			@Html.Partial("RoomItem")
 		</div>
+
+
 		<div id="facilities" class="col-md-4" style="display:none">
 			<table class="table" style="width:90%">
 				<thead>
@@ -146,25 +171,92 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-</div>
-<br />
-	<div id="map" class="progress" style="visibility:visible;align-items:center"></div>
+
+
 	<script>
 		function myMap(map) {
 			var uluru = { lat: 44.439663, lng: 26.096306 };
+			var belagio = { lat: 46.761050, lng: 23.608344 };
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 4,
-				center: uluru
+				center: uluru,
+				mapTypeId: 'roadmap'
 			});
 			document.getElementById("map").style.visibility = "visible";
 			var marker = new google.maps.Marker({
 				position: uluru,
 				map: map
 			});
+			var marker = new google.maps.Marker({
+				position: belagio,
+				title: 'Belagio',
+				map: map
+			});
+
+		
+		// Create the search box and link it to the UI element.
+		var input = document.getElementById('pac-input');
+		var searchBox = new google.maps.places.SearchBox(input);
+		map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+		// Bias the SearchBox results towards current map's viewport.
+		map.addListener('bounds_changed', function() {
+			searchBox.setBounds(map.getBounds());
+		});
+
+		var markers = [];
+		// Listen for the event fired when the user selects a prediction and retrieve
+		// more details for that place.
+		searchBox.addListener('places_changed', function() {
+			var places = searchBox.getPlaces();
+
+			if (places.length == 0) {
+				return;
+			}
+
+			// Clear out the old markers.
+			markers.forEach(function(marker) {
+				marker.setMap(null);
+			});
+			markers = [];
+
+			// For each place, get the icon, name and location.
+			var bounds = new google.maps.LatLngBounds();
+			places.forEach(function(place) {
+				if (!place.geometry) {
+					console.log("Returned place contains no geometry");
+					return;
+				}
+				var icon = {
+					url: place.icon,
+					size: new google.maps.Size(71, 71),
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(17, 34),
+					scaledSize: new google.maps.Size(25, 25)
+				};
+
+				// Create a marker for each place.
+				markers.push(new google.maps.Marker({
+					map: map,
+					icon: icon,
+					title: place.name,
+					position: place.geometry.location
+				}));
+
+				if (place.geometry.viewport) {
+					// Only geocodes have viewport.
+					bounds.union(place.geometry.viewport);
+				} else {
+					bounds.extend(place.geometry.location);
+				}
+			});
+			map.fitBounds(bounds);
+		});
 		}
+		
+
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&callback=myMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&libraries=places&callback=myMap"></script>
 
 
 
