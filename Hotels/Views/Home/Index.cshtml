@@ -62,10 +62,10 @@
 
 					</tr>
 				</thead>
-				<tbody data-bind="foreach:Countries">
+				<tbody  data-bind="foreach:Countries">
 					<tr>
-						<td class="col-md-4" id="id1" onclick="onMouseClick();"  style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black" data-bind="click:$parent.getCities" data-target="#countryItem">
-							<h4 data-bind="text: Name";  style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
+						<td class="col-md-4"   style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black" data-bind="click:$parent.getCities" data-target="#countryItem" >
+							<h4 data-bind="text: Name"; id="id1" onclick="onMouseClick();" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
 						</td>
 					</tr>
 				</tbody>
@@ -88,14 +88,14 @@
 		<div id="cities" class="col-md-4" style="display:none">
 			<table class="table" style="width:90%">
 				<thead>
-					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
+					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large" >
 						<th>Cities</th>
 					</tr>
 				</thead>
 				<tbody data-bind="foreach:Cities">
 					<tr>
 						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
-							<h4 data-bind="text: Name" style="font-size:large"> </h4>
+							<h4  id="id2" onclick="onMouseClick1();" data-bind="text: Name"style="font-size:large"> </h4>
 						</td>
 					</tr>
 				</tbody>
@@ -259,65 +259,17 @@
 <script>
 	function onMouseClick() {
 		var x = document.getElementById('id1');
-		var map = new google.maps.Map(document.getElementById('map'));
 		var input = document.getElementById('pac-input');
-		
 		var searchBox = new google.maps.places.SearchBox(input);
-	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-		// Bias the SearchBox results towards current map's viewport.
-		map.addListener('bounds_changed', function () {
-			searchBox.setBounds(map.getBounds());
-		});
-
-		var markers = [];
-		// Listen for the event fired when the user selects a prediction and retrieve
-		// more details for that place.
-		searchBox.addListener('places_changed', function () {
-			var places = searchBox.getPlaces();
-
-			if (places.length == 0) {
-				return;
-			}
-
-			// Clear out the old markers.
-			markers.forEach(function (marker) {
-				marker.setMap(null);
-			});
-			markers = [];
-
-			// For each place, get the icon, name and location.
-			var bounds = new google.maps.LatLngBounds();
-			places.forEach(function (place) {
-				if (!place.geometry) {
-					console.log("Returned place contains no geometry");
-					return;
-				}
-				var icon = {
-					url: place.icon,
-					size: new google.maps.Size(71, 71),
-					origin: new google.maps.Point(0, 0),
-					anchor: new google.maps.Point(17, 34),
-					scaledSize: new google.maps.Size(25, 25)
-				};
-
-				// Create a marker for each place.
-				markers.push(new google.maps.Marker({
-					map: map,
-					icon: icon,
-					title: place.name,
-					position: place.geometry.location
-				}));
-
-				if (place.geometry.viewport) {
-					// Only geocodes have viewport.
-					bounds.union(place.geometry.viewport);
-				} else {
-					bounds.extend(place.geometry.location);
-				}
-			});
-			map.fitBounds(bounds);
-		});
+		input.value = x.textContent;
+		
+		
+	}
+	function onMouseClick1() {
+		var x = document.getElementById('id2');
+		var input = document.getElementById('pac-input');
+		var searchBox = new google.maps.places.SearchBox(input);
+		input.value = x.textContent;
 	}
 </script>
 
