@@ -65,17 +65,17 @@
 				<tbody  data-bind="foreach:Countries">
 					<tr>
 						<td class="col-md-4"   style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black" data-bind="click:$parent.getCities" data-target="#countryItem" >
-							<h4 data-bind="text: Name"; id="id1" onclick="onMouseClick();" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
+							<h4 id="id1" onclick="onMouseClick();"data-bind="text: Name" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
 						</td>
 					</tr>
 				</tbody>
 
 			</table>
 			<div>
-				<input id="pac-input"  class="controls" type="text" placeholder="Search Box">
+				<input id="pac-input"  class="controls" type="text" placeholder="Search Box" autocomplete="on">
 			</div>
 			<br />
-			<div id="map" class="progress" style="visibility:visible;align-items:center"></div>
+			<div id="map" class="progress" style="visibility:visible;align-items:center" ></div>
 			@Html.Partial("Item")
 		</div>
 
@@ -260,15 +260,13 @@
 	function onMouseClick() {
 		var x = document.getElementById('id1');
 		var input = document.getElementById('pac-input');
-		var searchBox = new google.maps.places.SearchBox(input);
+		//var searchBox = new google.maps.places.SearchBox(input);
 		input.value = x.textContent;
-		
-		
 	}
 	function onMouseClick1() {
 		var x = document.getElementById('id2');
 		var input = document.getElementById('pac-input');
-		var searchBox = new google.maps.places.SearchBox(input);
+		//var searchBox = new google.maps.places.SearchBox(input);
 		input.value = x.textContent;
 	}
 </script>
