@@ -191,7 +191,7 @@ public void SetTableNames()
 
 			_tableName["Mining_Route"] = "Mining_Route_input";
 
-			tableName["Other_Cost_Routes"] = "Other_Cost_Routes_input";
+			_tableName["Other_Cost_Routes"] = "Other_Cost_Routes_input";
 
 			_tableName["Ownership_Score_Weight"] = "Ownership_Score_Weight";
 
