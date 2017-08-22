@@ -19,8 +19,8 @@
             <label for="NumberOfChildren">Number of children</label>
             <input id="NumberOfChildren" type="text" class="form-control" data-bind="value: NumberOfChildren"  readonly/>
        
-            <label for="Price">Price</label>
-            <input id="Price" type="text" class="form-control" data-bind="value: Price,click:getTotalPayment"  readonly/>
+            <label for="Price">Price/night</label>
+            <input id="Price" type="text" class="form-control" data-bind="value: Price"  readonly/>
        
             <label for="NumberOfRoomsAvailable">Number of rooms available</label>
             <input id="NumberOfRoomsAvailable" type="text" class="form-control" data-bind="value: NumberOfRoomsAvailable" readonly />
@@ -57,8 +57,8 @@
             <input id="TotalPayment" type="text" class="form-control" data-bind="TotalPayment"/>
         </div>
         <div class="modal-footer">
-            <button id="button1" type="button" class="btn btn-default" data-bind="click:bookRoom" style="visibility:hidden">Book room</button>
-            <button id="button2" type="button" class="btn btn-default" data-bind="TotalPayment,click:getTotalPayment" >Get total price</button>
+            <button id="btnBook" type="button" class="btn btn-default" data-bind="click:bookRoom" style="display:none">Book room</button>
+            <button id="btnGetPrice" type="button" class="btn btn-default" data-bind="TotalPayment,click:getTotalPayment" >Get total price</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </div>

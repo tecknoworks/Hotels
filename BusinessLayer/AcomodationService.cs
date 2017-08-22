@@ -378,80 +378,10 @@ namespace BusinessLayer
         }
         public float GetTotalPayment(DateTime dateOfStart,DateTime dateOfEnd,float price)
         {
-            var date = dateOfEnd - dateOfStart;
+            var date = dateOfEnd.Date - dateOfStart.Date;
 
             return date.Days * price;
         }
-
-        //private  Dictionary<string, string> _tableName;
-
-    //public void SetTableNames()
-    //{
-    //        _tableName = new Dictionary<string, string>();
-
-    //        _tableName["Access_to_Water"] = "AccessToWater_input";
-
-    //        _tableName["Base_Real_Cost_Escalation"] = "BaseRealCostEscalation";
-
-    //        _tableName["Coal_Price"] = "CoalPrice_input";
-
-    //        _tableName["Commodity_Price"] = "CommodityPrice_input";
-
-    //        _tableName["Company_Wage_Premium"] = "CompanyWagePremium_input";
-
-    //        _tableName["Consumables_Price"] = "ConsumablePrice_input";
-
-    //        _tableName["Corporate_tas"] = "CorporateTax_input";
-
-    //        _tableName["Country_Specific_Real_Cost_Escalation"] = "CountrySpecificCostEscalation_input";
-
-    //        _tableName["Diesel_Price"] = "DieselPrice_input";
-
-    //        _tableName["Electricity_Generation_Cost"] = "ElectricityGenerationCost_input";
-
-    //        _tableName["Electricity_Grid_Price"] = "ElectricityGridPrice_input";
-
-    //        _tableName["Electricity_Source"] = "ElectricitySource_input";
-
-    //        _tableName["Employee_Wages"] = "EmployeeWages_Input";
-
-    //        _tableName["Employee_Wages_Contributions"] = "EmployeeWageContribution_input";
-
-    //        _tableName["Export_Status"] = "ExportStatus_input";
-
-    //        _tableName["Export_Tariff"] = "ExportTariff_input";
-
-    //        _tableName["HauldingDistance"] = "HaulingDistance_input";
-
-    //        _tableName["Inflation"] = "Inflation_input";
-
-    //        _tableName["Natural_Gas_Price"] = "NaturalGasPrice_input";
-
-    //        _tableName["Oil_Steel_Price"] = "OilSteelPrice_Input";
-
-    //        _tableName["Overland_Freight_Price"] = "OverlandFreightPrices_input";
-
-    //        _tableName["Port_Charges"] = "PortCharges_input";
-
-    //        _tableName["Royalities"] = "Royalties_input";
-
-    //        _tableName["Seaborne_freight"] = "SeaborneFreight_input";
-
-    //        _tableName["Share_of_Subcontractors"] = "ShareOfSubcontractors_input";
-
-    //        _tableName["Subcontractor_MarkUp"] = "SubcontractorMarkup_input";
-
-    //        _tableName["SubcontractorWagesRatio"] = "SubcontractorWagesRatio_input";
-
-    //        _tableName["SupervisionMarkup"] = "SupervisionMarkup_input";
-
-    //        _tableName["Water_Price"] = "WaterPrice_input";
-
-    //        _tableName["Water_Rights"] = "WaterRights_input";
-
-    //        _tableName["Exchange Rate"] = "ExchangeRate_Input";
-
-    //    }
 
     }
 
