@@ -77,7 +77,10 @@ namespace BusinessLayer
 		/// <returns>A new room</returns>
         public Room AddRoom(RoomType type,float price,int numberOdAdults,int numberOfChildren,string photo,string description,int numberOfRoomsAvailable,int accomodationId)
         {
-            return new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+            Room room= new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+            context.Rooms.Add(room);
+            context.SaveChanges();
+            return room;
         }
 
 
@@ -93,7 +96,10 @@ namespace BusinessLayer
 		/// <returns>A new room reservation</returns>
         public RoomReservation AddRoomReservation(DateTime dateOfStart,DateTime dateOfEnd,int roomId,int reservationId)
         {
-            return new RoomReservation(dateOfStart, dateOfEnd, roomId, reservationId);
+            RoomReservation roomReservation= new RoomReservation(dateOfStart, dateOfEnd, roomId, reservationId);
+            context.RoomReservations.Add(roomReservation);
+            context.SaveChanges();
+            return roomReservation;
 
         }
 	}

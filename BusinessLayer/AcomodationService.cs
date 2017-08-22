@@ -253,7 +253,10 @@ namespace BusinessLayer
         /// <returns>A new country</returns>
         public Country AddCountry(string name)
         {
-            return new Country(name);
+            Country country = new Country(name);
+            context.Countries.Add(country);
+            context.SaveChanges();
+            return country;
         }
 
 
@@ -267,7 +270,11 @@ namespace BusinessLayer
         /// <returns>A new city</returns>
         public City AddCity(string name,int countryId)
         {
-            return new City(name, countryId);
+            City city= new City(name, countryId);
+            context.Cities.Add(city);
+            context.SaveChanges();
+            return city;
+
         }
 
 
@@ -287,7 +294,10 @@ namespace BusinessLayer
         /// <returns></returns>
         public Acomodation AddAcomodation(AcomodationType type,string address,string name,int numberOfStars,string photo,string description,string phoneNumber,string website,int cityId)
         {
-            return new Acomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId);
+            Acomodation accomodation= new Acomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId);
+            context.Acomodations.Add(accomodation);
+            context.SaveChanges();
+            return accomodation;
         }
 
 
@@ -309,6 +319,8 @@ namespace BusinessLayer
         {
             Reservation reservation= new Reservation(DateTime.Now, dateOfStart.Date, dateOfEnd.Date, totalPayment, numberOfPeople, 1, 1);
             context.Reservations.Add(reservation);
+            context.SaveChanges();
+
             return reservation; 
         }
 
@@ -323,7 +335,10 @@ namespace BusinessLayer
         /// <returns>A new facility</returns>
         public Facility AddFacility(string description)
         {
-            return new Facility(description);
+            Facility facility= new Facility(description);
+            context.Facilities.Add(facility);
+            context.SaveChanges();
+            return facility;
         }
 
 
@@ -337,7 +352,10 @@ namespace BusinessLayer
         /// <returns>A new nearby place</returns>
         public Nearby AddNearby(string name,string location,NearbyType type)
         {
-            return new Nearby(name, location, type);
+            Nearby nearby=new Nearby(name, location, type);
+            context.NearbyPlaces.Add(nearby);
+            context.SaveChanges();
+            return nearby;
         }
 
 
@@ -352,7 +370,10 @@ namespace BusinessLayer
         /// <returns></returns>
         public Review AddReview(DateTime date,string description,int userId,int acomodationId)
         {
-            return new Review(date, description, userId, acomodationId);
+            Review review= new Review(date, description, userId, acomodationId);
+            context.Reviews.Add(review);
+            context.SaveChanges();
+            return review;
         }
 
 
@@ -364,7 +385,10 @@ namespace BusinessLayer
         /// <returns></returns>
         public AcomodationNearby AddAcomodationNearby(int nearbyId, int acomodationId)
         {
-            return new AcomodationNearby(nearbyId, acomodationId);
+            AcomodationNearby accomodationNearby=new AcomodationNearby(nearbyId, acomodationId);
+            context.AcomodationNearbyPlaces.Add(accomodationNearby);
+            context.SaveChanges();
+            return accomodationNearby;
         }
 
 

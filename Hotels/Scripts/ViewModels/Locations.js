@@ -201,15 +201,8 @@
                     $("#TotalPayment").val(data.TotalPayment);
                     $("#btnBook").show();
                     $("#btnGetPrice").hide();
-                    debugger
-                    if ($("#buttonClose").val()=="yes") {
-                        $("#DateOfStart").attr("readonly", false);
-                        $("#DateOfEnd").attr("readonly", false);
-                    }
-                    else {
-                        $("#DateOfStart").attr("readonly", true);
-                        $("#DateOfEnd").attr("readonly", true);
-                    }
+                    $("#DateOfStart").attr("readonly", true);
+                    $("#DateOfEnd").attr("readonly", true);
                         
 
                 },
