@@ -55,7 +55,7 @@
 		<div id="countries" class="col-md-4">
 			<table class="table" style="width:90%">
 				<thead style="margin-left:0px;margin-right:0px">
-					<tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large;">
+					<tr  style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff;font-size:x-large;">
 						<th style="width:100%;height:20px">
 							Countries
 						</th>
@@ -65,7 +65,7 @@
 				<tbody data-bind="foreach:Countries">
 					<tr>
 						<td class="col-md-4" style="background-color:rgba(242, 233, 238, 0.41);margin-left:0px;margin-right:0px;color:black" data-bind="click:$parent.getCities" data-target="#countryItem">
-							<h4 data-bind="text: Name" style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
+							<h4 data-bind="text: Name"; style="font-size:large;margin-left:0px;margin-right:0px"> </h4>
 						</td>
 					</tr>
 				</tbody>
