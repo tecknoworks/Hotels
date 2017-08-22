@@ -182,6 +182,7 @@
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Reservation(data.Reservation);
+                data.NumberOfRoomsAvailable = data.NumberOfRoomsAvailable - 1;
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -190,16 +191,17 @@
         });
     };
     self.getTotalPayment = function (data) {
-        debugger
         var url = '/Home/GetTotalPayment';
             $.ajax(url, {
-                data: { dateOfEnd: DateOfStart.value ,
-                        dateOfStart: DateOfEnd.value ,
+                data: { dateOfEnd: DateOfEnd.value ,
+                        dateOfStart: DateOfStart.value ,
                         price: data.Price },
                 type: "get",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    self.TotalPayment(data.TotalPayment)
+                    $("#TotalPayment").val(data.TotalPayment);
+                    $("#btnBook").show();
+                    $("#btnGetPrice").hide();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus + ': ' + errorThrown);
