@@ -307,7 +307,9 @@ namespace BusinessLayer
         /// <returns></returns>
         public Reservation AddReservation(DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople)
         {
-            return new Reservation(DateTime.Now,dateOfStart,dateOfEnd,totalPayment,numberOfPeople,1,1);
+            Reservation reservation= new Reservation(DateTime.Now, dateOfStart.Date, dateOfEnd.Date, totalPayment, numberOfPeople, 1, 1);
+            context.Reservations.Add(reservation);
+            return reservation; 
         }
 
 
@@ -376,6 +378,14 @@ namespace BusinessLayer
         {
             return null;// new AcomodationFacility(facilityId, acomodationId);
         }
+
+        /// <summary>
+        /// Returns the total price based on the number of days
+        /// </summary>
+        /// <param name="dateOfStart">The start date of the reservation </param>
+        /// <param name="dateOfEnd">The end date of the reservation</param>
+        /// <param name="price">The price of the room</param>
+        /// <returns></returns>
         public float GetTotalPayment(DateTime dateOfStart,DateTime dateOfEnd,float price)
         {
             var date = dateOfEnd.Date - dateOfStart.Date;

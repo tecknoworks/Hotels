@@ -170,19 +170,18 @@
     };
 
     self.bookRoom = function (data) {
-        debugger
         var url = '/Home/AddReservation';
         $.ajax(url, {
             data: {
-                dateOfStart: data.DateOfStart,
-                dateOfEnd: data.DateOfEnd,
+                dateOfStart:DateOfStart.value,
+                dateOfEnd: DateOfEnd.value,
                 numberOfPeople: data.NrOfPeople,
-                 totalPayment: data.TotalPayment },
+                totalPayment: TotalPayment.value },
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Reservation(data.Reservation);
-                data.NumberOfRoomsAvailable = data.NumberOfRoomsAvailable - 1;
+                data.NumberOfRoomsAvailable= data.NumberOfRoomsAvailable - 1;
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -202,6 +201,17 @@
                     $("#TotalPayment").val(data.TotalPayment);
                     $("#btnBook").show();
                     $("#btnGetPrice").hide();
+                    debugger
+                    if ($("#buttonClose").val()=="yes") {
+                        $("#DateOfStart").attr("readonly", false);
+                        $("#DateOfEnd").attr("readonly", false);
+                    }
+                    else {
+                        $("#DateOfStart").attr("readonly", true);
+                        $("#DateOfEnd").attr("readonly", true);
+                    }
+                        
+
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus + ': ' + errorThrown);
