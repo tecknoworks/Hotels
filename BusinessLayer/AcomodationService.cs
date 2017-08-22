@@ -383,7 +383,7 @@ namespace BusinessLayer
             return date.Days * price;
         }
 
-        private  Dictionary<string, string> _tableName;
+        //private  Dictionary<string, string> _tableName;
 
     //public void SetTableNames()
     //{
