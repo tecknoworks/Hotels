@@ -292,8 +292,12 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { TotalPayment = totalPayment }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-
-
+        public JsonResult GetNrOfRoomsAvailable(int nrOfRooms)
+        {
+            AcomodationService service = new AcomodationService();
+            var nrOfRoomsAvailable = service.GetNrOfRoomsAvailable(nrOfRooms);
+            return new JsonResult() { Data = new { NrOfRoomsSAvailable = nrOfRoomsAvailable }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
 
     }
 }

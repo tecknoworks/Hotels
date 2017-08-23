@@ -175,13 +175,12 @@
             data: {
                 dateOfStart:DateOfStart.value,
                 dateOfEnd: DateOfEnd.value,
-                numberOfPeople: data.NrOfPeople,
-                totalPayment: TotalPayment.value },
+                numberOfPeople: NrOfPeople.value,
+                totalPayment: TotalPayment.value},
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Reservation(data.Reservation);
-                data.NumberOfRoomsAvailable= data.NumberOfRoomsAvailable - 1;
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -211,5 +210,24 @@
                 }
             });
     };
+    self.getNrOfRoomsStillAvailable = function (data) {
+
+        var url = '/Home/GetNrOfRoomsAvailable'
+        debugger
+        $.ajax(url, {
+            
+            data: { nrOfRooms: NumberOfRoomsAvailable.value },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $("#NumberOfRoomsAvailable").val(data.NumberOfRoomsAvailable);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+
+        });
+
+    }
 }
 

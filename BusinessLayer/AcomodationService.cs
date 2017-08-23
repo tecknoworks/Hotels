@@ -416,6 +416,12 @@ namespace BusinessLayer
 
             return date.Days * price;
         }
+        public int GetNrOfRoomsAvailable(int nrOfRooms)
+        {
+            if(nrOfRooms>0)
+                return nrOfRooms - 1;
+            return 0;
+        }
 
     }
 
