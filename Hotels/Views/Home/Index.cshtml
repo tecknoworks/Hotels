@@ -73,6 +73,7 @@
 			</table>
 			<div>
 				<input id="pac-input"  class="controls" type="text" placeholder="Search Box" autocomplete="on">
+                
 			</div>
 			<br />
 			<div id="map" class="progress" style="visibility:visible;align-items:center" ></div>
@@ -260,14 +261,17 @@
 	function onMouseClick() {
 		var x = document.getElementById('id1');
 		var input = document.getElementById('pac-input');
-		//var searchBox = new google.maps.places.SearchBox(input);
+		var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
+		//var searchBox = new google.maps.places.SearchBox('pac-input');
 		input.value = x.textContent;
+
 	}
 	function onMouseClick1() {
 		var x = document.getElementById('id2');
 		var input = document.getElementById('pac-input');
 		//var searchBox = new google.maps.places.SearchBox(input);
 		input.value = x.textContent;
+	
 	}
 </script>
 
