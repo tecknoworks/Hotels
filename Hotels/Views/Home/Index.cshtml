@@ -75,18 +75,15 @@
 			</table>
 			<div>
 				<input id="pac-input"  class="controls" type="text" placeholder="Search Box" autocomplete="on">
-                <div id="map-canvas"></div>
+               
 			</div>
-			<br />
-			<div id="map" class="progress" style="visibility:visible;align-items:center" ></div>
-			@Html.Partial("Item")
-		</div>
+		
 
-        </div>
+        
         <br />
         <div id="map" class="progress" style="visibility:visible;align-items:center"></div>
         @Html.Partial("Item")
-    </div>
+   </div>
 
 
 
@@ -111,23 +108,7 @@
 
 
 
-    <div id="cities" class="col-md-4" style="display:none">
-        <table class="table" style="width:90%">
-            <thead>
-                <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
-                    <th>Cities</th>
-                </tr>
-            </thead>
-            <tbody data-bind="foreach:Cities">
-                <tr>
-                    <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
-                        <h4 id="id2" onclick="onMouseClick1();" data-bind="text: Name" style="font-size:large"> </h4>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        @Html.Partial("CityItem")
-    </div>
+    
 
     <div id="acomodations" class="col-md-4" style="display:none">
         <table class="table" style="width:90%">
@@ -212,8 +193,8 @@
             </tbody>
         </table>
     </div>
-
 </div>
+
 	<script>
 		function myMap(map) {
 			var uluru = { lat: 44.439663, lng: 26.096306 };
