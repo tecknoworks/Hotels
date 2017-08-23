@@ -150,6 +150,19 @@ namespace DataLayer.Migrations
                    PhoneNumber = "07433257963",
                    WebSite = "www.raul.fr",
                    CityId = 7
+               },
+               new Acomodation
+               {
+                   Id=4,
+                   Type= AcomodationType.Hotel,
+                   Address= "Rue de Rivoli",
+                   Name= "Hotel de Ville de Paris",
+                   NumberOfStars = 4,
+                   AcomodationPhoto = "hotel4.jpg",
+                   Description = "Close to the city center",
+                   PhoneNumber = "33142764040",
+                   WebSite = "www.villeDeParis.fr",
+                   CityId = 7
                }
                );
 
