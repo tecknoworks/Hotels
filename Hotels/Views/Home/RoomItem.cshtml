@@ -55,9 +55,12 @@
 
             <label for="TotalPayment">Total payment</label>
             <input id="TotalPayment" type="text" class="form-control" data-bind="TotalPayment" readonly/>
+
+            <h3 id="succes" style="color:red;visibility:hidden">Your book was succesful !</h3>
+
         </div>
         <div class="modal-footer">
-            <button id="btnBook" type="button" class="btn btn-default" data-bind="click: function() {bookRoom(); getNrOfRoomsStillAvailable() }" style="display:none">Book room</button>
+            <button id="btnBook" type="button" class="btn btn-default" data-bind="click:bookRoom" style="display:none">Book room</button>
             <button id="btnGetPrice" type="button" class="btn btn-default" data-bind="TotalPayment,click:getTotalPayment" >Get total price</button>
             <button id="buttonClose" type="button" class="btn btn-default" data-dismiss="modal" onclick="enableControls()">Close</button>
         </div>
