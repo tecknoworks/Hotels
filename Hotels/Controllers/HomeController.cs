@@ -242,10 +242,11 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { Acomodation = acomodation }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult AddReservation(DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople)
+        public JsonResult AddReservation(DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople,int roomId)
         {
             AcomodationService service = new AcomodationService();
-            var resevation = service.AddReservation(dateOfStart, dateOfEnd, totalPayment, numberOfPeople);
+            var resevation = service.AddReservation(dateOfStart, dateOfEnd, totalPayment, numberOfPeople,roomId);
+            
             return new JsonResult() { Data = new { Reservation = resevation }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
@@ -292,12 +293,6 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { TotalPayment = totalPayment }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult GetNrOfRoomsAvailable(int nrOfRooms)
-        {
-            AcomodationService service = new AcomodationService();
-            var nrOfRoomsAvailable = service.GetNrOfRoomsAvailable(nrOfRooms);
-            return new JsonResult() { Data = new { NrOfRoomsSAvailable = nrOfRoomsAvailable }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-        }
 
     }
 }

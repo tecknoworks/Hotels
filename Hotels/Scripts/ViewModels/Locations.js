@@ -7,6 +7,7 @@
     self.Reservation = ko.observableArray();
     self.RoomReservation = ko.observableArray();
     self.AcomodationFacilities = ko.observableArray();
+    self.Reviews=ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -68,6 +69,7 @@
                 $("#cities").hide();
                 $("#acomodations").hide();
                 $("#rooms").hide();
+                $("#reviews").hide();
                 if (data.Countries.length > 0) {
                     $("#countries").show();
                 }
@@ -91,6 +93,7 @@
                 self.Cities(data.Cities);
                 $("#acomodations").hide();
                 $("#rooms").hide();
+                $("#reviews").hide();
                 if (data.Cities.length > 0) {
                     $("#cities").show();
                 }
@@ -114,6 +117,7 @@
                 self.Acomodations(data.Acomodations);
                 $("#rooms").hide();
                 $("#facilities").hide();
+                $("#reviews").hide();
                 if (data.Acomodations.length > 0) {
                     $("#acomodations").show();
                 }
@@ -169,6 +173,27 @@
         });
     };
 
+    self.getReviews = function (data) {
+        var url = '/Home/GetReviews';
+        $.ajax(url, {
+            data: { acomodationId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Reviews(data.Reviews);
+                if (data.Reviews.length > 0) {
+                    $("#reviews").show();
+                }
+                else {
+                    $("#reviews").hide();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    };
+
     self.bookRoom = function (data) {
         var url = '/Home/AddReservation';
         $.ajax(url, {
@@ -176,11 +201,14 @@
                 dateOfStart:DateOfStart.value,
                 dateOfEnd: DateOfEnd.value,
                 numberOfPeople: NrOfPeople.value,
-                totalPayment: TotalPayment.value},
+                totalPayment: TotalPayment.value,
+                roomId: data.Id},
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Reservation(data.Reservation);
+                document.getElementById("succes").style.visibility = "visible";
+                window.setTimeout(function () { location.reload() }, 3000);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -188,6 +216,7 @@
 
         });
     };
+
     self.getTotalPayment = function (data) {
         var url = '/Home/GetTotalPayment';
             $.ajax(url, {
@@ -202,32 +231,12 @@
                     $("#btnGetPrice").hide();
                     $("#DateOfStart").attr("readonly", true);
                     $("#DateOfEnd").attr("readonly", true);
-                        
-
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus + ': ' + errorThrown);
                 }
             });
     };
-    self.getNrOfRoomsStillAvailable = function (data) {
 
-        var url = '/Home/GetNrOfRoomsAvailable'
-        debugger
-        $.ajax(url, {
-            
-            data: { nrOfRooms: NumberOfRoomsAvailable.value },
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("#NumberOfRoomsAvailable").val(data.NumberOfRoomsAvailable);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-
-        });
-
-    }
 }
 
