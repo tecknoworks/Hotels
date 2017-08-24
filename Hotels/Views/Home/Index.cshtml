@@ -121,7 +121,7 @@
             <tbody data-bind="foreach:Acomodations">
                 <tr>
                     <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
-                        <h4 data-bind="text: Name, click:$parent.getReviews" style="font-size:large;margin-right: 5px"> </h4>
+                        <h4 data-bind="text: Name, click:$parent.getReviews,click:$parent.setMapLocation" style="font-size:large;margin-right: 5px"> </h4>
                     </td>
 
                     <td class="col-xs-5">
@@ -198,7 +198,6 @@
 	<script>
 		function myMap(map) {
 			var uluru = { lat: 44.439663, lng: 26.096306 };
-			var belagio = { lat: 46.761050, lng: 23.608344 };
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 4,
 				center: uluru,
@@ -209,13 +208,7 @@
 				position: uluru,
 				map: map
 			});
-			var marker = new google.maps.Marker({
-				position: belagio,
-				title: 'Belagio',
-				map: map
-			});
-
-		
+			
 		// Create the search box and link it to the UI element.
 		var input = document.getElementById('pac-input');
 		var searchBox = new google.maps.places.SearchBox(input);
