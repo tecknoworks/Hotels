@@ -237,7 +237,7 @@
     self.getFacilities = function (data) {
         var url = '/Home/GetFacilities';
         $.ajax(url, {
-            data: { acomodationId: data.Id },
+            data: { acomodationId: data.Id},
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
