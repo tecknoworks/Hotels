@@ -96,7 +96,7 @@
 				<tbody data-bind="foreach:Cities">
 					<tr>
 						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
-							<h4 data-bind="text: Name, click:$parent.setMapLocation"style="font-size:large"> </h4>
+							<h4 data-bind="text: Name, click:$parent.setMapLocationCity"style="font-size:large"> </h4>
 						</td>
 					</tr>
 				</tbody>
@@ -120,7 +120,7 @@
             <tbody data-bind="foreach:Acomodations">
                 <tr>
                     <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
-                        <h4 data-bind="text: Name,click:$parent.getFacilities,click:$parent.setMapLocation" style="font-size:large;margin-right: 5px"> </h4>
+                        <h4 data-bind="text: Name,click:$parent.getFacilities,click:$parent.setMapLocationAcomodation" style="font-size:large;margin-right: 5px"> </h4>
                     </td>
 
                     <td class="col-xs-5">

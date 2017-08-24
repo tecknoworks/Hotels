@@ -19,7 +19,9 @@ namespace DataLayer
 		public string Description { get; set; }
 		public string PhoneNumber { get; set; }
 		public string WebSite { get; set; }
-		public int CityId { get; set; }
+        public string Lat { get; set; }
+        public string Lng { get; set; }
+        public int CityId { get; set; }
 		public City City { get; set; }
         public string AcomodationPhoto { get; set;}
         [NotMapped]

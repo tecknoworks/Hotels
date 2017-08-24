@@ -32,13 +32,13 @@ namespace DataLayer.Migrations
             
               context.Cities.AddOrUpdate(
               p => p.Id,
-              new City { Id = 1, Name = "Cluj-Napoca", CountryId = 1 },
-              new City { Id = 2, Name = "Bucuresti", CountryId = 1 },
-              new City { Id = 3, Name = "Sibiu", CountryId = 1 },
-              new City { Id = 4, Name = "Budapest", CountryId = 2 },
-              new City { Id = 5, Name = "Rome", CountryId = 3 },
-              new City { Id = 6, Name = "Berlin", CountryId = 4 },
-              new City { Id = 7, Name = "Paris", CountryId = 5 }
+              new City { Id = 1, Name = "Cluj-Napoca", CountryId = 1 ,Lat= "46.77121",Lng= "23.623635"},
+              new City { Id = 2, Name = "Bucuresti", CountryId = 1,Lat= "44.439663",Lng= "26.096306 "},
+              new City { Id = 3, Name = "Sibiu", CountryId = 1 ,Lat= "45.7983273",Lng= "24.12558260000003"},
+              new City { Id = 4, Name = "Budapest", CountryId = 2,Lat= "47.497912",Lng= "19.04023499999994" },
+              new City { Id = 5, Name = "Rome", CountryId = 3,Lat= "41.9027835",Lng= "12.496365500000024 "},
+              new City { Id = 6, Name = "Berlin", CountryId = 4 , Lat = "52.520008", Lng = "13.404954" },
+              new City { Id = 7, Name = "Paris", CountryId = 5,Lat= "48.864716",Lng= "2.349014" }
             );
             
             context.NearbyPlaces.AddOrUpdate(
@@ -122,7 +122,9 @@ namespace DataLayer.Migrations
                    Description = "Nice hotel with a great view",
                    PhoneNumber = "07433256963",
                    WebSite = "www.",
-                   CityId = 1
+                   CityId = 1,
+                   Lat= "46.761050",
+                   Lng= "23.608344"
                },
                
                new Acomodation
@@ -136,7 +138,9 @@ namespace DataLayer.Migrations
                    Description = "Great hotel with a great view",
                    PhoneNumber = "07433256994",
                    WebSite = "www.bianca&oana.com",
-                   CityId = 3
+                   CityId = 3,
+                   Lat= "45.7983273",
+                   Lng= "24.12558260000003"
                },
                new Acomodation
                {
@@ -149,7 +153,9 @@ namespace DataLayer.Migrations
                    Description = "Best price in the city of love",
                    PhoneNumber = "07433257963",
                    WebSite = "www.raul.fr",
-                   CityId = 7
+                   CityId = 7,
+                   Lat= "48.864716",
+                   Lng= "2.349014"
                },
                new Acomodation
                {
@@ -162,7 +168,9 @@ namespace DataLayer.Migrations
                    Description = "Close to the city center",
                    PhoneNumber = "33142764040",
                    WebSite = "www.villeDeParis.fr",
-                   CityId = 7
+                   CityId = 7,
+                   Lat= "48.856497",
+                   Lng= "2.352401"
                }
                );
 

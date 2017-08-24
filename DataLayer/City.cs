@@ -12,6 +12,8 @@ namespace DataLayer
         public int Id { get; set; }
 		public string Name { get; set; }
 		public int CountryId { get; set; }
+        public string Lat { get; set; }
+        public string Lng { get; set; }
 		public Country Country { get; set; }
         public City()
         {
