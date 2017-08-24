@@ -23,11 +23,11 @@ namespace DataLayer.Migrations
             //  to avoid creating duplicate seed data. E.g.
             context.Countries.AddOrUpdate(
               p => p.Id,
-              new Country { Id = 1, Name = "Romania" },
-              new Country { Id = 2, Name = "Hungary" },
-              new Country { Id = 3, Name = "Italy" },
-              new Country { Id = 4, Name = "Germany" },
-              new Country { Id = 5, Name = "France" }
+              new Country { Id = 1, Name = "Romania",Lat= "44.439663" ,Lng= "26.096306" },
+              new Country { Id = 2, Name = "Hungary",Lat= "47.497912",Lng= "19.04023499999994" },
+              new Country { Id = 3, Name = "Italy",Lat= "41.9027835",Lng= "12.496365500000024"},
+              new Country { Id = 4, Name = "Germany",Lat= "52.520008",Lng= "13.404954 " },
+              new Country { Id = 5, Name = "France",Lat= "48.864716",Lng= "2.349014" }
             );
             
               context.Cities.AddOrUpdate(
