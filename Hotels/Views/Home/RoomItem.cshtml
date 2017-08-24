@@ -42,12 +42,12 @@
             <label for="DateOfStart">Date of start</label>
 			<br>
 		
-			<input id="DateOfStart"  type="date" min="@DateTime.Now.Date"  required="required" class="form-control" data-bind="DateOfStart" />
+			<input id="DateOfStart"  type="date"   required="required" class="form-control" data-bind="DateOfStart" />
 			<br>
 
             <label for="DateOfEnd">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date" required class="form-control" data-bind="DateOfEnd" > 
+            <input id="DateOfEnd" type="date" min="@DateTime.Now.AddDays(+1).Date.ToShortDateString()" required class="form-control" data-bind="DateOfEnd" > 
 			<br />
 
             <label for="NrOfPeople">Number of people</label>
@@ -74,4 +74,21 @@
         $("#btnGetPrice").show();
     }
 
+</script>
+<script type="text/javascript">
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('DateOfStart').setAttribute("min", today);
 </script>
