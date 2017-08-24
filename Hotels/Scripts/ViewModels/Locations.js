@@ -379,7 +379,7 @@
                 self.Cities(data.Cities);
                 $("#acomodations").hide();
                 $("#rooms").hide();
-                $("#reviews").hide();
+                $("#facilities").hide();
                 if (data.Cities.length > 0) {
                     $("#cities").show();
                 }
@@ -461,6 +461,7 @@
 
     self.getReviews = function (data) {
         var url = '/Home/GetReviews';
+        
         $.ajax(url, {
             data: { acomodationId: data.Id },
             type: "get",
