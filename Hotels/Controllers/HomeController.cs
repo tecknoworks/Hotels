@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Hotels.Controllers
-{
+{    
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -33,6 +33,7 @@ namespace Hotels.Controllers
             return View();
         }
 
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -234,7 +235,7 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { City = city }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-
+        [Authorize(Roles = "Admin, Regular")]
         public JsonResult AddAcomodation(AcomodationType type, string address, string name, int numberOfStars, string photo, string description, string phoneNumber, string website, int cityId)
         {
             AcomodationService service = new AcomodationService();
@@ -286,6 +287,7 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { AcomodationFacility = acomodationFacility }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
+        [Authorize(Roles = "Regular")]
         public JsonResult GetTotalPayment( DateTime? dateOfStart, DateTime? dateOfEnd, int price)
         {
             AcomodationService service = new AcomodationService();
