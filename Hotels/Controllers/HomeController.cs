@@ -129,7 +129,7 @@ namespace Hotels.Controllers
             var rooms = service.GetRoomReservations(roomId, reservationId);
             return new JsonResult() { Data = new { Rooms = rooms }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
-
+        [Authorize(Roles = "Admin,Regular")]
         public JsonResult GetCities(int countryId)
         {
             AcomodationService service = new AcomodationService();
@@ -235,7 +235,7 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { City = city }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        [Authorize(Roles = "Admin, Regular")]
+        [Authorize(Roles = "Admin")]
         public JsonResult AddAcomodation(AcomodationType type, string address, string name, int numberOfStars, string photo, string description, string phoneNumber, string website, int cityId)
         {
             AcomodationService service = new AcomodationService();

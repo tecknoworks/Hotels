@@ -74,6 +74,7 @@
                 $("#cities").hide();
                 $("#acomodations").hide();
                 $("#rooms").hide();
+                $("#facilities").hide();
                 $("#reviews").hide();
                 if (data.Countries.length > 0) {
                     $("#countries").show();
@@ -350,15 +351,20 @@
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                self.Cities(data.Cities);
                 $("#acomodations").hide();
                 $("#rooms").hide();
                 $("#facilities").hide();
-                if (data.Cities.length > 0) {
-                    $("#cities").show();
+                if (data == "") {
+                    redirect('Account/Login');
                 }
                 else {
-                    $("#cities").hide();
+                    self.Cities(data.Cities);
+                    if (data.Cities.length > 0) {
+                        $("#cities").show();
+                    }
+                    else {
+                        $("#cities").hide();
+                    }
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -446,16 +452,12 @@
                 type: "get",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    if (data == "") {
-                        redirect('Account/Login');
-                    }
-                    else {
                         $("#TotalPayment").val(data.TotalPayment);
                         $("#btnBook").show();
                         $("#btnGetPrice").hide();
                         $("#DateOfStart").attr("readonly", true);
                         $("#DateOfEnd").attr("readonly", true);
-                    }
+                    
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus + ': ' + errorThrown);
