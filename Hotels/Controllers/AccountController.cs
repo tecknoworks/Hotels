@@ -156,12 +156,18 @@ namespace Hotels.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    var _context = new ApplicationDbContext();
+                    UserManager.AddToRole(user.Id, "Regular");
+                    //var UserManager = new UserManager<ApplicationUser>(user);
+                    //user.AddToRole("UserName", "UserRole");
+                    _context.SaveChanges();
 
                     return RedirectToAction("Index", "Home");
                 }
