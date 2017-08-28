@@ -98,9 +98,9 @@
 <script type="text/javascript">
   
     var today = new Date();
-    var dd = today.getDate()+1;
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
+    var dd = DateOfStart.getDate()+1;
+    var mm = DateOfStart.getMonth() + 1;
+    var yyyy = DateOfStart.getFullYear();
 
     if (dd < 10) {
         dd = '0' + dd
@@ -113,4 +113,34 @@
     today = yyyy + '-' + mm + '-' + dd;
 
     document.getElementById('DateOfEnd').setAttribute("min", today);
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $('#datetimePicker').datetimepicker();
+
+    $('#meetingForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            meeting: {
+                validators: {
+                    date: {
+                        format: 'MM/DD/YYYY h:m A',
+                        message: 'The value is not a valid date'
+                    }
+                }
+            }
+        }
+    });
+
+    $('#datetimePicker').on('dp.change dp.show', function(e) {
+        $('#meetingForm').formValidation('revalidateField', 'meeting');
+    });
+});
 </script>
