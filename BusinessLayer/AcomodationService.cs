@@ -424,7 +424,10 @@ namespace BusinessLayer
 
             return date.Days * price;
         }
-
+        public List<Reservation> GetReservation(int roomId)
+        {
+            return context.Reservations.Where(r => r.RoomReservationId == roomId).ToList();
+        }
 
     }
 
