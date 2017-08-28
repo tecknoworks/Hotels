@@ -315,7 +315,8 @@
                 $("#rooms").hide();
                 $("#facilities").hide();
                 if (data == "") {
-                    redirect('Account/Login');
+                    //redirect('Account/Login');
+                    window.location.href="Account/Login";
                 }
                 else {
                     self.Cities(data.Cities);
@@ -442,37 +443,6 @@
             }
 
         });
-        //$(document).ready(function () {
-        //    $('#form1')
-        //        .formValidation({
-        //            framework: 'bootstrap',
-        //            icon: {
-        //                valid: 'glyphicon glyphicon-ok',
-        //                invalid: 'glyphicon glyphicon-remove',
-        //                validating: 'glyphicon glyphicon-refresh'
-        //            },
-        //            fields: {
-        //              DateOfStart  : {
-        //                    validators: {
-        //                        notEmpty: {
-        //                            message: 'The start date is required'
-        //                        },
-        //                        date: {
-        //                            format: 'MM/DD/YYYY',
-        //                            message: 'The start date is not valid'
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        })
-        //        .find('[name="DateOfStart"]')
-        //            .datepicker({
-        //                onSelect: function (date, inst) {
-        //                    // Revalidate the field when choosing it from the datepicker
-        //                    $('#form1').formValidation('revalidateField', 'DateOfStart');
-        //                }
-        //            });
-        //});
     };
 
     self.getTotalPayment = function (data) {

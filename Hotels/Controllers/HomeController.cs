@@ -287,7 +287,7 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { AcomodationFacility = acomodationFacility }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        [Authorize(Roles = "Regular")]
+        
         public JsonResult GetTotalPayment( DateTime? dateOfStart, DateTime? dateOfEnd, int price)
         {
             AcomodationService service = new AcomodationService();
