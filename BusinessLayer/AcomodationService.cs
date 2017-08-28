@@ -315,9 +315,9 @@ namespace BusinessLayer
         /// <param name="roomReservationId">The id of the room </param>
         /// <param name="userId">The id of the user who made the reservation</param>
         /// <returns></returns>
-        public Reservation AddReservation(DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople,int roomId)
+        public Reservation AddReservation(DateTime dateOfStart, DateTime dateOfEnd, float totalPayment, int numberOfPeople,int roomId,string userId)
         {
-            Reservation reservation= new Reservation(DateTime.Now, dateOfStart.Date, dateOfEnd.Date, totalPayment, numberOfPeople, roomId, 1);
+            Reservation reservation= new Reservation(DateTime.Now, dateOfStart.Date, dateOfEnd.Date, totalPayment, numberOfPeople, roomId, userId);
             context.Reservations.Add(reservation);
 
             Room room = context.Rooms.FirstOrDefault(r => r.Id == roomId);
@@ -376,7 +376,7 @@ namespace BusinessLayer
         /// <param name="userId">The user who made the review</param>
         /// <param name="acomodationId">The Id of the acomodation</param>
         /// <returns></returns>
-        public Review AddReview(DateTime date,string description,int userId,int acomodationId)
+        public Review AddReview(DateTime date,string description,string userId,int acomodationId)
         {
             Review review= new Review(date, description, userId, acomodationId);
             context.Reviews.Add(review);
