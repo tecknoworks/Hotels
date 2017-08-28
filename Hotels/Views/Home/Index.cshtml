@@ -95,8 +95,8 @@
 				</thead>
 				<tbody data-bind="foreach:Cities">
 					<tr>
-						<td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
-							<h4 data-bind="text: Name, click:$parent.setMapLocationCity"style="font-size:large"> </h4>
+						<td  onclick="stars()"class="col-xs-5"  style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getAcomodations" data-target="#cityItem">
+							<h4 data-bind="text: Name , click:$parent.setMapLocationCity"style="font-size:large"> </h4>
 						</td>
 					</tr>
 				</tbody>
@@ -120,7 +120,14 @@
             <tbody data-bind="foreach:Acomodations">
                 <tr>
                     <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
-                        <h4 data-bind="text: Name,click:$parent.setMapLocationAcomodation" style="font-size:large;margin-right: 5px"> </h4>
+                        
+  
+                        <h4 data-bind="text: Name ,click:$parent.setMapLocationAcomodation" style="font-size:large;margin-right: 5px" > </h4>
+                        @*<div data-bind="if: $data.NumberOfStars=1">&#11088;</div>
+                        <div data-target="#NumberOfStars" data-bind="if: $NumberOfStars=2">&#11088;&#11088;</div>*@
+                        <div data-target="#NumberOfStars" data-bind="if:$NumberOfStars=3">&#11088;&#11088;&#11088;</div>
+                        @*<div data-target="#NumberOfStars" data-bind="if:$data.NumberOfStars=4">&#11088;&#11088;&#11088;&#11088;</div>*@
+                        @*<div data-target="#numberOfStars" data-bind="if:$data.numberOfStars=2">&#11088;&#11088;</div>*@
                     </td>
 
                     <td class="col-xs-5">
@@ -270,25 +277,11 @@
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_U6W6I7vNQ61tTP2Z6QkaoORBTfsY4ZY&libraries=places&callback=myMap"></script>
 
-@*<script  type="text/javascript">
-	function onMouseClick(e) {
-	   
-	    //var x = document.getElementById('id1');
-		//var input = document.getElementById('pac-input');
-		//var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
-		////var searchBox = new google.maps.places.SearchBox('pac-input');
-		//input.value = x.textContent;
-		//console.log("country:" + x.textContent);
-
-	}
-	function onMouseClick1() {
-		var x = document.getElementById('id2');
-		var input = document.getElementById('pac-input');
-		//var searchBox = new google.maps.places.SearchBox(input);
-		input.value = x.textContent;
-	
-	}
-</script>*@
+<script>
+    function stars() {
+        
+    }
+</script>
 
 
 <script type="text/javascript">
@@ -300,6 +293,7 @@
         ko.applyBindings(vm, $("#acomodations").get(0));
         ko.applyBindings(vm, $("#rooms").get(0));
         ko.applyBindings(vm, $("#facilities").get(0));
+    
     });
 </script>
 

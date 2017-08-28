@@ -62,6 +62,7 @@
         self.FacilityDescription(data.FacilityDescription);
         self.Lat(data.lat);
         self.Lng(data.Lng);
+        
     };
 
     self.refresh = function () {
@@ -235,6 +236,7 @@
     self.setMapLocationAcomodation = function (data) {
         var input = document.getElementById('pac-input');
         input.value = data.Name;
+       
         var latt = parseFloat(data.Lat);
         var lngg = parseFloat(data.Lng);
         var x = { lat: latt, lng: lngg };
@@ -390,12 +392,14 @@
                 $("#rooms").hide();
                 $("#facilities").hide();
                 $("#reviews").hide();
+              
                 if (data.Acomodations.length > 0) {
                     $("#acomodations").show();
                 }
                 else {
                     $("#acomodations").hide();
                 }
+             
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -423,6 +427,27 @@
             }
         });
     };
+
+    self.getStars = function (data) {
+        var url = '/Home/GetAcomodationByStars';
+        $.ajax(url, {
+            data: { acomodationId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Rooms(data.Rooms);
+                if (data.Rooms.length > 0) {
+                    $("#rooms").show();
+                }
+                else {
+                    $("#rooms").hide();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    }
 
 
     self.bookRoom = function (data) {
