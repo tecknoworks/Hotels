@@ -83,7 +83,7 @@ namespace DataLayer.Migrations
                     TotalPayment = 400,
                     NumberOfPeople = 3,
                     RoomReservationId = 1,
-                    UserId = 1
+                    User_Id = "3264ce46 - b85e - 4e36 - b1a3 - 72f196cabb2b"
                 },
             new Reservation
             {
@@ -94,7 +94,7 @@ namespace DataLayer.Migrations
                 TotalPayment = 300,
                 NumberOfPeople = 2,
                 RoomReservationId = 2,
-                UserId = 2
+                User_Id = "487ff246-78c7-4ad3-a1a1-5790021a8139"
             },
                 new Reservation
                 {
@@ -105,7 +105,7 @@ namespace DataLayer.Migrations
                     TotalPayment = 500,
                     NumberOfPeople = 2,
                     RoomReservationId = 3,
-                    UserId = 1
+                    User_Id = "3264ce46 - b85e - 4e36 - b1a3 - 72f196cabb2b"
                 }
             );
             
@@ -184,8 +184,8 @@ namespace DataLayer.Migrations
             
             context.Reviews.AddOrUpdate(
                 p => p.Id,
-                new Review { Id = 1, Date= new DateTime(2017, 08, 01), Description="I liked everything",UserId=1,AcomodationId=1},
-                new Review { Id=2, Date=new DateTime(2017,08,30),Description="It was a nice stay",UserId=2,AcomodationId=2}
+                new Review { Id = 1, Date= new DateTime(2017, 08, 01), Description="I liked everything", User_Id = "3264ce46 - b85e - 4e36 - b1a3 - 72f196cabb2b", AcomodationId=1},
+                new Review { Id=2, Date=new DateTime(2017,08,30),Description="It was a nice stay", User_Id = "3264ce46 - b85e - 4e36 - b1a3 - 72f196cabb2b", AcomodationId=2}
                );
           
             context.AcomodationFacilities.AddOrUpdate(

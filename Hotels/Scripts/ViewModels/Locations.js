@@ -302,6 +302,50 @@
             });
             map.fitBounds(bounds);
         });
+        //Get facilities
+
+        var url1 = '/Home/GetFacilities';
+        $.ajax(url1, {
+            data: { acomodationId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.AcomodationFacilities(data.AcomodationFacilities);
+                if (data.AcomodationFacilities.length > 0) {
+                    $("#facilities").show();
+                }
+                else {
+                    $("#facilities").hide();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+
+       
+        //Get Reviews
+
+        var url = '/Home/GetReviews';
+
+        $.ajax(url, {
+            data: { acomodationId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Reviews(data.Reviews);
+                if (data.Reviews.length > 0) {
+                    $("#reviews").show();
+                }
+                else {
+                    $("#reviews").hide();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+
     }
 
     self.getCities = function (data) {
@@ -379,48 +423,6 @@
         });
     };
 
-    self.getFacilities = function (data) {
-        var url = '/Home/GetFacilities';
-        $.ajax(url, {
-            data: { acomodationId: data.Id},
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.AcomodationFacilities(data.AcomodationFacilities);
-                if (data.AcomodationFacilities.length > 0) {
-                    $("#facilities").show();
-                }
-                else {
-                    $("#facilities").hide();
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    };
-
-    self.getReviews = function (data) {
-        var url = '/Home/GetReviews';
-        
-        $.ajax(url, {
-            data: { acomodationId: data.Id },
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.Reviews(data.Reviews);
-                if (data.Reviews.length > 0) {
-                    $("#reviews").show();
-                }
-                else {
-                    $("#reviews").hide();
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    };
 
     self.bookRoom = function (data) {
         var url = '/Home/AddReservation';
