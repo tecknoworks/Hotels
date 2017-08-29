@@ -326,35 +326,57 @@
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
             }
+
         });
 
-
-        //Get Reviews
-
-        //var url = '/Home/GetReviews';
-
-        //$.ajax(url, {
-        //    data: { acomodationId: data.Id },
-        //    type: "get",
-        //    contentType: "application/json; charset=utf-8",
-        //    success: function (data) {
-        //        self.Reviews(data.Reviews);
-        //        if (data.Reviews.length > 0) {
-        //            $("#reviews").show();
-        //        }
-        //        else {
-        //            $("#reviews").hide();
-        //        }
-        //    },
-        //    error: function (jqXHR, textStatus, errorThrown) {
-        //        console.log(textStatus + ': ' + errorThrown);
-        //    }
-        //});
+        self.getReviews
+        var url = '/Home/GetReviews';
+        $.ajax(url, {
+            data: { acomodationId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Reviews(data.Reviews);
+                if (data.Reviews.length > 0) {
+                    $("#reviews").show();
+                }
+                else {
+                    $("#reviews").hide();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
 
     };
 
+    this.CountryChanged = function (obj, event) {
+        
+        var url = '/Home/GetCities';
+        
+        $.ajax(url, {
+            data: { countryId: event.target.value},
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                if (data == "") {
+                    //redirect('Account/Login');
+                    window.location.href = "Account/Login";
+                }
+                else {
+                    self.Cities(data.Cities);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    }
+
     self.getCities = function (data) {
         var url = '/Home/GetCities';
+        debugger
         $.ajax(url, {
             data: { countryId: data.Id },
             type: "get",

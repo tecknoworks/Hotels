@@ -1,139 +1,124 @@
 ﻿
 <div id="addAcomodation">
-    <h3 style="color:white">Add a new acomodation</h3>
+    <h3 style="color:white">Add a new accomodation</h3>
     <br />
-				
-    <label style="color:white">Country*</label>
-	<select style="color:black" id="Country">
-        <option>Select the country...</option>
-		<option value="Romania" >Romania</option>
-		<option value="Hungary">Hungary</option>
-        <option value="Italy" >Italy</option>
-        <option value="Germany" >Germany</option>
-        <option value="France">France</option>
-    
-    </select>
-	<br />
-	<br />
-	<label style="color:white">City*</label>
-             
-    <select style="color:black" id="City">
-        <option >Select the city...</option>
-        <option value="Clui-Napoca" >Cluj-Napoca</option>
-        <option value="Bucuresti">Bucuresti</option>
-        <option value="Sibiu" >Sibiu</option>
-        <option value="Budapest" >Budapest</option>
-        <option value="Rome" >Rome</option>
-        <option value="Berlin" >Berlin</option>
-        <option value="Paris" >Paris</option>
-    </select>
-	<br />
+    <div id="countries">
+        <label style="color:white">Country*</label>
+        <select style="color:black" data-bind="options: Countries, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose a country...', event:{ change: getCities} "></select>
+        @*<span data-bind="text: selectedItem() && selectedItem().Id"></span>*@
+    </div>
+        <br />
+        <br />
+    <div id="cities" style="display:normal!important">
+        <label style="color:white">City*</label>
+        <select style="color:black" data-bind="options: Cities, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...'"></select>
+        </div>
+        <br />
+        <h3 style="color:white">Accomodation details</h3>
+        <br />
 
-	<h3 style="color:white">Acomodation details</h3>
-	<br />
+        <label style="color:white">Type*</label>
+        <select style="color:black" id="Type" data-bind="value: AcomodationType">
+            <option>Select the type...</option>
+            <option value="Hotel">Hotel</option>
+            <option value="Pension">Pension</option>
+            <option value="Hut">Hut</option>
+            <option value="Motel">Motel</option>
+        </select>
+        <br />
 
-	<label style="color:white">Type*</label>
-	<select style="color:black" >
-        <option >Select the type...</option>
-		<option value="Hotel" >Hotel</option>
-		<option value="Pension">Pension</option>
-		<option value="Hut" >Hut</option>
-		<option value="Motel" >Motel</option>
-	</select>
-	<br />
+        <label style="color:white">Address*</label>
+        <input id="Address" type="text" data-bind="value:Address" size="25" style="color:black" />
+        <br />
 
-	<label style="color:white">Address*</label>
-	<input id="Address" type="text" data-bind="Address" size="25" />
-	<br />
+        <label style="color:white">Name*</label>
+        <input id="Name" type="text" data-bind="value:Name" size="27" style="color:black" />
+        <br />
 
-	<label style="color:white">Name*</label>
-	<input id="Name" type="text" data-bind="Name" size="27" />
-	<br />
+        <label style="color:white">Nr. of stars*</label>
+        <input id="NumberOfStars" type="text" data-bind="value:NumberOfStars" size="22" style="color:black" />
+        <br />
 
-	<label style="color:white">Nr. of stars*</label>
-	<input id="NumberOfStars" type="text" data-bind="NumberOfStars" size="22" />
-	<br />
+        <label style="color:white">Description*</label>
+        <input id="Description" type="text" data-bind="value:Description" size="21" style="color:black" />
+        <br />
 
-	<label style="color:white">Description*</label>
-	<input id="Description" type="text" data-bind="Description" size="21" />
-	<br />
+        <label style="color:white">Phone number*</label>
+        <input id="PhoneNumber" type="text" data-bind="value:PhoneNumber" size="19" style="color:black" />
+        <br />
 
-	<label style="color:white">Phone number*</label>
-	<input id="PhoneNumber" type="text" data-bind="PhoneNumber" size="19" />
-	<br />
+        <label style="color:white">Web site*</label>
+        <input id="WebSite" type="text" data-bind="value:WebSite" size="24" style="color:black" />
+        <br />
 
-	<label style="color:white">Web site*</label>
-	<input id="WebSite" type="text" data-bind="WebSite" size="24" />
-	<br />
+        <label style="color:white">Latitude</label>
+        <input id="Lat" type="text" data-bind="value:Lat" size="25" style="color:black" />
+        <br />
 
-     <label style="color:white">Latitude</label>
-     <input id="Lat" type="text" data-bind="Lat" size="25" />
-     <br />
+        <label style="color:white">Longitude</label>
+        <input id="Long" type="text" data-bind="value:Long" size="24" style="color:black" />
+        <br />
 
-     <label style="color:white">Longitude</label>
-     <input id="Long" type="text" data-bind="Long" size="24" />
-     <br />
+        <form id="AcomodationPhoto" method="post" enctype="multipart/form-data" data-bind="value:AcomodationPhoto">
+            <INPUT type=file id=File1 name=File1 />
+            <br>
 
-    <form id="Form1" method="post" enctype="multipart/form-data" runat="server">
-        <INPUT type=file id=File1 name=File1 runat="server" />
-        <br>
+        </form>
+        <br />
+        <br />
 
-    </form>
-	<br />
-    <br />
-    
-    <h3 style="color:white">Room details:</h3>
-	<br />
+        <h3 style="color:white">Room details:</h3>
+        <br />
 
-	<label style="color:white">Room type*</label>
-	<select style="color:black">
-        <option style="color:black">Select the type...</option>
-		<option value="Single" >Single</option>
-		<option value="Double" >Double</option>
-		<option value="Triple" >Triple</option>
-		<option value="Quad" >Quad</option>
-		<option value="Apartment" >Apartment</option>
+        <label style="color:white">Room type*</label>
+        <select style="color:black" id="RoomType" data-bind="value:RoomType">
+            <option style="color:black">Select the type...</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Triple">Triple</option>
+            <option value="Quad">Quad</option>
+            <option value="Apartment">Apartment</option>
 
-	</select>
-	<br />
+        </select>
+        <br />
 
-	<label style="color:white">Price*</label>
-	<input id="Price" type="text" data-bind="Price" size="17" />
-	<br />
-    
-    <label style="color:white">Nr. of children*</label>
-	<input id="NumerOfChildren" type="text" data-bind="NumberOfChildren" size="8" />
-	<br />
+        <label style="color:white">Price*</label>
+        <input id="Price" type="text" data-bind="value:Price" size="17" style="color:black" />
+        <br />
 
-	<label style="color:white">Nr. of adults*</label>
-	<input id="NumberOfAdults" type="text" data-bind="NumberOfAdults" size="10" />
-	<br />
+        <label style="color:white">Nr. of children*</label>
+        <input id="NumerOfChildren" type="text" data-bind="value:NumberOfChildren" size="8" style="color:black" />
+        <br />
 
-	<label style="color:white">Nr. of rooms available*</label>
-	<input id="NumerOfRoomsAvailabe" type="text" data-bine="NumberOfRoomsAvailable" size="1" />
-	<br />
+        <label style="color:white">Nr. of adults*</label>
+        <input id="NumberOfAdults" type="text" data-bind="value:NumberOfAdults" size="10" style="color:black" />
+        <br />
 
-    <label style="color:white">Latitude*</label>
-    <input id="Lat" type="text" data-bind="Lat" size="13" />
-    <br />
+        <label style="color:white">Nr. of rooms available*</label>
+        <input id="NumerOfRoomsAvailabe" type="text" data-bine="value:NumberOfRoomsAvailable" size="1" style="color:black" />
+        <br />
 
-    <label style="color:white">Longitude*</label>
-    <input id="Long" type="text" data-bind="Long" size="12" />
-    <br />
+        <label style="color:white">Latitude*</label>
+        <input id="Lat" type="text" data-bind="value:Lat" size="13" style="color:black" />
+        <br />
 
-    <form id="Form1" method="post" enctype="multipart/form-data" runat="server">
-        <INPUT type=file id=File1 name=File1 runat="server" />
-        <br>
-       
-    </form>
+        <label style="color:white">Longitude*</label>
+        <input id="Long" type="text" data-bind="value:Long" size="12" style="color:black" />
+        <br />
+
+        <form id="RoomPhoto" method="post" enctype="multipart/form-data">
+            <INPUT type=file id=File1 name=File1 data-bind="value: RoomPhoto" />
+            <br>
+
+        </form>
         <br />
         <br />
 
         <label style="color:white">* All the fields are required</label>
         <br />
 
-        <input type="button" value="Add acomodation" onclick="onButton()" style="color:black" />
-</div>
+        <button id="btnAdd" type="button" class="btn btn-default" style="color:black" data-bind="click:function(){$parent.addAcomodation();$parent.addRoom()}">Add accomodation</button>
+    </div>
 
 @*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
 
@@ -146,4 +131,16 @@
 		}
 
 	}
+
+	$(function () {
+	    var vm = new Accomodation();
+	    vm.refresh();
+	    ko.applyBindings(vm, $("#countries").get(0));
+	    ko.applyBindings(vm, $("#cities").get(0));
+	    //ko.applyBindings(vm, $("#acomodations").get(0));
+	    //ko.applyBindings(vm, $("#rooms").get(0));
+	    //ko.applyBindings(vm, $("#facilities").get(0));
+	    //ko.applyBindings(vm, $("#reviews").get(0));
+
+	});
 </script>
