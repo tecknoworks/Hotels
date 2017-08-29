@@ -2,9 +2,12 @@
 <div id="addAcomodation">
     <h3 style="color:white">Add a new acomodation</h3>
     <br />
+
+
+ 
 				
     <label style="color:white">Country*</label>
-	<select style="color:black" id="Country">
+	<select name="select1" style="color:black" id="Country">
         <option>Select the country...</option>
 		<option value="Romania" >Romania</option>
 		<option value="Hungary">Hungary</option>
@@ -16,12 +19,13 @@
 	<br />
 	<br />
 	<label style="color:white">City*</label>
-             
-    <select style="color:black" id="City">
+    
+    <select name="select2" style="color:black" id="City">
         <option >Select the city...</option>
-        <option value="Clui-Napoca" >Cluj-Napoca</option>
+        
+        <option value="Cluj-Napoca" >Cluj-Napoca</option>
         <option value="Bucuresti">Bucuresti</option>
-        <option value="Sibiu" >Sibiu</option>
+        <option value="Sibiu" >Sibiu</option> 
         <option value="Budapest" >Budapest</option>
         <option value="Rome" >Rome</option>
         <option value="Berlin" >Berlin</option>
@@ -147,3 +151,35 @@
 
 	}
 </script>
+
+@*<script>
+
+    $("#select1").change(function() {
+        if ($(this).data('options') === undefined) {
+            /*Taking an array of all options-2 and kind of embedding it on the select1*/
+            $(this).data('options', $('#select2 option').clone());
+        }
+        var id = $(this).val();
+        var options = $(this).data('options').filter('[value=' + id + ']');
+        $('#select2').html(options);
+    });
+</script>
+
+<script>
+  function FillCity() {
+    var stateId = $('#Cpuntry').val();
+    $.ajax({
+        url: '/Employees/FillCity',
+        type: "GET",
+        dataType: "JSON",
+        data: { State: stateId},
+        success: function (cities) {
+            $("#City").html(""); // clear before appending new list
+            $.each(cities, function (i, city) {
+                $("#City").append(
+                    $('<option></option>').val(city.CityId).html(city.City));
+            });
+        }
+    });
+  }
+</script>*@
