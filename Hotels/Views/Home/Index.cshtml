@@ -120,16 +120,9 @@
             <tbody data-bind="foreach:Acomodations">
                 <tr>
                     <td class="col-xs-5" style="background-color:rgba(242, 233, 238, 0.41);color:black" data-bind="click:$parent.getRooms" data-target="#acomodationItem">
-                        
-  
-                        <h4 data-bind="text: Name ,click:$parent.setMapLocationAcomodation" style="font-size:large;margin-right: 5px" > </h4>
-                        @*<div data-bind="if: $data.NumberOfStars=1">&#11088;</div>
-                        <div data-target="#NumberOfStars" data-bind="if: $NumberOfStars=2">&#11088;&#11088;</div>*@
-                        <div data-target="#NumberOfStars" data-bind="if:$NumberOfStars=3">&#11088;&#11088;&#11088;</div>
-                        @*<div data-target="#NumberOfStars" data-bind="if:$data.NumberOfStars=4">&#11088;&#11088;&#11088;&#11088;</div>*@
-                        @*<div data-target="#numberOfStars" data-bind="if:$data.numberOfStars=2">&#11088;&#11088;</div>*@
+                        <div data-target="#numberOfStars" data-bind="html: Stars"></div>
+                        <h4 data-bind="text: Name ,click:$parent.setMapLocationAcomodation" style="font-size:large;margin-right: 5px" > </h4> 
                     </td>
-
                     <td class="col-xs-5">
                         <input type="button" value="Details" class="btn btn-info" data-toggle="modal" data-target="#acomodationItem" data-bind="click:$parent.details" />
                     </td>

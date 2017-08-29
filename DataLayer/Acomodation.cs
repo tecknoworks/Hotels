@@ -16,6 +16,8 @@ namespace DataLayer
         public string Address { get; set; }
         public string Name { get; set; }
 		public int NumberOfStars { get; set; }
+
+        
 		public string Description { get; set; }
 		public string PhoneNumber { get; set; }
 		public string WebSite { get; set; }
@@ -33,6 +35,34 @@ namespace DataLayer
             }
         }
         public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, string AcomodationPhoto, string Description, string PhoneNumber, string WebSite,int CityId,string lat,string lng)
+        public string Stars
+        {
+            get
+            { string stars;
+                switch (NumberOfStars)
+                {
+                    case 1 :
+                        stars = "&#11088;";
+                        break;
+                    case 2:
+                        stars = "&#11088;&#11088;";
+                        break;
+                    case 3:
+                        stars = "&#11088;&#11088;&#11088;";
+                        break;
+                    case 4:
+                        stars = "&#11088;&#11088;&#11088;&#11088;";
+                        break;
+                    case 5:
+                        stars = "&#11088;&#11088;&#11088;&#11088;&#11088;";
+                        break;
+                    default:
+                        stars = string.Empty;
+                        break;
+                }
+                return stars;
+            }
+        }
 		{
 			this.Type = Type;
 			this.Address = Address;
