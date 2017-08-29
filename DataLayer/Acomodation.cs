@@ -32,7 +32,7 @@ namespace DataLayer
                 return Type.ToString();
             }
         }
-        public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, string AcomodationPhoto, string Description, string PhoneNumber, string WebSite,int CityId)
+        public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, string AcomodationPhoto, string Description, string PhoneNumber, string WebSite,int CityId,string lat,string lng)
 		{
 			this.Type = Type;
 			this.Address = Address;
@@ -43,6 +43,8 @@ namespace DataLayer
 			this.PhoneNumber = PhoneNumber;
 			this.WebSite = WebSite;
 			this.CityId = CityId;
+            this.Lat = lat;
+            this.Lng = lng;
 		}
         public Acomodation() { }
     }

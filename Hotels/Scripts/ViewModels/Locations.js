@@ -7,7 +7,7 @@
     self.Reservation = ko.observableArray();
     self.RoomReservation = ko.observableArray();
     self.AcomodationFacilities = ko.observableArray();
-    self.Reviews=ko.observableArray();
+    self.Reviews = ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -34,7 +34,7 @@
     self.FacilityDescription = ko.observable();
     self.Lat = ko.observable();
     self.Lng = ko.observable();
-    
+
 
 
     self.details = function (data) {
@@ -62,7 +62,7 @@
         self.FacilityDescription(data.FacilityDescription);
         self.Lat(data.lat);
         self.Lng(data.Lng);
-        
+
     };
 
     self.refresh = function () {
@@ -97,10 +97,10 @@
         var lngg = parseFloat(data.Lng);
         var x = { lat: latt, lng: lngg };
         var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: x,
-                mapTypeId: 'roadmap'
-            });
+            zoom: 4,
+            center: x,
+            mapTypeId: 'roadmap'
+        });
         document.getElementById("map").style.visibility = "visible";
         var marker = new google.maps.Marker({
             position: x,
@@ -161,7 +161,7 @@
             map.fitBounds(bounds);
         });
     }
-    
+
     self.setMapLocationCity = function (data) {
         var input = document.getElementById('pac-input');
         input.value = data.Name;
@@ -236,7 +236,7 @@
     self.setMapLocationAcomodation = function (data) {
         var input = document.getElementById('pac-input');
         input.value = data.Name;
-       
+
         var latt = parseFloat(data.Lat);
         var lngg = parseFloat(data.Lng);
         var x = { lat: latt, lng: lngg };
@@ -325,30 +325,30 @@
             }
         });
 
-       
+
         //Get Reviews
 
-        var url = '/Home/GetReviews';
+        //var url = '/Home/GetReviews';
 
-        $.ajax(url, {
-            data: { acomodationId: data.Id },
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.Reviews(data.Reviews);
-                if (data.Reviews.length > 0) {
-                    $("#reviews").show();
-                }
-                else {
-                    $("#reviews").hide();
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
+        //$.ajax(url, {
+        //    data: { acomodationId: data.Id },
+        //    type: "get",
+        //    contentType: "application/json; charset=utf-8",
+        //    success: function (data) {
+        //        self.Reviews(data.Reviews);
+        //        if (data.Reviews.length > 0) {
+        //            $("#reviews").show();
+        //        }
+        //        else {
+        //            $("#reviews").hide();
+        //        }
+        //    },
+        //    error: function (jqXHR, textStatus, errorThrown) {
+        //        console.log(textStatus + ': ' + errorThrown);
+        //    }
+        //});
 
-    }
+    };
 
     self.getCities = function (data) {
         var url = '/Home/GetCities';
@@ -363,7 +363,7 @@
                 $("#reviews").hide();
                 if (data == "") {
                     //redirect('Account/Login');
-                    window.location.href="Account/Login";
+                    window.location.href = "Account/Login";
                 }
                 else {
                     self.Cities(data.Cities);
@@ -392,14 +392,14 @@
                 $("#rooms").hide();
                 $("#facilities").hide();
                 $("#reviews").hide();
-              
+
                 if (data.Acomodations.length > 0) {
                     $("#acomodations").show();
                 }
                 else {
                     $("#acomodations").hide();
                 }
-             
+
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -447,18 +447,19 @@
                 console.log(textStatus + ': ' + errorThrown);
             }
         });
-    }
+    };
 
 
     self.bookRoom = function (data) {
         var url = '/Home/AddReservation';
         $.ajax(url, {
             data: {
-                dateOfStart:DateOfStart.value,
+                dateOfStart: DateOfStart.value,
                 dateOfEnd: DateOfEnd.value,
                 numberOfPeople: NrOfPeople.value,
                 totalPayment: TotalPayment.value,
-                roomId: data.Id},
+                roomId: data.Id
+            },
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
@@ -475,26 +476,75 @@
 
     self.getTotalPayment = function (data) {
         var url = '/Home/GetTotalPayment';
-            $.ajax(url, {
-                data: { dateOfEnd: DateOfEnd.value ,
-                        dateOfStart: DateOfStart.value ,
-                        price: data.Price
-                },
-                type: "get",
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-                        $("#TotalPayment").val(data.TotalPayment);
-                        $("#btnBook").show();
-                        $("#btnGetPrice").hide();
-                        $("#DateOfStart").attr("readonly", true);
-                        $("#DateOfEnd").attr("readonly", true);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus + ': ' + errorThrown);
-                }
-            });
+        $.ajax(url, {
+            data: {
+                dateOfEnd: DateOfEnd.value,
+                dateOfStart: DateOfStart.value,
+                price: data.Price
+            },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $("#TotalPayment").val(data.TotalPayment);
+                $("#btnBook").show();
+                $("#btnGetPrice").hide();
+                $("#DateOfStart").attr("readonly", true);
+                $("#DateOfEnd").attr("readonly", true);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
     };
 
+    self.addAccomodation = function (data) {
+        var url = '/Home/AddAcomodation';
+        $.ajax(url, {
+            data: {
+                type: data.AcomodationType,
+                address: data.Address,
+                name: data.Name,
+                numberOfStars: data.NumberOfStars,
+                photo: data.AcomodationPhoto,
+                description: data.Description,
+                phoneNumber: data.PhoneNumber,
+                website: data.WebSite,
+                cityId: data.Id,
+                lat: data.Lat,
+                lng: data.Lng
+            },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Acomodations(data.Acomodations);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    };
 
+    self.addRoom = function (data) {
+        var url = '/Home/AddRoom';
+        $.ajax(url, {
+            data: {
+                type: data.RoomType,
+                price:data.Price,
+                numberOfAdults:data.NumberOfAdults,
+                numberOfChildren: data.NumberOfChildren,
+                photo: data.RoomPhoto,
+                description: data.Description,
+                numberOfRoomsAvailable: data.NumberOfRoomsAvailable,
+                acomodationId:data.Id
+            },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Rooms(data.Rooms);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    };
 }
-

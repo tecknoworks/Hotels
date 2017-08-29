@@ -236,10 +236,10 @@ namespace Hotels.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public JsonResult AddAcomodation(AcomodationType type, string address, string name, int numberOfStars, string photo, string description, string phoneNumber, string website, int cityId)
+        public JsonResult AddAcomodation(AcomodationType type, string address, string name, int numberOfStars, string photo, string description, string phoneNumber, string website, int cityId,string lat,string lng)
         {
             AcomodationService service = new AcomodationService();
-            var acomodation = service.AddAcomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId);
+            var acomodation = service.AddAcomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId,lat,lng);
             return new JsonResult() { Data = new { Acomodation = acomodation }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 

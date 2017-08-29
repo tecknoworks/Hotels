@@ -335,6 +335,12 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\images\ui-icons_222222_256x240.png" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-ui.css" />
