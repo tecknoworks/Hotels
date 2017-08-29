@@ -162,7 +162,7 @@
     </div>
 
 
-    <div id="facilities" class="col-md-4" style="display:none">
+    <div id="facilities" class="col-md-4" style="display:none" >
         <table class="table" style="width:90%">
             <thead>
                 <tr style="background-color:rgba(119, 41, 83, 0.74); color:#ffffff ;font-size:x-large">
@@ -193,7 +193,6 @@
         </table>
     </div>
 </div>
-
 	<script>
 		function myMap(map) {
 			var uluru = { lat: 44.439663, lng: 26.096306 };
@@ -286,6 +285,7 @@
         ko.applyBindings(vm, $("#acomodations").get(0));
         ko.applyBindings(vm, $("#rooms").get(0));
         ko.applyBindings(vm, $("#facilities").get(0));
+        ko.applyBindings(vm, $("#reviews").get(0));
     
     });
 </script>
