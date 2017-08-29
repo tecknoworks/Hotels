@@ -120,20 +120,21 @@
     <input id="Long" type="text" data-bind="Long" size="12" />
     <br />
 
-	<form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
-        <label style="color:white">Room photo*</label>
-		<input type="file" name="fileToUpload" id="fileToUpload">
-	</form>
-	<br />
-    <br />
+    <form id="Form1" method="post" enctype="multipart/form-data" runat="server">
+        <INPUT type=file id=File1 name=File1 runat="server" />
+        <br>
+       
+    </form>
+        <br />
+        <br />
 
-	<label style="color:white">* All the fields are required</label>
-	<br />
+        <label style="color:white">* All the fields are required</label>
+        <br />
 
-	<input type="button" value="Add acomodation" onclick="onButton()"style="color:black" />
+        <input type="button" value="Add acomodation" onclick="onButton()" style="color:black" />
 </div>
 
-<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>
+@*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
 
 <script>
 	function onButton() {
