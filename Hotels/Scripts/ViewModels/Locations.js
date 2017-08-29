@@ -34,6 +34,7 @@
     self.FacilityDescription = ko.observable();
     self.Lat = ko.observable();
     self.Lng = ko.observable();
+    self.Stars = ko.observable();
     
 
 
@@ -62,6 +63,7 @@
         self.FacilityDescription(data.FacilityDescription);
         self.Lat(data.lat);
         self.Lng(data.Lng);
+        self.Stars(data.Stars);
         
     };
 
