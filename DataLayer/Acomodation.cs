@@ -34,7 +34,7 @@ namespace DataLayer
                 return Type.ToString();
             }
         }
-        [NotMapped]
+        public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, string AcomodationPhoto, string Description, string PhoneNumber, string WebSite,int CityId,string lat,string lng)
         public string Stars
         {
             get
@@ -63,7 +63,6 @@ namespace DataLayer
                 return stars;
             }
         }
-        public Acomodation(AcomodationType Type, string Address,string Name, int NumberOfStars, string AcomodationPhoto, string Description, string PhoneNumber, string WebSite,int CityId)
 		{
 			this.Type = Type;
 			this.Address = Address;
@@ -74,6 +73,8 @@ namespace DataLayer
 			this.PhoneNumber = PhoneNumber;
 			this.WebSite = WebSite;
 			this.CityId = CityId;
+            this.Lat = lat;
+            this.Lng = lng;
 		}
         public Acomodation() { }
     }

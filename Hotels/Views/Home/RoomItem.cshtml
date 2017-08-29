@@ -1,12 +1,4 @@
-﻿<style>
-body
-{
-    font-size:10pt;
-    font-family:Verdana;
-    padding: 5px;
-}
-</style>
-
+﻿
 <div id="roomItem" class="modal fade" role="dialog" >
     <div class="modal-dialog">
         <div class="modal-header">
@@ -50,12 +42,12 @@ body
 
             <label for="DateOfStart" style="color:black"  >Date of start</label>
 			<br>
-		    <input id="DateOfStart" type="text" data-bind="DateOfStart"  />
+		    <input id="DateOfStart" type="text" class="form-control" data-bind="DateOfStart"  />
 			<br>
 
             <label for="DateOfEnd" style="color:black">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="text"   data-bind="DateOfEnd" > 
+            <input id="DateOfEnd" type="text" class="form-control"  data-bind="DateOfEnd" > 
 			<br />
 
             <label for="NrOfPeople" style="color:black">Number of people</label>
@@ -86,14 +78,15 @@ body
   
 </script>
 <script src="~/Scripts/jquery-ui.js"></script>
-
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css"rel="stylesheet" />
+@*<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />*@
 <script type="text/javascript">
  
 
     $(document).ready(function(){
         $("#DateOfStart").datepicker({
                 minDate: 0,
-        maxDate: "+60D",
+        maxDate: "+5000D",
         numberOfMonths: 2,
         onSelect: function (selected) {
             
@@ -102,10 +95,9 @@ body
     });
     $("#DateOfEnd").datepicker({
             minDate: 0,
-    maxDate:"+60D",
+    maxDate:"+5000D",
     numberOfMonths: 2,
     onSelect: function(selected) {
-        
         $("#DateOfStart").datepicker("option","maxDate", selected)
     }
     }); 
