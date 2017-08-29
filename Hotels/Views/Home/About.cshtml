@@ -1,133 +1,140 @@
 ﻿
-
-<body>
-
-			<div id="addAcomodation">
-				<h3 style="color:white">Add a new acomodation</h3>
-				<br />
+<div id="addAcomodation">
+    <h3 style="color:white">Add a new acomodation</h3>
+    <br />
 				
-				<label style="color:white">Country*</label>
-				<select>
-					<option>Select the country...</option>
-					<option value="Romania">Romania</option>
-					<option value="Hungary">Hungary</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Germany">Germany</option>
-                    <option value="France">France</option>
+    <label style="color:white">Country*</label>
+	<select style="color:black">
+        <option>Select the country...</option>
+		<option value="Romania" >Romania</option>
+		<option value="Hungary">Hungary</option>
+        <option value="Italy" >Italy</option>
+        <option value="Germany" >Germany</option>
+        <option value="France">France</option>
+    
+    </select>
+	<br />
+	<br />
+	<label style="color:white">City*</label>
+             
+    <select style="color:black">
+        <option >Select the city...</option>
+        <option value="Clui-Napoca" >Cluj-Napoca</option>
+        <option value="Bucuresti">Bucuresti</option>
+        <option value="Sibiu" >Sibiu</option>
+        <option value="Budapest" >Budapest</option>
+        <option value="Rome" >Rome</option>
+        <option value="Berlin" >Berlin</option>
+        <option value="Paris" >Paris</option>
+    </select>
+	<br />
 
-				</select>
-				<br />
-				<br />
-				<label style="color:white">City*</label>
-                <select>
-                    <option>Select the city...</option>
-                    <option value="Clui-Napoca">Cluj-Napoca</option>
-                    <option value="Bucuresti">Bucuresti</option>
-                    <option value="Sibiu">Sibiu</option>
-                    <option value="Budapest">Budapest</option>
-                    <option value="Rome">Rome</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Paris">Paris</option>
+	<h3 style="color:white">Acomodation details</h3>
+	<br />
 
-                </select>
-				<br />
+	<label style="color:white">Type*</label>
+	<select style="color:black">
+        <option >Select the type...</option>
+		<option value="Hotel" >Hotel</option>
+		<option value="Pension">Pension</option>
+		<option value="Hut" >Hut</option>
+		<option value="Motel" >Motel</option>
+	</select>
+	<br />
 
-				<h3 style="color:white">Acomodation details</h3>
-				<br />
+	<label style="color:white">Address*</label>
+	<input id="Address" type="text" data-bind="Address" size="25" />
+	<br />
 
-				<label style="color:white">Type*</label>
-				<select>
-					<option>Select the type...</option>
-					<option value="Hotel">Hotel</option>
-					<option value="Pension">Pension</option>
-					<option value="Hut">Hut</option>
-					<option value="Motel">Motel</option>
-				</select>
-				<br />
+	<label style="color:white">Name*</label>
+	<input id="Name" type="text" data-bind="Name" size="27" />
+	<br />
 
-				<label style="color:white">Address*</label>
-				<input id="Address" type="text" data-bind="Address" size="25" />
-				<br />
+	<label style="color:white">Nr. of stars*</label>
+	<input id="NumberOfStars" type="text" data-bind="NumberOfStars" size="22" />
+	<br />
 
-				<label style="color:white">Name*</label>
-				<input id="Name" type="text" data-bind="Name" size="27" />
-				<br />
+	<label style="color:white">Description*</label>
+	<input id="Description" type="text" data-bind="Description" size="21" />
+	<br />
 
-				<label style="color:white">Nr. of stars*</label>
-				<input id="NumberOfStars" type="text" data-bind="NumberOfStars" size="22" />
-				<br />
+	<label style="color:white">Phone number*</label>
+	<input id="PhoneNumber" type="text" data-bind="PhoneNumber" size="19" />
+	<br />
 
-				<label style="color:white">Description*</label>
-				<input id="Description" type="text" data-bind="Description" size="21" />
-				<br />
+	<label style="color:white">Web site*</label>
+	<input id="WebSite" type="text" data-bind="WebSite" size="24" />
+	<br />
 
-				<label style="color:white">Phone number*</label>
-				<input id="PhoneNumber" type="text" data-bind="PhoneNumber" size="19" />
-				<br />
+     <label style="color:white">Latitude</label>
+     <input id="Lat" type="text" data-bind="Lat" size="25" />
+     <br />
 
-				<label style="color:white">Web site*</label>
-				<input id="WebSite" type="text" data-bind="WebSite" size="24" />
-				<br />
-                <label style="color:white">Latitude</label>
-                <input id="Lat" type="text" data-bind="Lat" size="25" />
-                <br />
-                <label style="color:white">Longitude</label>
-                <input id="Long" type="text" data-bind="Long" size="24" />
-                <br />
-				<form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
-					<label style="color:white">Acomodation photo*</label>
-					<input type="file" name="fileToUpload" id="fileToUpload">
-				</form>
-				<br />
-				<br />
+     <label style="color:white">Longitude</label>
+     <input id="Long" type="text" data-bind="Long" size="24" />
+     <br />
 
-				<h3 style="color:white">Room details:</h3>
-				<br />
+	<form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
+        <label style="color:white">Acomodation photo*</label>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+	</form>
+	<br />
+    <br />
+    
+    <h3 style="color:white">Room details:</h3>
+	<br />
 
-				<label style="color:white">Room type*</label>
-				<select>
-					<option>Select the type...</option>
-					<option value="Single">Single</option>
-					<option value="Double">Double</option>
-					<option value="Triple">Triple</option>
-					<option value="Quad">Quad</option>
-					<option value="Apartment">Apartment</option>
+	<label style="color:white">Room type*</label>
+	<select style="color:black">
+        <option style="color:black">Select the type...</option>
+		<option value="Single" >Single</option>
+		<option value="Double" >Double</option>
+		<option value="Triple" >Triple</option>
+		<option value="Quad" >Quad</option>
+		<option value="Apartment" >Apartment</option>
 
-				</select>
-				<br />
+	</select>
+	<br />
 
-				<label style="color:white">Price*</label>
-				<input id="Price" type="text" data-bind="Price" size="17" />
-				<br />
+	<label style="color:white">Price*</label>
+	<input id="Price" type="text" data-bind="Price" size="17" />
+	<br />
+    
+    <label style="color:white">Nr. of children*</label>
+	<input id="NumerOfChildren" type="text" data-bind="NumberOfChildren" size="8" />
+	<br />
 
-				<label style="color:white">Nr. of children*</label>
-				<input id="NumerOfChildren" type="text" data-bind="NumberOfChildren" size="8" />
-				<br />
+	<label style="color:white">Nr. of adults*</label>
+	<input id="NumberOfAdults" type="text" data-bind="NumberOfAdults" size="10" />
+	<br />
 
-				<label style="color:white">Nr. of adults*</label>
-				<input id="NumberOfAdults" type="text" data-bind="NumberOfAdults" size="10" />
-				<br />
-				<label style="color:white">Nr. of rooms available*</label>
-				<input id="NumerOfRoomsAvailabe" type="text" data-bine="NumberOfRoomsAvailable" size="1" />
-				<br />
-                <label style="color:white">Latitude*</label>
-                <input id="Lat" type="text" data-bind="Lat" size="13" />
-                <br />
-                <label style="color:white">Longitude*</label>
-                <input id="Long" type="text" data-bind="Long" size="12" />
-                <br />
-				<form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
-					<label style="color:white">Room photo*</label>
-					<input type="file" name="fileToUpload" id="fileToUpload">
-				</form>
-				<br />
-				<br />
-				<label style="color:white">* All the fields are required</label>
-				<br />
-				<input type="button" value="Add acomodation" onclick="onButton()"style="color:black" />
-			</div>
-	<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>
-</body>
+	<label style="color:white">Nr. of rooms available*</label>
+	<input id="NumerOfRoomsAvailabe" type="text" data-bine="NumberOfRoomsAvailable" size="1" />
+	<br />
+
+    <label style="color:white">Latitude*</label>
+    <input id="Lat" type="text" data-bind="Lat" size="13" />
+    <br />
+
+    <label style="color:white">Longitude*</label>
+    <input id="Long" type="text" data-bind="Long" size="12" />
+    <br />
+
+	<form action="upload.php" style="color:white" method="post" enctype="multipart/form-data">
+        <label style="color:white">Room photo*</label>
+		<input type="file" name="fileToUpload" id="fileToUpload">
+	</form>
+	<br />
+    <br />
+
+	<label style="color:white">* All the fields are required</label>
+	<br />
+
+	<input type="button" value="Add acomodation" onclick="onButton()"style="color:black" />
+</div>
+
+<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>
+
 <script>
 	function onButton() {
 		if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||

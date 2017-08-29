@@ -1,4 +1,11 @@
-﻿
+﻿<style>
+body
+{
+    font-size:10pt;
+    font-family:Verdana;
+    padding: 5px;
+}
+</style>
 
 <div id="roomItem" class="modal fade" role="dialog" >
     <div class="modal-dialog">
@@ -43,13 +50,12 @@
 
             <label for="DateOfStart" style="color:black"  >Date of start</label>
 			<br>
-		
-			<input id="DateOfStart"  type="date"  required="required" class="form-control" data-bind="DateOfStart" />
+		    <input id="DateOfStart" type="text" data-bind="DateOfStart"  />
 			<br>
 
             <label for="DateOfEnd" style="color:black">Date of end</label>
 			<br />
-            <input id="DateOfEnd" type="date"  required="required" class="form-control" data-bind="DateOfEnd" > 
+            <input id="DateOfEnd" type="text"   data-bind="DateOfEnd" > 
 			<br />
 
             <label for="NrOfPeople" style="color:black">Number of people</label>
@@ -77,70 +83,32 @@
         $("#btnBook").hide();
         $("#btnGetPrice").show();
     }
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; 
-    var yyyy = today.getFullYear();
-
-    if (dd < 10) {
-        dd = '0' + dd
-    }
-
-    if (mm < 10) {
-        mm = '0' + mm
-    }
-
-    today = yyyy + '-' + mm + '-' + dd;
-
-    
-    document.getElementById('DateOfStart').setAttribute("min", today);
+  
 </script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
 <script type="text/javascript">
-    var d = document.getElementById('DateOfStart');
-    var today = new Date();
-    var dd = today.getDate()+1;
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
+ 
 
-    if (dd < 10) {
-        dd = '0' + dd
-    }
-
-    if (mm < 10) {
-        mm = '0' + mm
-    }
-
-    today = yyyy + '-' + mm + '-' + dd;
-
-    document.getElementById('DateOfEnd').setAttribute("min", today);
-</script>
-
-
-@*<script>
-$(document).ready(function() {
-    $('#datetimePicker').datetimepicker();
-
-    $('#meetingForm').formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            meeting: {
-                validators: {
-                    date: {
-                        format: 'MM/DD/YYYY h:m A',
-                        message: 'The value is not a valid date'
-                    }
-                }
-            }
+    $(document).ready(function(){
+        $("#DateOfStart").datepicker({
+                minDate: 0,
+        maxDate: "+60D",
+        numberOfMonths: 2,
+        onSelect: function (selected) {
+            
+            $("#DateOfEnd").datepicker("option", "minDate", selected)
         }
     });
-
-    $('#datetimePicker').on('dp.change dp.show', function(e) {
-        $('#meetingForm').formValidation('revalidateField', 'meeting');
+    $("#DateOfEnd").datepicker({
+            minDate: 0,
+    maxDate:"+60D",
+    numberOfMonths: 2,
+    onSelect: function(selected) {
+        
+        $("#DateOfStart").datepicker("option","maxDate", selected)
+    }
+    }); 
     });
-});
-</script>*@
+
+</script>

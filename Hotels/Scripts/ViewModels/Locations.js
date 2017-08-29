@@ -360,6 +360,7 @@
                 $("#acomodations").hide();
                 $("#rooms").hide();
                 $("#facilities").hide();
+                $("#reviews").hide();
                 if (data == "") {
                     //redirect('Account/Login');
                     window.location.href="Account/Login";
@@ -477,21 +478,23 @@
             $.ajax(url, {
                 data: { dateOfEnd: DateOfEnd.value ,
                         dateOfStart: DateOfStart.value ,
-                        price: data.Price },
+                        price: data.Price
+                },
                 type: "get",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    $("#TotalPayment").val(data.TotalPayment);
-                    $("#btnBook").show();
-                    $("#btnGetPrice").hide();
-                    $("#DateOfStart").attr("readonly", true);
-                    $("#DateOfEnd").attr("readonly", true);
+                        $("#TotalPayment").val(data.TotalPayment);
+                        $("#btnBook").show();
+                        $("#btnGetPrice").hide();
+                        $("#DateOfStart").attr("readonly", true);
+                        $("#DateOfEnd").attr("readonly", true);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus + ': ' + errorThrown);
                 }
             });
     };
+
 
 }
 
