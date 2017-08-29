@@ -125,9 +125,10 @@
                         <h4 data-bind="text: Name ,click:$parent.setMapLocationAcomodation" style="font-size:large;margin-right: 5px" > </h4>
                         @*<div data-bind="if: $data.NumberOfStars=1">&#11088;</div>
                         <div data-target="#NumberOfStars" data-bind="if: $NumberOfStars=2">&#11088;&#11088;</div>*@
-                        <div data-target="#NumberOfStars" data-bind="if:$NumberOfStars=3">&#11088;&#11088;&#11088;</div>
-                        @*<div data-target="#NumberOfStars" data-bind="if:$data.NumberOfStars=4">&#11088;&#11088;&#11088;&#11088;</div>*@
-                        @*<div data-target="#numberOfStars" data-bind="if:$data.numberOfStars=2">&#11088;&#11088;</div>*@
+                        @*<div data-target="#NumberOfStars" data-bind="if:$parent.NumberOfStars=3">&#11088;&#11088;&#11088;</div>*@
+                        <div data-target="#NumberOfStars" data-bind="text: NumberOfStars">&#11088;&#11088;&#11088;&#11088;</div>
+
+                        <div data-target="#numberOfStars" data-bind="if:text=3">&#11088;&#11088;&#11088;</div>
                     </td>
 
                     <td class="col-xs-5">
