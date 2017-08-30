@@ -51,4 +51,20 @@
         });
     };
 
+    self.getCities = function (data) {
+        var url = '/Home/GetCities';
+        $.ajax(url, {
+            data: { countryId: event.target.value },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                    self.Cities(data.Cities);
+                   
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    };
+
 }
