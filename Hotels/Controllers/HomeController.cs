@@ -33,7 +33,13 @@ namespace Hotels.Controllers
             return View();
         }
 
-        
+        public ActionResult AddNewRoom()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
