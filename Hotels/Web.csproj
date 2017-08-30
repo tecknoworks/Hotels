@@ -211,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\images\bookroom.jpg" />
+    <Content Include="Scripts\images\bianca.jpg" />
     <Content Include="App_Data\hotel1.jpg" />
     <Content Include="App_Data\hotel2.jpg" />
     <Content Include="App_Data\hotel3.jpg" />
@@ -219,6 +220,7 @@
     <Content Include="App_Data\hotel6.jpg" />
     <Content Include="App_Data\hotel7.jpg" />
     <Content Include="App_Data\hotel8.jpg" />
+    <Content Include="Scripts\images\oana.jpg" />
     <Content Include="App_Data\roomA1.jpg" />
     <Content Include="App_Data\roomD1.jpg" />
     <Content Include="App_Data\roomD2.jpg" />
