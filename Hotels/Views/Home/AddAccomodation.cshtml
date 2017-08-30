@@ -13,21 +13,13 @@
         <select style="color:black" data-bind="options: Cities, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...'" class="form-control"></select>
         </div>
         <br />
-        <h3 style="color:white">Accomodation details</h3>
+        <h3 style="color:white">Accommodation details</h3>
         <br />
 
         <label style="color:white">Type*</label>
 
-        
-        @*<select style="color:black" id="Type" data-bind="value: AcomodationType" class="form-control">
-            <option>Choose...</option>
-            <option value="Hotel">Hotel</option>
-            <option value="Pension">Pension</option>
-            <option value="Hut">Hut</option>
-            <option value="Motel">Motel</option>
-        </select>*@
+        @Html.DropDownList("AccommodationType", EnumHelper.GetSelectList(typeof(DataLayer.AcomodationType)),"Choose...",new { @class = "form-control" })
         <br />
-
         <label style="color:white">Address*</label>
         <input id="Address" type="text" data-bind="value:Address" size="25" style="color:black" class="form-control" />
         <br />
@@ -60,15 +52,15 @@
         <input id="Long" type="text" data-bind="value:Long" size="24" style="color:black" class="form-control" />
         <br />
 
-        @*<form id="AcomodationPhoto" method="post" enctype="multipart/form-data" data-bind="value:AcomodationPhoto">
-            <label style="color:white">Accomodation photo</label>
-            <INPUT type=file id=File1 name=File1 />
-            <br>*@
+        <form id="acomodationphoto" method="post" enctype="multipart/form-data" data-bind="value:acomodationphoto" >
+            <label style="color:white">accomodation photo</label>
+            <input type=file id=file1 name=file1 style="color:white"/>
+            <br>
 
         </form>
         <br />
         <br />
-    <button id="btnAdd" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click:addAccomodation">Add accomodation</button>
+    <button id="btnAdd" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click:addAccomodation">Add accommodation</button>
 
 </div>
 @*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
@@ -88,10 +80,7 @@
 	    vm.refresh();
 	    ko.applyBindings(vm, $("#countries").get(0));
 	    ko.applyBindings(vm, $("#cities").get(0));
-	    //ko.applyBindings(vm, $("#acomodations").get(0));
-	    //ko.applyBindings(vm, $("#rooms").get(0));
-	    //ko.applyBindings(vm, $("#facilities").get(0));
-	    //ko.applyBindings(vm, $("#reviews").get(0));
-
+	    ko.applyBindings(vm, $("#acomodations").get(0));
+	    ko.applyBindings(vm, $("#rooms").get(0));
 	});
 </script>
