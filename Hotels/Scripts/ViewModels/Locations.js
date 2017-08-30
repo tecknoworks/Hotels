@@ -522,54 +522,5 @@
         });
     };
 
-    self.addAccomodation = function (data) {
-        var url = '/Home/AddAcomodation';
-        $.ajax(url, {
-            data: {
-                type: data.AcomodationType,
-                address: data.Address,
-                name: data.Name,
-                numberOfStars: data.NumberOfStars,
-                photo: data.AcomodationPhoto,
-                description: data.Description,
-                phoneNumber: data.PhoneNumber,
-                website: data.WebSite,
-                cityId: data.Id,
-                lat: data.Lat,
-                lng: data.Lng
-            },
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.Acomodations(data.Acomodations);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    };
-
-    self.addRoom = function (data) {
-        var url = '/Home/AddRoom';
-        $.ajax(url, {
-            data: {
-                type: data.RoomType,
-                price:data.Price,
-                numberOfAdults:data.NumberOfAdults,
-                numberOfChildren: data.NumberOfChildren,
-                photo: data.RoomPhoto,
-                description: data.Description,
-                numberOfRoomsAvailable: data.NumberOfRoomsAvailable,
-                acomodationId:data.Id
-            },
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.Rooms(data.Rooms);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    };
+    
 }

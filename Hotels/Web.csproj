@@ -210,6 +210,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\images\bookroom.jpg" />
     <Content Include="Scripts\images\bianca.jpg" />
     <Content Include="App_Data\hotel1.jpg" />
     <Content Include="App_Data\hotel2.jpg" />
@@ -403,6 +404,7 @@
     <Content Include="Views\Home\CityItem.cshtml" />
     <Content Include="Views\Home\AcomodationItem.cshtml" />
     <Content Include="Views\Home\RoomItem.cshtml" />
+    <Content Include="Views\Home\AddNewRoom.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
