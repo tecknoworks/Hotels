@@ -25,7 +25,7 @@
         self.AcomodationType = ko.observable();
         self.RoomType = ko.observable();
         self.RoomPhoto = ko.observable();
-        self.AcomodationPhoto = ko.observable();
+        //self.AcomodationPhoto = ko.observable();
         self.NumberOfPeople = ko.observable();
         self.Lat = ko.observable();
         self.Lng = ko.observable();
@@ -108,7 +108,7 @@
                 address: data.Address,
                 name: data.Name,
                 numberOfStars: data.NumberOfStars,
-                photo: data.AcomodationPhoto,
+                //photo: data.AcomodationPhoto,
                 description: data.Description,
                 phoneNumber: data.PhoneNumber,
                 website: data.WebSite,

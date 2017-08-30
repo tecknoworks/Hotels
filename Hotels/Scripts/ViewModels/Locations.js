@@ -24,7 +24,7 @@
     self.AcomodationType = ko.observable();
     self.RoomType = ko.observable();
     self.RoomPhoto = ko.observable();
-    self.AcomodationPhoto = ko.observable();
+    //self.AcomodationPhoto = ko.observable();
     self.NumberOfPeople = ko.observable();
     self.TotalPayment = ko.observable();
     self.DateOfEnd = ko.observable();
@@ -55,7 +55,7 @@
         self.AcomodationType(data.AcomodationType);
         self.RoomType(data.RoomType);
         self.RoomPhoto(data.RoomPhoto);
-        self.AcomodationPhoto(data.AcomodationPhoto);
+        //self.AcomodationPhoto(data.AcomodationPhoto);
         self.NumberOfPeople(data.NumberOfPeople);
         self.TotalPayment(data.TotalPayment);
         self.DateOfStart(data.DateOfStart);

@@ -210,6 +210,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\hotel1a.jpg" />
+    <Content Include="App_Data\hotel1b.jpg" />
+    <Content Include="App_Data\hotel2a.jpg" />
+    <Content Include="App_Data\hotel2b.jpg" />
+    <Content Include="App_Data\hotel3a.jpg" />
     <Content Include="Scripts\images\bookroom.jpg" />
     <Content Include="Scripts\images\bianca.jpg" />
     <Content Include="App_Data\hotel1.jpg" />
