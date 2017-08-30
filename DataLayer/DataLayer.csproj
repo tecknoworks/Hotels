@@ -113,9 +113,13 @@
     <Compile Include="Migrations\201708280802157_userId.Designer.cs">
       <DependentUpon>201708280802157_userId.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708301015271_photos.cs" />
-    <Compile Include="Migrations\201708301015271_photos.Designer.cs">
-      <DependentUpon>201708301015271_photos.cs</DependentUpon>
+    <Compile Include="Migrations\201708301123246_photosss.cs" />
+    <Compile Include="Migrations\201708301123246_photosss.Designer.cs">
+      <DependentUpon>201708301123246_photosss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301134254_photo.cs" />
+    <Compile Include="Migrations\201708301134254_photo.Designer.cs">
+      <DependentUpon>201708301134254_photo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
@@ -234,8 +238,11 @@
     <EmbeddedResource Include="Migrations\201708280802157_userId.resx">
       <DependentUpon>201708280802157_userId.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708301015271_photos.resx">
-      <DependentUpon>201708301015271_photos.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708301123246_photosss.resx">
+      <DependentUpon>201708301123246_photosss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301134254_photo.resx">
+      <DependentUpon>201708301134254_photo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

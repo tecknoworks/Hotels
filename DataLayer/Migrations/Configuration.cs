@@ -188,12 +188,12 @@ namespace DataLayer.Migrations
 
             context.Photos.AddOrUpdate(
                p => p.Id,
-               new Photo { Id = 1, AcomodationPhoto = "hotel1.jpg", AcomodationId = 1 },
-               new Photo { Id = 2, AcomodationPhoto = "hotel1a.jpg", AcomodationId = 1 },
-               new Photo { Id = 3, AcomodationPhoto = "hotel1b.jpg", AcomodationId = 1 },
-               new Photo { Id = 4, AcomodationPhoto = "hotel2.jpg", AcomodationId = 2 },
-               new Photo { Id = 5, AcomodationPhoto = "hotel2a.jpg", AcomodationId = 2 },
-               new Photo { Id = 6, AcomodationPhoto = "hotel2b.jpg", AcomodationId = 2 }
+               new Photo { Id = 1, AccomodationPhoto = "hotel1.jpg", AcomodationId = 1 },
+               new Photo { Id = 2, AccomodationPhoto = "hotel1a.jpg", AcomodationId = 1 },
+               new Photo { Id = 3, AccomodationPhoto = "hotel1b.jpg", AcomodationId = 1 },
+               new Photo { Id = 4, AccomodationPhoto = "hotel2.jpg", AcomodationId = 2 },
+               new Photo { Id = 5, AccomodationPhoto = "hotel2a.jpg", AcomodationId = 2 },
+               new Photo { Id = 6, AccomodationPhoto = "hotel2b.jpg", AcomodationId = 2 }
                 );
           
             context.AcomodationFacilities.AddOrUpdate(

@@ -9,7 +9,7 @@ namespace DataLayer
     public class Photo
     {
         public int Id { get; set; }
-        public string AcomodationPhoto{ get; set; }
+        public string AccomodationPhoto{ get; set; }
 
         public int AcomodationId { get; set; }
 
@@ -21,7 +21,7 @@ namespace DataLayer
         public Photo(int id,string acomodationPhoto,int acomodationId)
         {
             this.Id = id;
-            this.AcomodationPhoto = acomodationPhoto;
+            this.AccomodationPhoto = acomodationPhoto;
             this.AcomodationId = acomodationId;
         }
     }

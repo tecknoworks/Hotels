@@ -147,10 +147,10 @@ namespace Hotels.Controllers
         {
             AcomodationService service = new AcomodationService();
             var acomodations = service.GetAcomodations(cityId);
-            foreach (Acomodation a in acomodations)
-            {
-                a.AcomodationPhoto = "file.ashx?name=" + a.AcomodationPhoto;
-            }
+            //foreach (Acomodation a in acomodations)
+            //{
+            //    a.AcomodationPhoto = "file.ashx?name=" + a.AcomodationPhoto;
+            //}
             return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 

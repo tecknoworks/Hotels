@@ -25,7 +25,6 @@ namespace DataLayer
         public string Lng { get; set; }
         public int CityId { get; set; }
 		public City City { get; set; }
-        public string AcomodationPhoto { get; set;}
         [NotMapped]
         public string AcomodationType
         {
