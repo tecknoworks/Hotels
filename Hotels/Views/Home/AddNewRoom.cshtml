@@ -13,22 +13,14 @@
     </div>
     <br />
     <div id="acomodations" style="display:normal!important">
-        <label style="color:white">Accomodation*</label>
+        <label style="color:white">Accommodation*</label>
         <select style="color:black" data-bind="options: Acomodations, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...'" class="form-control"></select>
     </div>
     <h3 style="color:white">Room details:</h3>
     <br />
 
     <label style="color:white">Room type*</label>
-    <select style="color:black" id="RoomType" data-bind="value:RoomType" class="form-control">
-        <option style="color:black">Choose...</option>
-        <option value="Single">Single</option>
-        <option value="Double">Double</option>
-        <option value="Triple">Triple</option>
-        <option value="Quad">Quad</option>
-        <option value="Apartment">Apartment</option>
-
-    </select>
+    @Html.DropDownList("RoomType", EnumHelper.GetSelectList(typeof(DataLayer.RoomType)), "Choose...", new { @class = "form-control" })
     <br />
 
     <label style="color:white">Price*</label>
@@ -56,7 +48,7 @@
     <br />
     <form id="RoomPhoto" method="post" enctype="multipart/form-data">
         <label style="color:white">Room photo*</label>
-        <INPUT type=file id=File1 name=File1 data-bind="value: RoomPhoto" />
+        <INPUT type=file id=File1 name=File1 data-bind="value: RoomPhoto" style="color:white"/>
         <br>
 
     </form>
@@ -86,9 +78,7 @@
 	    ko.applyBindings(vm, $("#countries").get(0));
 	    ko.applyBindings(vm, $("#cities").get(0));
 	    ko.applyBindings(vm, $("#acomodations").get(0));
-	    //ko.applyBindings(vm, $("#rooms").get(0));
-	    //ko.applyBindings(vm, $("#facilities").get(0));
-	    //ko.applyBindings(vm, $("#reviews").get(0));
-
+	    ko.applyBindings(vm, $("#rooms").get(0));
 	});
+    
 </script>
