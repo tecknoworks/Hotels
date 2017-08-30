@@ -31,7 +31,8 @@ namespace Hotels
                      "~/Scripts/knockout-3.4.2.js"));
 
            bundles.Add(new ScriptBundle("~/bundles/viewModels").Include(
-                      "~/Scripts/ViewModels/Locations.js"));
+                      "~/Scripts/ViewModels/Locations.js", "~/Scripts/ViewModels/Accomodation.js"));
+
        
 
 

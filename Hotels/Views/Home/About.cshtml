@@ -4,8 +4,8 @@
     <br />
     <div id="countries">
         <label style="color:white">Country*</label>
-        <select style="color:black" data-bind="options: Countries, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose a country...', event:{ change: getCities} "></select>
-        @*<span data-bind="text: selectedItem() && selectedItem().Id"></span>*@
+        <select style="color:black" data-bind="options: Countries, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...', event:{ change: getCities} "></select>
+       
     </div>
         <br />
         <br />
@@ -117,7 +117,7 @@
         <label style="color:white">* All the fields are required</label>
         <br />
 
-        <button id="btnAdd" type="button" class="btn btn-default" style="color:black" data-bind="click:function(){$parent.addAcomodation();$parent.addRoom()}">Add accomodation</button>
+        <button id="btnAdd" type="button" class="btn btn-default" style="color:black" data-bind="click:function(){addAcomodation();addRoom()}">Add accomodation</button>
     </div>
 
 @*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
@@ -144,4 +144,3 @@
 
 	});
 </script>
-
