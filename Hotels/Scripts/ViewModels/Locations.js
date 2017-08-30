@@ -8,6 +8,7 @@
     self.RoomReservation = ko.observableArray();
     self.AcomodationFacilities = ko.observableArray();
     self.Reviews = ko.observableArray();
+    self.Photo = ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -24,7 +25,7 @@
     self.AcomodationType = ko.observable();
     self.RoomType = ko.observable();
     self.RoomPhoto = ko.observable();
-    //self.AcomodationPhoto = ko.observable();
+    self.AcomodationPhoto = ko.observable();
     self.NumberOfPeople = ko.observable();
     self.TotalPayment = ko.observable();
     self.DateOfEnd = ko.observable();
@@ -35,7 +36,7 @@
     self.Lat = ko.observable();
     self.Lng = ko.observable();
     self.Stars = ko.observable();
-    
+    self.AccomodationPhoto = ko.observable();
 
 
 
@@ -55,7 +56,7 @@
         self.AcomodationType(data.AcomodationType);
         self.RoomType(data.RoomType);
         self.RoomPhoto(data.RoomPhoto);
-        //self.AcomodationPhoto(data.AcomodationPhoto);
+        self.AcomodationPhoto(data.AcomodationPhoto);
         self.NumberOfPeople(data.NumberOfPeople);
         self.TotalPayment(data.TotalPayment);
         self.DateOfStart(data.DateOfStart);
@@ -65,6 +66,7 @@
         self.Lat(data.lat);
         self.Lng(data.Lng);
         self.Stars(data.Stars);
+        self.AccomodationPhoto(data.AccomodationPhoto);
         
     };
 

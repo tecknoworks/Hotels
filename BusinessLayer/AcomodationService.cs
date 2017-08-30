@@ -52,6 +52,15 @@ namespace BusinessLayer
             return context.Acomodations.ToList();
         }
 
+        /// <summary>
+        /// Return all the photos from an acomodation
+        /// </summary>
+        /// <param name="acomodationId">The id of the acomodation</param>
+        /// <returns></returns>
+        public List<Photo>GetPhotos(int acomodationId)
+        {
+            return context.Photos.Where(a => a.AcomodationId == acomodationId).ToList();
+        }
 
 
         /// <summary>

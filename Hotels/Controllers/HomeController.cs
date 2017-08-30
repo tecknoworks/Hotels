@@ -154,6 +154,13 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { Acomodations = acomodations }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
+        public JsonResult GetPhotos(int acomodationId)
+        {
+            AcomodationService service = new AcomodationService();
+            var photos = service.GetPhotos(acomodationId);
+            return new JsonResult() { Data = new { Photos = photos }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
 
         public JsonResult GetAcomodationsByType(AcomodationType type)
         {
