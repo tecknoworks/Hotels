@@ -292,9 +292,9 @@ namespace BusinessLayer
         /// <param name="website">The website of the acomodation</param>
         /// <param name="cityId">The id of the city where the acomodation is situated</param>
         /// <returns></returns>
-        public Acomodation AddAcomodation(AcomodationType type,string address,string name,int numberOfStars,string photo,string description,string phoneNumber,string website,int cityId,string lat,string lng)
+        public Acomodation AddAcomodation(AcomodationType type,string address,string name,int numberOfStars,string description,string phoneNumber,string website,int cityId,string lat,string lng)
         {
-            Acomodation accomodation= new Acomodation(type, address, name, numberOfStars, photo, description, phoneNumber, website, cityId,lat,lng);
+            Acomodation accomodation= new Acomodation(type, address, name, numberOfStars,  description, phoneNumber, website, cityId,lat,lng);
             context.Acomodations.Add(accomodation);
             context.SaveChanges();
             return accomodation;

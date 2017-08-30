@@ -53,7 +53,7 @@ namespace Hotels.Models
 
 		public DbSet<Reservation> Reservations { get; set; }
 
-
+        public DbSet<Photo> Photos { get; set; }
 
 	}
 }

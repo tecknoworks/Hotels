@@ -30,6 +30,7 @@ namespace DataLayer.Migrations
               new Country { Id = 5, Name = "France",Lat= "48.864716",Lng= "2.349014" }
             );
             
+            
               context.Cities.AddOrUpdate(
               p => p.Id,
               new City { Id = 1, Name = "Cluj-Napoca", CountryId = 1 ,Lat= "46.77121",Lng= "23.623635"},
@@ -118,7 +119,6 @@ namespace DataLayer.Migrations
                    Address = "Str.Nicoara Moise nr.10",
                    Name = "Belagio",
                    NumberOfStars = 3,
-                   AcomodationPhoto = "hotel1.jpg",
                    Description = "Nice hotel with a great view",
                    PhoneNumber = "07433256963",
                    WebSite = "www.",
@@ -134,7 +134,6 @@ namespace DataLayer.Migrations
                    Address = "Str.Ion Creanga nr.2",
                    Name = "Bianca & Oana",
                    NumberOfStars = 5,
-                   AcomodationPhoto = "hotel2.jpg",
                    Description = "Great hotel with a great view",
                    PhoneNumber = "07433256994",
                    WebSite = "www.bianca&oana.com",
@@ -149,7 +148,6 @@ namespace DataLayer.Migrations
                    Address = "Champselisee,no.10",
                    Name = "Raul",
                    NumberOfStars = 3,
-                   AcomodationPhoto = "hotel3.jpg",
                    Description = "Best price in the city of love",
                    PhoneNumber = "07433257963",
                    WebSite = "www.raul.fr",
@@ -164,7 +162,6 @@ namespace DataLayer.Migrations
                    Address= "Rue de Rivoli",
                    Name= "Hotel de Ville de Paris",
                    NumberOfStars = 4,
-                   AcomodationPhoto = "hotel4.jpg",
                    Description = "Close to the city center",
                    PhoneNumber = "33142764040",
                    WebSite = "www.villeDeParis.fr",
@@ -181,12 +178,23 @@ namespace DataLayer.Migrations
                 new Facility { Id = 2, Description = "Close to supermarkets" },
                 new Facility { Id = 3, Description = "In a quaiet area" }
                );
+        
             
             context.Reviews.AddOrUpdate(
                 p => p.Id,
                 new Review { Id = 1, Date= new DateTime(2017, 08, 01), Description="I liked everything", User_Id = "3264ce46 - b85e - 4e36 - b1a3 - 72f196cabb2b", AcomodationId=1},
                 new Review { Id=2, Date=new DateTime(2017,08,30),Description="It was a nice stay", User_Id = "3264ce46 - b85e - 4e36 - b1a3 - 72f196cabb2b", AcomodationId=2}
                );
+
+            context.Photos.AddOrUpdate(
+               p => p.Id,
+               new Photo { Id = 1, AcomodationPhoto = "hotel1.jpg", AcomodationId = 1 },
+               new Photo { Id = 2, AcomodationPhoto = "hotel1a.jpg", AcomodationId = 1 },
+               new Photo { Id = 3, AcomodationPhoto = "hotel1b.jpg", AcomodationId = 1 },
+               new Photo { Id = 4, AcomodationPhoto = "hotel2.jpg", AcomodationId = 2 },
+               new Photo { Id = 5, AcomodationPhoto = "hotel2a.jpg", AcomodationId = 2 },
+               new Photo { Id = 6, AcomodationPhoto = "hotel2b.jpg", AcomodationId = 2 }
+                );
           
             context.AcomodationFacilities.AddOrUpdate(
                 p=>p.Id,
@@ -194,6 +202,8 @@ namespace DataLayer.Migrations
                 new AcomodationFacility { Id = 2, FacilityId = 2, AcomodationId = 2 },
                 new AcomodationFacility { Id = 3, FacilityId = 2, AcomodationId = 3 }
                 );
+           
+            
                
 
         }  

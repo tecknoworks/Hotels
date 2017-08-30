@@ -63,13 +63,12 @@ namespace DataLayer
                 return stars;
             }
         }
-        public Acomodation(AcomodationType Type, string Address, string Name, int NumberOfStars, string AcomodationPhoto, string Description, string PhoneNumber, string WebSite, int CityId, string lat, string lng)
+        public Acomodation(AcomodationType Type, string Address, string Name, int NumberOfStars, string Description, string PhoneNumber, string WebSite, int CityId, string lat, string lng)
         {
 			this.Type = Type;
 			this.Address = Address;
             this.Name = Name;
 			this.NumberOfStars = NumberOfStars;
-			this.AcomodationPhoto = AcomodationPhoto;
 			this.Description = Description;
 			this.PhoneNumber = PhoneNumber;
 			this.WebSite = WebSite;
