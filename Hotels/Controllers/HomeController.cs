@@ -26,7 +26,7 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { Countries = countries }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public ActionResult About()
+        public ActionResult AddAccomodation()
         {
             ViewBag.Message = "Your application description page.";
 
