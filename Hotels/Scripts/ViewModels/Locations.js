@@ -376,7 +376,7 @@
 
     self.getCities = function (data) {
         var url = '/Home/GetCities';
-        debugger
+        
         $.ajax(url, {
             data: { countryId: data.Id },
             type: "get",

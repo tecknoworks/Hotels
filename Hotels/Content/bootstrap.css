@@ -1966,8 +1966,21 @@ pre code {
     width: 41.66666667%;
   }
   .col-md-4 {
-    width: 33.33333333%;
+   
+    width: 25%;
+	border-collapse: collapse;
+   
   }
+  .col-md-4 td {
+			padding: 10px;
+			border: rgba(119, 41, 83, 0.74) 1px solid;
+		}
+		.col-md-4 tr {
+			background: rgb(203, 165, 185);
+		}
+        .col-md-4 tr:hover {
+			background-color: white;
+		}
   .col-md-3 {
     width: 25%;
   }
@@ -5155,12 +5168,16 @@ a.thumbnail.active {
 }
 .progress {
   overflow:visible;
-  height: 20px;
+  
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: 300px;
+  visibility: visible!important;
+  display:normal;
 }
 .progress-bar {
   float: left;
@@ -5908,6 +5925,19 @@ button.close {
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
+  #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
