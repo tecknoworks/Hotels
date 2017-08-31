@@ -347,7 +347,7 @@
 
         });
 
-        self.getReviews
+        //Get reviews
         var url = '/Home/GetReviews';
         $.ajax(url, {
             data: { acomodationId: data.Id },
@@ -368,29 +368,6 @@
         });
 
     };
-
-    this.CountryChanged = function (obj, event) {
-        
-        var url = '/Home/GetCities';
-        
-        $.ajax(url, {
-            data: { countryId: event.target.value},
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                if (data == "") {
-                    //redirect('Account/Login');
-                    window.location.href = "Account/Login";
-                }
-                else {
-                    self.Cities(data.Cities);
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    }
 
     self.getCities = function (data) {
         var url = '/Home/GetCities';

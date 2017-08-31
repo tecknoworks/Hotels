@@ -1,8 +1,8 @@
 ﻿
-<div id="addAcomodation">
+<div id="countries">
     <h3 style="color:white">Add a new accomodation</h3>
     <br />
-    <div id="countries">
+    <div>
         <label style="color:white">Country*</label>
         <select style="color:black" data-bind="options: Countries, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...', event:{ change: getCities} " class="form-control"></select>
        
@@ -10,16 +10,20 @@
         <br />
     <div id="cities" style="display:normal!important">
         <label style="color:white">City*</label>
-        <select style="color:black" data-bind="options: Cities, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...'" class="form-control"></select>
+        <select style="color:black" data-bind="options: Cities, optionsText: 'Name', optionsValue: 'Id', value: CityId, optionsCaption: 'Choose ...'" class="form-control"></select>
+        <div data-bind="visible: CityId">
+            <span data-bind="text: CityId() ? CityId().Id : 'unknown'"></span>
         </div>
+        </div>
+
         <br />
         <h3 style="color:white">Accommodation details</h3>
         <br />
 
         <label style="color:white">Type*</label>
-
-        @Html.DropDownList("AccommodationType", EnumHelper.GetSelectList(typeof(DataLayer.AcomodationType)),"Choose...",new { @class = "form-control" })
+        @Html.DropDownList("AcomodationType", EnumHelper.GetSelectList(typeof(DataLayer.AcomodationType)),"Choose...",new { @class = "form-control" })
         <br />
+
         <label style="color:white">Address*</label>
         <input id="Address" type="text" data-bind="value:Address" size="25" style="color:black" class="form-control" />
         <br />
@@ -49,38 +53,40 @@
         <br />
 
         <label style="color:white">Longitude</label>
-        <input id="Long" type="text" data-bind="value:Long" size="24" style="color:black" class="form-control" />
+        <input id="Lng" type="text" data-bind="value:Lng" size="24" style="color:black" class="form-control" />
         <br />
 
-        <form id="acomodationphoto" method="post" enctype="multipart/form-data" data-bind="value:AccomodationPhoto" >
-            <label style="color:white">accomodation photo</label>
+        <form id="AcomodationPhoto" method="post" enctype="multipart/form-data" data-bind="value:AcomodationPhoto" >
+            <label style="color:white">Accomodation photo</label>
             <input type=file id=file1 name=file1 style="color:white"/>
             <br>
 
         </form>
         <br />
         <br />
-    <button id="btnAdd" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click:addAccomodation">Add accommodation</button>
+    
+    <button id="btnAddAcomodation" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click: addAccomodation">Add accommodation</button>
 
 </div>
 @*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
 
 <script>
-	function onButton() {
-		if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
-			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
-			(NumerOfRoomsAvailabe == "")) {
-			alert('Please complete all required fields');
-		}
 
-	}
 
 	$(function () {
 	    var vm = new Accomodation();
 	    vm.refresh();
 	    ko.applyBindings(vm, $("#countries").get(0));
-	    ko.applyBindings(vm, $("#cities").get(0));
-	    ko.applyBindings(vm, $("#acomodations").get(0));
-	    ko.applyBindings(vm, $("#rooms").get(0));
+	    //ko.applyBindings(vm, $("#cities").get(0));
 	});
+</script>
+<script type="text/javascript">
+    function onButton() {
+        if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
+			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
+			(NumerOfRoomsAvailabe == "")) {
+            alert('Please complete all required fields');
+        }
+
+    }
 </script>
