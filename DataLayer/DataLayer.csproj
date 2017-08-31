@@ -93,9 +93,9 @@
     <Compile Include="Facility.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201708311148067_Initial.cs" />
-    <Compile Include="Migrations\201708311148067_Initial.Designer.cs">
-      <DependentUpon>201708311148067_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201708311209474_first.cs" />
+    <Compile Include="Migrations\201708311209474_first.Designer.cs">
+      <DependentUpon>201708311209474_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
@@ -217,8 +217,8 @@
     <Content Include="Scripts\npm.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708311148067_Initial.resx">
-      <DependentUpon>201708311148067_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708311209474_first.resx">
+      <DependentUpon>201708311209474_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,7 @@
 namespace DataLayer.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -202,9 +204,25 @@ namespace DataLayer.Migrations
                 new AcomodationFacility { Id = 2, FacilityId = 2, AcomodationId = 2 },
                 new AcomodationFacility { Id = 3, FacilityId = 2, AcomodationId = 3 }
                 );
-           
-            
-               
+
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admin" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Regular"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Regular" };
+
+                manager.Create(role);
+            }
+
 
         }  
     }
