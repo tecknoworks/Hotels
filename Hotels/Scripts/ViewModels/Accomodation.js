@@ -120,15 +120,15 @@
         var url = '/Home/AddAcomodation';
         $.ajax(url, {
             data: {
-                type: data.AcomodationType,
+                type: AcomodationType.value,
                 address: Address.value,
                 name: Name.value,
                 numberOfStars: NumberOfStars.value,
-                photo: AcomodationPhoto.value,
+                //photo: AcomodationPhoto.value,
                 description: Description.value,
                 phoneNumber: PhoneNumber.value,
                 website: WebSite.value,
-                cityId: CityId.value,
+                cityId: self.CityId(),
                 lat: Lat.value,
                 lng: Lng.value
             },
