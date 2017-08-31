@@ -93,33 +93,9 @@
     <Compile Include="Facility.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201708040916307_allTabels.cs" />
-    <Compile Include="Migrations\201708040916307_allTabels.Designer.cs">
-      <DependentUpon>201708040916307_allTabels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708110944468_AccomnodationPhoto.cs" />
-    <Compile Include="Migrations\201708110944468_AccomnodationPhoto.Designer.cs">
-      <DependentUpon>201708110944468_AccomnodationPhoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708110956041_RoomPhoto.cs" />
-    <Compile Include="Migrations\201708110956041_RoomPhoto.Designer.cs">
-      <DependentUpon>201708110956041_RoomPhoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708240928282_Lng.cs" />
-    <Compile Include="Migrations\201708240928282_Lng.Designer.cs">
-      <DependentUpon>201708240928282_Lng.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708280802157_userId.cs" />
-    <Compile Include="Migrations\201708280802157_userId.Designer.cs">
-      <DependentUpon>201708280802157_userId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708301123246_photosss.cs" />
-    <Compile Include="Migrations\201708301123246_photosss.Designer.cs">
-      <DependentUpon>201708301123246_photosss.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708301134254_photo.cs" />
-    <Compile Include="Migrations\201708301134254_photo.Designer.cs">
-      <DependentUpon>201708301134254_photo.cs</DependentUpon>
+    <Compile Include="Migrations\201708311148067_Initial.cs" />
+    <Compile Include="Migrations\201708311148067_Initial.Designer.cs">
+      <DependentUpon>201708311148067_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nearby.cs" />
@@ -223,29 +199,6 @@
     <None Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708040916307_allTabels.resx">
-      <DependentUpon>201708040916307_allTabels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708110944468_AccomnodationPhoto.resx">
-      <DependentUpon>201708110944468_AccomnodationPhoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708110956041_RoomPhoto.resx">
-      <DependentUpon>201708110956041_RoomPhoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708240928282_Lng.resx">
-      <DependentUpon>201708240928282_Lng.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708280802157_userId.resx">
-      <DependentUpon>201708280802157_userId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708301123246_photosss.resx">
-      <DependentUpon>201708301123246_photosss.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708301134254_photo.resx">
-      <DependentUpon>201708301134254_photo.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -262,6 +215,11 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\npm.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708311148067_Initial.resx">
+      <DependentUpon>201708311148067_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
