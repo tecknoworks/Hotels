@@ -1,4 +1,4 @@
-﻿<div id="addRoom">
+﻿<div id="Room">
     <h3 style="color:white">Add a new room</h3>
     <br />
     <div id="countries">
@@ -23,7 +23,7 @@
     @Html.DropDownList("RoomType", EnumHelper.GetSelectList(typeof(DataLayer.RoomType)), "Choose...", new { @class = "form-control" })
     <br />
 
-    <label style="color:white">Price*</label>
+    @*<label style="color:white">Price*</label>
     <input id="Price" type="text" data-bind="value:Price" size="17" style="color:black" class="form-control" />
     <br />
 
@@ -36,16 +36,9 @@
     <br />
 
     <label style="color:white">Nr. of rooms available*</label>
-    <input id="NumerOfRoomsAvailabe" type="text" data-bine="value:NumberOfRoomsAvailable" size="1" style="color:black" class="form-control" />
+    <input id="NumerOfRoomsAvailabe" type="text" data-bind="value:NumberOfRoomsAvailable" size="1" style="color:black" class="form-control" />
     <br />
 
-    <label style="color:white">Latitude*</label>
-    <input id="Lat" type="text" data-bind="value:Lat" size="13" style="color:black" class="form-control"/>
-    <br />
-
-    <label style="color:white">Longitude*</label>
-    <input id="Long" type="text" data-bind="value:Long" size="12" style="color:black" class="form-control" />
-    <br />
     <form id="RoomPhoto" method="post" enctype="multipart/form-data">
         <label style="color:white">Room photo*</label>
         <INPUT type=file id=File1 name=File1 data-bind="value: RoomPhoto" style="color:white"/>
@@ -58,19 +51,12 @@
     <label style="color:white">* All the fields are required</label>
     <br />
     <br />
-
-    <button id="btnAdd" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click:addRoom">Add room</button>
+    *@
+    <button id="btnAddRoom" class="btn btn-default" style="color:black; background:lightpink" data-bind="click: addNewRoom">Add room</button>
 </div>
 
 <script>
-	function onButton() {
-		if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
-			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
-			(NumerOfRoomsAvailabe == "")) {
-			alert('Please complete all required fields');
-		}
-
-	}
+	
 
 	$(function () {
 	    var vm = new Accomodation();
@@ -78,7 +64,18 @@
 	    ko.applyBindings(vm, $("#countries").get(0));
 	    ko.applyBindings(vm, $("#cities").get(0));
 	    ko.applyBindings(vm, $("#acomodations").get(0));
-	    ko.applyBindings(vm, $("#rooms").get(0));
 	});
     
+</script>
+
+
+<script type="text/javascript">
+    function onButton() {
+        if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
+			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
+			(NumerOfRoomsAvailabe == "")) {
+            alert('Please complete all required fields');
+        }
+
+    }
 </script>

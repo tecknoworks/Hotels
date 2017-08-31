@@ -25,7 +25,6 @@
         self.AcomodationType = ko.observable();
         self.RoomType = ko.observable();
         self.RoomPhoto = ko.observable();
-        //self.AcomodationPhoto = ko.observable();
         self.NumberOfPeople = ko.observable();
         self.Lat = ko.observable();
         self.Lng = ko.observable();
@@ -101,6 +100,7 @@
     };
 
     self.addAccomodation = function (data) {
+        debugger
         var url = '/Home/AddAcomodation';
         $.ajax(url, {
             data: {
@@ -108,11 +108,11 @@
                 address: data.Address,
                 name: data.Name,
                 numberOfStars: data.NumberOfStars,
-                //photo: data.AcomodationPhoto,
+                photo: data.AcomodationPhoto,
                 description: data.Description,
                 phoneNumber: data.PhoneNumber,
                 website: data.WebSite,
-                cityId: data.Id,
+                cityId: event.target.value,
                 lat: data.Lat,
                 lng: data.Lng
             },
@@ -127,7 +127,8 @@
         });
     };
 
-    self.addRoom = function (data) {
+    self.addNewRoom = function (data) {
+        debugger;
         var url = '/Home/AddRoom';
         $.ajax(url, {
             data: {
@@ -138,7 +139,7 @@
                 photo: data.RoomPhoto,
                 description: data.Description,
                 numberOfRoomsAvailable: data.NumberOfRoomsAvailable,
-                acomodationId: data.Id
+                acomodationId: event.target.value
             },
             type: "get",
             contentType: "application/json; charset=utf-8",
@@ -151,4 +152,5 @@
         });
     };
 
+   
 }
