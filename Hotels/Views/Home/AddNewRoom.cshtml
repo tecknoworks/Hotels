@@ -1,7 +1,7 @@
-﻿<div id="Room">
+﻿<div id="addRooms">
     <h3 style="color:white">Add a new room</h3>
     <br />
-    <div id="countries">
+    <div id="countries" >
         <label style="color:white">Country*</label>
         <select style="color:black" data-bind="options: Countries, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...', event:{ change: getCities} " class="form-control"></select>
 
@@ -23,7 +23,7 @@
     @Html.DropDownList("RoomType", EnumHelper.GetSelectList(typeof(DataLayer.RoomType)), "Choose...", new { @class = "form-control" })
     <br />
 
-    @*<label style="color:white">Price*</label>
+    <label style="color:white">Price*</label>
     <input id="Price" type="text" data-bind="value:Price" size="17" style="color:black" class="form-control" />
     <br />
 
@@ -51,7 +51,7 @@
     <label style="color:white">* All the fields are required</label>
     <br />
     <br />
-    *@
+    
     <button id="btnAddRoom" class="btn btn-default" style="color:black; background:lightpink" data-bind="click: addNewRoom">Add room</button>
 </div>
 
@@ -61,9 +61,10 @@
 	$(function () {
 	    var vm = new Accomodation();
 	    vm.refresh();
-	    ko.applyBindings(vm, $("#countries").get(0));
-	    ko.applyBindings(vm, $("#cities").get(0));
-	    ko.applyBindings(vm, $("#acomodations").get(0));
+	    ko.applyBindings(vm, $("#addRooms").get(0));
+	    //ko.applyBindings(vm, $("#countries").get(0));
+	    //ko.applyBindings(vm, $("#cities").get(0));
+	    //ko.applyBindings(vm, $("#acomodations").get(0));
 	});
     
 </script>

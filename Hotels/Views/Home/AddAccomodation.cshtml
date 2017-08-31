@@ -10,8 +10,12 @@
         <br />
     <div id="cities" style="display:normal!important">
         <label style="color:white">City*</label>
-        <select style="color:black" data-bind="options: Cities, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...'" class="form-control"></select>
+        <select style="color:black" data-bind="options: Cities, optionsText: 'Name', optionsValue: 'Id', value: CityId, optionsCaption: 'Choose ...'" class="form-control"></select>
+        <div data-bind="visible: CityId">
+            <span data-bind="text: CityId() ? CityId().Id : 'unknown'"></span>
         </div>
+        </div>
+
         <br />
         <h3 style="color:white">Accommodation details</h3>
         <br />
@@ -49,7 +53,7 @@
         <br />
 
         <label style="color:white">Longitude</label>
-        <input id="Long" type="text" data-bind="value:Long" size="24" style="color:black" class="form-control" />
+        <input id="Lng" type="text" data-bind="value:Lng" size="24" style="color:black" class="form-control" />
         <br />
 
         <form id="AcomodationPhoto" method="post" enctype="multipart/form-data" data-bind="value:AcomodationPhoto" >
@@ -61,25 +65,28 @@
         <br />
         <br />
     
-    <button id="btnAddAcomodation" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click:addAccomodation">Add accommodation</button>
+    <button id="btnAddAcomodation" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click: addAccomodation">Add accommodation</button>
 
 </div>
 @*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
 
 <script>
-	function onButton() {
-		if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
-			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
-			(NumerOfRoomsAvailabe == "")) {
-			alert('Please complete all required fields');
-		}
 
-	}
 
 	$(function () {
 	    var vm = new Accomodation();
 	    vm.refresh();
 	    ko.applyBindings(vm, $("#countries").get(0));
-	    ko.applyBindings(vm, $("#cities").get(0));
+	    //ko.applyBindings(vm, $("#cities").get(0));
 	});
+</script>
+<script type="text/javascript">
+    function onButton() {
+        if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
+			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
+			(NumerOfRoomsAvailabe == "")) {
+            alert('Please complete all required fields');
+        }
+
+    }
 </script>
