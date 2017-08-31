@@ -59,7 +59,7 @@ namespace BusinessLayer
         /// <returns></returns>
         public List<Photo>GetPhotos(int acomodationId)
         {
-            return context.Photos.Where(a => a.AcomodationId == acomodationId).ToList();
+            return context.Photos.Include("Acomodation").Where(a => a.AcomodationId == acomodationId).ToList();
         }
 
 

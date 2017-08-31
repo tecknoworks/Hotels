@@ -8,7 +8,7 @@
     self.RoomReservation = ko.observableArray();
     self.AcomodationFacilities = ko.observableArray();
     self.Reviews = ko.observableArray();
-    self.Photo = ko.observableArray();
+    self.Photos = ko.observableArray();
 
     self.Id = ko.observable();
     self.Type = ko.observable();
@@ -89,6 +89,22 @@
                     $("#countries").hide();
                 }
             },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    };
+    self.getPhotos=function(data){
+        var url = '/Home/GetPhotos';
+        $.ajax(url, {
+            data:{acomodationId:data.Id},
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.AccomodationPhoto(data.AccomodationPhoto);
+            },
+          
+            
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
             }
