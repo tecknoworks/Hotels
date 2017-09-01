@@ -9,46 +9,46 @@
     site.details = function (data) {
         site.Id(data.Id);
         site.AccomodationPhoto(data.AccomodationPhoto);
-        site.getPhotos = function (data) {
-            var url = '/Home/GetPhotos';
+    }
 
-            $.ajax(url, {
-                data: { acomodationId: data.Id },
-                type: "get",
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-                    site.AccomodationPhoto(data.AccomodationPhoto);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus + ': ' + errorThrown);
-                }
-            });
-
-            site.models.Gallery = function () {
-                var self = this;
-                this.itemsObservables = ko.observableArray();
-                this.init = function (data) {
-                    ko.utils.arrayForEach(data, function (item) {
-                        self.itemsObservables.push(new site.models.GalleryItem(item));
-                    });
-                }
+    site.getPhotos = function (data) {
+        var url = '/Home/GetPhotos';
+        $.ajax(url, {
+            data: { acomodationId: data.Id },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                site.AccomodationPhoto(data.AccomodationPhoto);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
             }
+        });
 
-            ko.utils.arrayForEach(data, function (item) {
-                self.itemsObservables.push(new site.models.GalleryItem(item));
-            });
-
-            site.models.GalleryItem = function (el) {
-                this.isSelected = ko.observable(false);
-                this.src = el.href;
-                this.caption = el.innerHTML;
+        site.models.Gallery = function () {
+            var self = this;
+            this.itemsObservables = ko.observableArray();
+            this.init = function (data) {
+                ko.utils.arrayForEach(data, function (item) {
+                    self.itemsObservables.push(new site.models.GalleryItem(item));
+                });
             }
-
-            $(function () {
-                var viewModel = new site.models.Gallery();
-                viewModel.init($('ul.origin a'));
-                ko.applyBindings(viewModel, $('body').get(0));
-            });
         }
+
+        ko.utils.arrayForEach(data, function (item) {
+            self.itemsObservables.push(new site.models.GalleryItem(item));
+        });
+
+        site.models.GalleryItem = function (el) {
+            this.isSelected = ko.observable(false);
+            this.src = el.href;
+            this.caption = el.innerHTML;
+        }
+
+        $(function () {
+            var viewModel = new site.models.Gallery();
+            viewModel.init($('ul.origin a'));
+            ko.applyBindings(viewModel, $('body').get(0));
+        });
     }
 }
