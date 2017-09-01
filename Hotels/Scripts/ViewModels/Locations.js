@@ -94,22 +94,20 @@
             }
         });
     };
-    self.getPhotos=function(data){
-        var url = '/Home/GetPhotos';
-        $.ajax(url, {
-            data:{acomodationId:data.Id},
-            type: "get",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.AccomodationPhoto(data.AccomodationPhoto);
-            },
-          
-            
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
-    };
+    //self.getPhotos=function(data){
+    //    var url = '/Home/GetPhotos';
+    //    $.ajax(url, {
+    //        data:{acomodationId:data.Id},
+    //        type: "get",
+    //        contentType: "application/json; charset=utf-8",
+    //        success: function (data) {
+    //            self.AccomodationPhoto(data.AccomodationPhoto);
+    //        },
+    //        error: function (jqXHR, textStatus, errorThrown) {
+    //            console.log(textStatus + ': ' + errorThrown);
+    //        }
+    //    });
+    //};
 
     self.setMapLocation = function (data) {
         var input = document.getElementById('pac-input');

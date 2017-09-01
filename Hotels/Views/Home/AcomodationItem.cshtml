@@ -1,6 +1,14 @@
-﻿
-
-
+﻿<style>
+    ul.thumbs li {
+    float: left;
+    list-style: none outside none;
+    margin: 5px 10px 5px 0;
+    padding: 0;
+    }
+    .thumbs {
+    width: 200px;
+    }
+</style>
 <div id="acomodationItem" class="modal fade" role="dialog" >
 	<div class="modal-dialog" >
 		<div class="modal-header">
@@ -14,37 +22,30 @@
 
             
             <label for="Photo" style="color:black">Photo Gallery </label>
-            <img  width="275" height="260" data-bind="foreach: Photos,click:getPhotos"  align="right"  />
-            
-            <div class="gallery" data-bind="foreach: Photos">
-                <div class="item">
-                    <img width="800" height="533" data-bind="click:getPhotos" />
-                </div>
+            <div class="gallery" data-bind="foreach:Photos">
+                <div class="item"><img width="300" height="133" data-bind="attr: { src: AccomodationPhoto }" /></div>
             </div>
-
        
-            
+          
            
-
-
             <br />
-                <label for="AcomodationType" style="color:black">Type</label>
-                <input id="AcomodationType" type="text" class="form-control" data-bind="value: AcomodationType" readonly />
+            <label for="AcomodationType" style="color:black">Type</label>
+            <input id="AcomodationType" type="text" class="form-control" data-bind="value: AcomodationType" readonly />
 
-                <label for="NumberOfStars" style="color:black">Number of ★</label>
-                <input id="NumberOfStars" type="text" class="form-control" data-bind="value: NumberOfStars" readonly />
+            <label for="NumberOfStars" style="color:black">Number of ★</label>
+            <input id="NumberOfStars" type="text" class="form-control" data-bind="value: NumberOfStars" readonly />
 
-                <label for="Address" style="color:black">Address</label>
-                <input id="Address" type="text" class="form-control" data-bind="value: Address" readonly />
+            <label for="Address" style="color:black">Address</label>
+            <input id="Address" type="text" class="form-control" data-bind="value: Address" readonly />
 
-                <label for="Description" style="color:black">Description</label>
-                <input id="Description" type="text" class="form-control" data-bind="value: Description" readonly />
+            <label for="Description" style="color:black">Description</label>
+            <input id="Description" type="text" class="form-control" data-bind="value: Description" readonly />
 
-                <label for="PhoneNumber" style="color:black">Phone number</label>
-                <input id="PhoneNumber" type="text" class="form-control" data-bind="value: PhoneNumber" readonly />
+            <label for="PhoneNumber" style="color:black">Phone number</label>
+            <input id="PhoneNumber" type="text" class="form-control" data-bind="value: PhoneNumber" readonly />
 
-                <label for="WebSite" style="color:black">Web site</label>
-                <input id="WebSite" type="text" class="form-control" data-bind="value: WebSite" readonly />
+            <label for="WebSite" style="color:black">Web site</label>
+            <input id="WebSite" type="text" class="form-control" data-bind="value: WebSite" readonly />
             </div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -53,4 +54,6 @@
 
 
 </div>
+
+
 
