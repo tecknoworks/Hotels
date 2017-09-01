@@ -75,9 +75,9 @@ namespace BusinessLayer
 		/// <param name="numberOfRoomsAvailable">The number of rooms available</param>
 		/// <param name="accomodationId">The Id of the acomodation </param>
 		/// <returns>A new room</returns>
-        public Room AddRoom(RoomType type,float price,int numberOdAdults,int numberOfChildren,string photo,string description,int numberOfRoomsAvailable,int accomodationId)
+        public Room AddRoom(RoomType type, float price, int numberOdAdults, int numberOfChildren, string description, int numberOfRoomsAvailable, int accomodationId)
         {
-            Room room= new Room(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+            Room room= new Room(type, price, numberOdAdults, numberOfChildren, description, numberOfRoomsAvailable, accomodationId);
             context.Rooms.Add(room);
             context.SaveChanges();
             return room;

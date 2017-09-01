@@ -7,6 +7,7 @@
     self.Rooms = ko.observableArray();
 
     self.CityId = ko.observable();
+    self.AcomodationId = ko.observable();
     self.Id = ko.observable();
     self.Name = ko.observable();
     self.Address = ko.observable();
@@ -24,27 +25,6 @@
     self.NumberOfPeople = ko.observable();
     self.Lat = ko.observable();
     self.Lng = ko.observable();
-
-    //self.details = function (data) {
-    //    self.Id(data.Id);
-    //    self.Name(data.Name);
-    //    self.Address(data.Address);
-    //    self.NumberOfStars(data.NumberOfStars);
-    //    self.Description(data.Description);
-    //    self.PhoneNumber(data.PhoneNumber);
-    //    self.WebSite(data.WebSite);
-    //    self.Price(data.Price);
-    //    self.NumberOfAdults(data.NumberOfAdults);
-    //    self.NumberOfChildren(data.numberOfChildren);
-    //    self.NumberOfRoomsAvailable(data.NumberOfRoomsAvailable);
-    //    self.AcomodationType(data.AcomodationType);
-    //    self.RoomType (data.RoomType);
-    //    self.RoomPhoto (data.RoomPhoto);
-    //    self.NumberOfPeople(data.NumberOfPeople);
-    //    self.Lat (data.Lat);
-    //    self.Lng (data.Lng);
-        
-    //};
 
 
     self.refresh = function () {
@@ -116,7 +96,6 @@
     };
 
     self.addAccomodation = function (data,event) {
-        debugger
         var url = '/Home/AddAcomodation';
         $.ajax(url, {
             data: {
@@ -136,6 +115,8 @@
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Acomodations(data.Acomodations);
+                document.getElementById("succes").style.visibility = "visible";
+                
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
@@ -149,24 +130,23 @@
         $.ajax(url, {
             data: {
                 type: RoomType.value,
-                //price: Price.value,
-                numberOfAdults: NumberOfAdults.value,
+                price: Price.value,
+                numberOdAdults: NumberOfAdults.value,
                 numberOfChildren: NumberOfChildren.value,
-                photo: RoomPhoto.value,
+                //photo: RoomPhoto.value,
                 description: Description.value,
                 numberOfRoomsAvailable: NumberOfRoomsAvailable.value,
-                acomodationId: event.target.value
+                accomodationId: self.AcomodationId()
             },
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Rooms(data.Rooms);
+                document.getElementById("succesRoom").style.visibility = "visible";
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
             }
         });
     };
-
-   
 }

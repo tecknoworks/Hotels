@@ -224,10 +224,13 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { Reviews = reviews }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult AddRoom(RoomType type, float price, int numberOdAdults, int numberOfChildren, string photo, string description, int numberOfRoomsAvailable, int accomodationId)
+        public JsonResult AddRoom(string type, float price, int numberOdAdults, int numberOfChildren, string description, int numberOfRoomsAvailable, int accomodationId)
         {
+            var roomType = RoomType.Single;
+            Enum.TryParse(type, out roomType);
+
             RoomService service = new RoomService();
-            var room = service.AddRoom(type, price, numberOdAdults, numberOfChildren, photo, description, numberOfRoomsAvailable, accomodationId);
+            var room = service.AddRoom(roomType, price, numberOdAdults, numberOfChildren, description, numberOfRoomsAvailable, accomodationId);
             return new JsonResult() { Data = new { Room = room }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
