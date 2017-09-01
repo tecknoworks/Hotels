@@ -38,14 +38,14 @@ namespace DataLayer
         }
         public Acomodation Acomodation { get; set; }
         public Room() { }
-        public Room(RoomType Type, float Price, int NumberOfAdults, int NumberOfChildren, string RoomPhoto, string Description, int NumberOfRoomsAvailable,int AcomodationId)
+        public Room(RoomType Type, float Price, int NumberOfAdults, int NumberOfChildren, string Description, int NumberOfRoomsAvailable,int AcomodationId)
         {
            
             this.Type = Type;
             this.Price = Price;
             this.NumberOfAdults = NumberOfAdults;
             this.NumberOfChildren = NumberOfChildren;
-            this.RoomPhoto = RoomPhoto;
+            //this.RoomPhoto = RoomPhoto;
             this.Description = Description;
             this.NumberOfRoomsAvailable = NumberOfRoomsAvailable;
             this.AcomodationId = AcomodationId;

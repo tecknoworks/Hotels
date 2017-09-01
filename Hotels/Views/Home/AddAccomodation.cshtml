@@ -25,35 +25,35 @@
         <br />
 
         <label style="color:white">Address*</label>
-        <input id="Address" type="text" data-bind="value:Address" size="25" style="color:black" class="form-control" />
+        <input id="Address" type="text" data-bind="value:Address"  style="color:black" class="form-control" />
         <br />
 
         <label style="color:white">Name*</label>
-        <input id="Name" type="text" data-bind="value:Name" size="27" style="color:black" class="form-control"/>
+        <input id="Name" type="text" data-bind="value:Name"  style="color:black" class="form-control"/>
         <br />
 
         <label style="color:white">Nr. of stars*</label>
-        <input id="NumberOfStars" type="text" data-bind="value:NumberOfStars" size="22" style="color:black" class="form-control" />
+        <input id="NumberOfStars" type="text" data-bind="value:NumberOfStars"  style="color:black" class="form-control" />
         <br />
 
         <label style="color:white">Description*</label>
-        <input id="Description" type="text" data-bind="value:Description" size="21" style="color:black" class="form-control" />
+        <input id="Description" type="text" data-bind="value:Description"  style="color:black" class="form-control" />
         <br />
 
         <label style="color:white">Phone number*</label>
-        <input id="PhoneNumber" type="text" data-bind="value:PhoneNumber" size="19" style="color:black" class="form-control"/>
+        <input id="PhoneNumber" type="text" data-bind="value:PhoneNumber"  style="color:black" class="form-control"/>
         <br />
 
         <label style="color:white">Web site*</label>
-        <input id="WebSite" type="text" data-bind="value:WebSite" size="24" style="color:black" class="form-control"/>
+        <input id="WebSite" type="text" data-bind="value:WebSite"  style="color:black" class="form-control"/>
         <br />
 
         <label style="color:white">Latitude</label>
-        <input id="Lat" type="text" data-bind="value:Lat" size="25" style="color:black" class="form-control"/>
+        <input id="Lat" type="text" data-bind="value:Lat"  style="color:black" class="form-control"/>
         <br />
 
         <label style="color:white">Longitude</label>
-        <input id="Lng" type="text" data-bind="value:Lng" size="24" style="color:black" class="form-control" />
+        <input id="Lng" type="text" data-bind="value:Lng"  style="color:black" class="form-control" />
         <br />
 
         <form id="AcomodationPhoto" method="post" enctype="multipart/form-data" data-bind="value:AcomodationPhoto" >
@@ -63,6 +63,8 @@
 
         </form>
         <br />
+
+         <h3 id="succes" style="color:red;visibility:hidden">The accommodation was successfully added !</h3>
         <br />
     
     <button id="btnAddAcomodation" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click: addAccomodation">Add accommodation</button>

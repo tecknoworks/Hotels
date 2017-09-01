@@ -14,7 +14,10 @@
     <br />
     <div id="acomodations" style="display:normal!important">
         <label style="color:white">Accommodation*</label>
-        <select style="color:black" data-bind="options: Acomodations, optionsText: 'Name', optionsValue: 'Id', optionsCaption: 'Choose ...'" class="form-control"></select>
+        <select style="color:black" data-bind="options: Acomodations, optionsText: 'Name', optionsValue: 'Id', value: AcomodationId, optionsCaption: 'Choose ...'" class="form-control"></select>
+        <div data-bind="visible: AcomodationId">
+            <span data-bind="text: AcomodationId() ? AcomodationId().Id : 'unknown'"></span>
+        </div>
     </div>
     <h3 style="color:white">Room details:</h3>
     <br />
@@ -22,21 +25,23 @@
     <label style="color:white">Room type*</label>
     @Html.DropDownList("RoomType", EnumHelper.GetSelectList(typeof(DataLayer.RoomType)), "Choose...", new { @class = "form-control" })
     <br />
-
+    <label style="color:white">Description*</label>
+    <input id="Description" type="text" data-bind="value:Description" class="form-control" style="color:black" />
+    <br />
     <label style="color:white">Price*</label>
-    <input id="Price" type="text" data-bind="value:Price" size="17" style="color:black" class="form-control" />
+    <input id="Price" type="text" data-bind="value:Price"  style="color:black" class="form-control" />
     <br />
 
     <label style="color:white">Nr. of children*</label>
-    <input id="NumerOfChildren" type="text" data-bind="value:NumberOfChildren" size="8" style="color:black" class="form-control"/>
+    <input id="NumberOfChildren" type="text" data-bind="value:NumberOfChildren"  style="color:black" class="form-control"/>
     <br />
 
     <label style="color:white">Nr. of adults*</label>
-    <input id="NumberOfAdults" type="text" data-bind="value:NumberOfAdults" size="10" style="color:black" class="form-control"/>
+    <input id="NumberOfAdults" type="text" data-bind="value:NumberOfAdults"  style="color:black" class="form-control"/>
     <br />
 
     <label style="color:white">Nr. of rooms available*</label>
-    <input id="NumerOfRoomsAvailabe" type="text" data-bind="value:NumberOfRoomsAvailable" size="1" style="color:black" class="form-control" />
+    <input id="NumberOfRoomsAvailable" type="text" data-bind="value:NumberOfRoomsAvailable" style="color:black" class="form-control" />
     <br />
 
     <form id="RoomPhoto" method="post" enctype="multipart/form-data">
@@ -46,6 +51,9 @@
 
     </form>
     <br />
+
+
+    <h3 id="succesRoom" style="color:red;visibility:hidden">The room was successfully added !</h3>
     <br />
 
     <label style="color:white">* All the fields are required</label>
@@ -62,9 +70,6 @@
 	    var vm = new Accomodation();
 	    vm.refresh();
 	    ko.applyBindings(vm, $("#addRooms").get(0));
-	    //ko.applyBindings(vm, $("#countries").get(0));
-	    //ko.applyBindings(vm, $("#cities").get(0));
-	    //ko.applyBindings(vm, $("#acomodations").get(0));
 	});
     
 </script>
