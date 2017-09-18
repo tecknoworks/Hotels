@@ -32,7 +32,7 @@ namespace Hotels
 
            bundles.Add(new ScriptBundle("~/bundles/viewModels").Include(
                       "~/Scripts/ViewModels/Locations.js", "~/Scripts/ViewModels/Accomodation.js",
-                      "~/Scripts/ViewModels/Accomodation.js"));
+                      "~/Scripts/ViewModels/Gallery.js"));
 
        
 
