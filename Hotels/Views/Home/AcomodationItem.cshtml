@@ -22,6 +22,8 @@
 
             
             <label for="Photo" style="color:black">Photo Gallery </label>
+           
+            
             <div class="gallery" data-bind="foreach:Photos">
                 <div class="item"><img width="300" height="133" data-bind="attr: { src: AccomodationPhoto },click:$parent.getPhotos" /></div>
             </div>
