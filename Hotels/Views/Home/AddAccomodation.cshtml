@@ -70,7 +70,6 @@
     <button id="btnAddAcomodation" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click: addAccomodation">Add accommodation</button>
 
 </div>
-@*<h1 class="alert-info" style="text-align:center;">Get ready to meet your guests</h1>*@
 
 <script>
 
@@ -79,7 +78,6 @@
 	    var vm = new Accomodation();
 	    vm.refresh();
 	    ko.applyBindings(vm, $("#countries").get(0));
-	    //ko.applyBindings(vm, $("#cities").get(0));
 	});
 </script>
 <script type="text/javascript">
