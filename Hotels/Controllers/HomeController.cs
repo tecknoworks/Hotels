@@ -39,6 +39,12 @@ namespace Hotels.Controllers
 
             return View();
         }
+        public ActionResult GiveReview()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
 
         public ActionResult Contact()
         {
@@ -288,10 +294,10 @@ namespace Hotels.Controllers
             return new JsonResult() { Data = new { NearbyPlace = nearbyPlace }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
-        public JsonResult AddReview(DateTime date, string description, string userId, int acomodationId)
+        public JsonResult AddReview(string description, int acomodationId)
         {
             AcomodationService service = new AcomodationService();
-            var review = service.AddReview(date, description, userId, acomodationId);
+            var review = service.AddReview(DateTime.Now, description, acomodationId);
             return new JsonResult() { Data = new { Review = review }, ContentEncoding = Encoding.UTF8, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 

@@ -385,9 +385,9 @@ namespace BusinessLayer
         /// <param name="userId">The user who made the review</param>
         /// <param name="acomodationId">The Id of the acomodation</param>
         /// <returns></returns>
-        public Review AddReview(DateTime date,string description,string userId,int acomodationId)
+        public Review AddReview(DateTime date,string description,int acomodationId)
         {
-            Review review= new Review(date, description, userId, acomodationId);
+            Review review= new Review(date, description, acomodationId);
             context.Reviews.Add(review);
             context.SaveChanges();
             return review;

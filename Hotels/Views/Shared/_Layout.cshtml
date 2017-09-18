@@ -38,6 +38,10 @@
                         <li>@Html.ActionLink("Add acomodation", "AddAccomodation", "Home")</li>
                         <li>@Html.ActionLink("Add room","AddNewRoom","Home")</li>
                     }
+                    @if (User.IsInRole("Admin") || User.IsInRole("Regular"))
+                    {
+                        <li>@Html.ActionLink("Add review", "GiveReview", "Home")</li>
+                    }
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

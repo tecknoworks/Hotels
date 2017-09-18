@@ -19,12 +19,12 @@ namespace DataLayer
         public int AcomodationId { get; set; }
         public Acomodation Acomodation { get; set; }
         public Review() { }
-        public Review(DateTime Date,string Description,string UserId,int AcomodationId)
+        public Review(DateTime Date,string Description,int AcomodationId)
         {
             
             this.Date = Date;
             this.Description = Description;
-            this.User_Id = UserId;
+            //this.User_Id = UserId;
             this.AcomodationId = AcomodationId;
 
         }

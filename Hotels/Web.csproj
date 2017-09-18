@@ -411,6 +411,7 @@
     <Content Include="Views\Home\AcomodationItem.cshtml" />
     <Content Include="Views\Home\RoomItem.cshtml" />
     <Content Include="Views\Home\AddNewRoom.cshtml" />
+    <Content Include="Views\Home\GiveReview.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

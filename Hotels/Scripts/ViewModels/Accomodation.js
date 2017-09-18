@@ -5,6 +5,7 @@
     self.Cities = ko.observableArray();
     self.Acomodations = ko.observableArray();
     self.Rooms = ko.observableArray();
+    self.Reviews = ko.observableArray();
 
     self.CityId = ko.observable();
     self.AcomodationId = ko.observable();
@@ -41,27 +42,6 @@
         });
     };
 
-    //this.CountryChanged = function (obj, event) {
-
-    //    var url = '/Home/GetCities';
-
-    //    $.ajax(url, {
-    //        data: { countryId: event.target.value },
-    //        type: "get",
-    //        contentType: "application/json; charset=utf-8",
-    //        success: function (data) {
-    //            if (data == "") {
-    //                window.location.href = "Account/Login";
-    //            }
-    //            else {
-    //                self.Cities(data.Cities);
-    //            }
-    //        },
-    //        error: function (jqXHR, textStatus, errorThrown) {
-    //            console.log(textStatus + ': ' + errorThrown);
-    //        }
-    //    });
-    //};
 
     self.getCities = function (data) {
         var url = '/Home/GetCities';
@@ -125,7 +105,6 @@
     };
 
     self.addNewRoom = function (data,event) {
-        debugger;
         var url = '/Home/AddRoom';
         $.ajax(url, {
             data: {
@@ -143,6 +122,25 @@
             success: function (data) {
                 self.Rooms(data.Rooms);
                 document.getElementById("succesRoom").style.visibility = "visible";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus + ': ' + errorThrown);
+            }
+        });
+    };
+
+    self.addReview = function (data, event) {
+        var url = '/Home/AddReview';
+        $.ajax(url, {
+            data: {
+                description: Description.value,
+                acomodationId: self.AcomodationId()
+            },
+            type: "get",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                self.Reviews(data.Reviews);
+                //document.getElementById("succesRoom").style.visibility = "visible";
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
