@@ -140,7 +140,7 @@
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Reviews(data.Reviews);
-                //document.getElementById("succesRoom").style.visibility = "visible";
+                document.getElementById("succesReview").style.visibility = "visible";
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus + ': ' + errorThrown);
