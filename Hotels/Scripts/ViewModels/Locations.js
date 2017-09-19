@@ -37,6 +37,7 @@
     self.Lng = ko.observable();
     self.Stars = ko.observable();
     self.AccomodationPhoto = ko.observable();
+    self.Date = ko.observable();
 
 
 
