@@ -65,6 +65,7 @@
         <br />
 
          <h3 id="succes" style="color:red;visibility:hidden">The accommodation was successfully added !</h3>
+         <h3 id="error" style="color:red;visibility:hidden">Please complete all the fields</h3>
         <br />
     
     <button id="btnAddAcomodation" type="button" class="btn btn-default" style="color:black;background:lightpink" data-bind="click: addAccomodation">Add accommodation</button>
@@ -79,14 +80,4 @@
 	    vm.refresh();
 	    ko.applyBindings(vm, $("#countries").get(0));
 	});
-</script>
-<script type="text/javascript">
-    function onButton() {
-        if ((City.value == "") || (Address.value == "") || (Name.value == "") || (NumberOfStars.value = "") || (Description.value = "") ||
-			(PhoneNumber.value == "") || (WebSite.value == "") || (Price.value == "") || (NumerOfChildren == "") || (NumberOfAdults == "") ||
-			(NumerOfRoomsAvailabe == "")) {
-            alert('Please complete all required fields');
-        }
-
-    }
 </script>

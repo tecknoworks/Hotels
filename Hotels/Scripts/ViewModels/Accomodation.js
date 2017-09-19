@@ -95,10 +95,12 @@
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 self.Acomodations(data.Acomodations);
+                document.getElementById("error").style.visibility = "hidden";
                 document.getElementById("succes").style.visibility = "visible";
                 
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                document.getElementById("error").style.visibility = "visible";
                 console.log(textStatus + ': ' + errorThrown);
             }
         });
@@ -120,10 +122,12 @@
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
+                document.getElementById("errorRoom").style.visibility = "hidden";
                 self.Rooms(data.Rooms);
                 document.getElementById("succesRoom").style.visibility = "visible";
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                document.getElementById("errorRoom").style.visibility = "visible";
                 console.log(textStatus + ': ' + errorThrown);
             }
         });
@@ -139,11 +143,14 @@
             type: "get",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
+                document.getElementById("errorReview").style.visibility = "hidden";
                 self.Reviews(data.Reviews);
                 document.getElementById("succesReview").style.visibility = "visible";
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                document.getElementById("errorReview").style.visibility = "visible";
                 console.log(textStatus + ': ' + errorThrown);
+
             }
         });
     };
