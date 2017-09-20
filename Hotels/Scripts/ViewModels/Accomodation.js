@@ -6,6 +6,7 @@
     self.Acomodations = ko.observableArray();
     self.Rooms = ko.observableArray();
     self.Reviews = ko.observableArray();
+    
 
     self.CityId = ko.observable();
     self.AcomodationId = ko.observable();
@@ -153,5 +154,8 @@
 
             }
         });
+    };
+    self.addFacility = function (data, event) {
+
     };
 }
