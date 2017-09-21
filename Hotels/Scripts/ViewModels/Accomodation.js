@@ -155,7 +155,5 @@
             }
         });
     };
-    self.addFacility = function (data, event) {
 
-    };
 }
