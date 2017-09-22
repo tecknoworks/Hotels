@@ -55,5 +55,6 @@ namespace Hotels.Models
 
         public DbSet<Photo> Photos { get; set; }
 
+        
 	}
 }

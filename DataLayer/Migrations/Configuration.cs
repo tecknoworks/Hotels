@@ -24,6 +24,10 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
+            //context.Users.AddOrUpdate(
+            //    p=>p.Id,
+            //    new ApplicationUser { Email="oana@tkw.com",PasswordHash= "d2eb8f8a-8362-4eeb-b402-51ec3a09b13d" }
+            //    );
             context.Countries.AddOrUpdate(
               p => p.Id,
               new Country { Id = 1, Name = "Romania",Lat= "44.439663" ,Lng= "26.096306" },
