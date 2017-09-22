@@ -28,18 +28,7 @@
             //    p=>p.Id,
             //    new ApplicationUser { Email="oana@tkw.com",PasswordHash= "d2eb8f8a-8362-4eeb-b402-51ec3a09b13d" }
             //    );
-            var passwordHash = new PasswordHasher();
-            string password = passwordHash.HashPassword("!23Qwe");
-            context.Users.AddOrUpdate(
-                u=>u.UserName,
-                new ApplicationUser
-                {
-                    UserName="bianca@tkw.com",
-                    Email="bianca@tkw.com",
-                    PasswordHash=password,
-                    
-                }
-                );
+          
             context.Countries.AddOrUpdate(
               p => p.Id,
               new Country { Id = 1, Name = "Romania",Lat= "44.439663" ,Lng= "26.096306" },
@@ -435,7 +424,22 @@
                 manager.Create(role);
             }
 
-
+            var usr = "bianca@tkw.com";
+            if (!context.Users.Any(u => u.UserName == usr))
+            {
+                var passwordHash = new PasswordHasher();
+                string password = passwordHash.HashPassword("!23Qwe");
+                context.Users.AddOrUpdate(
+                    u => u.UserName,
+                    new ApplicationUser
+                    {
+                        UserName = usr,
+                        Email = "bianca@tkw.com",
+                        PasswordHash = password,
+                        SecurityStamp = Guid.NewGuid().ToString("D")
+                    }
+                    );
+            }
         }  
     }
 }
